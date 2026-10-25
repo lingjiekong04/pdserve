@@ -1,0 +1,242 @@
+[
+  {
+    "artifact": "results/aggregates.json",
+    "private_source_alias": "accepted-campaign/mixed_fifo/20short-low/aggregate.json",
+    "source_sha256": "1553239966bbb8a56a1dbdcd833ce534ba2315160b1ef14587453eda4c47a5b9"
+  },
+  {
+    "artifact": "results/per-run.json",
+    "private_source_alias": "accepted-campaign/mixed_fifo/20short-low/repeat-1/summary.json",
+    "source_sha256": "8e3696601a13859d7ee8a7492e442b5f0325648b502b622e00fc1ed098ecbd61"
+  },
+  {
+    "artifact": "results/per-run.json",
+    "private_source_alias": "accepted-campaign/mixed_fifo/20short-low/repeat-2/summary.json",
+    "source_sha256": "4300b35f11870cbc7c299c27450cbe14bcea1d93ab07fc861a1c24ef6143beef"
+  },
+  {
+    "artifact": "results/per-run.json",
+    "private_source_alias": "accepted-campaign/mixed_fifo/20short-low/repeat-3/summary.json",
+    "source_sha256": "002b6145d5337bed014e14973ea1cf153214c1ea3ee7af8a644f13dda81ad130"
+  },
+  {
+    "artifact": "results/aggregates.json",
+    "private_source_alias": "accepted-campaign/mixed_fifo/20short-saturated/aggregate.json",
+    "source_sha256": "d713dac5d212548e5a9b976ac76ac70acfa94e7fcdbb0b3fd95ae69cd9cfae3d"
+  },
+  {
+    "artifact": "results/per-run.json",
+    "private_source_alias": "accepted-campaign/mixed_fifo/20short-saturated/repeat-1/summary.json",
+    "source_sha256": "e72b7c7eaf3b6c7b165e3b880a8b70f49f1fdb7cc0df77668ef3114ab3b15785"
+  },
+  {
+    "artifact": "results/per-run.json",
+    "private_source_alias": "accepted-campaign/mixed_fifo/20short-saturated/repeat-2/summary.json",
+    "source_sha256": "d8df40d5562e0ad154b04eefebd1e338ba70a1f3f59ab3c35bb01419d82988c7"
+  },
+  {
+    "artifact": "results/per-run.json",
+    "private_source_alias": "accepted-campaign/mixed_fifo/20short-saturated/repeat-3/summary.json",
+    "source_sha256": "2a87e4d1470fa4c060feee1a1fa859fd63072ff06983aaa3fd6a653d247c76db"
+  },
+  {
+    "artifact": "results/aggregates.json",
+    "private_source_alias": "accepted-campaign/mixed_fifo/80short-low/aggregate.json",
+    "source_sha256": "5e814e49214ee0e2e9ac8f405a4f2535e4fd97cb432274b00419ceb87f7afb5c"
+  },
+  {
+    "artifact": "results/per-run.json",
+    "private_source_alias": "accepted-campaign/mixed_fifo/80short-low/repeat-1/summary.json",
+    "source_sha256": "8fe2861260e40fe3967746faaa856c785024460433beb252abd69f86febda213"
+  },
+  {
+    "artifact": "results/per-run.json",
+    "private_source_alias": "accepted-campaign/mixed_fifo/80short-low/repeat-2/summary.json",
+    "source_sha256": "1fa95bdb2a4169346ac349d23fdb59b43c3dbca9852dc1e56449de31e5e494c7"
+  },
+  {
+    "artifact": "results/per-run.json",
+    "private_source_alias": "accepted-campaign/mixed_fifo/80short-low/repeat-3/summary.json",
+    "source_sha256": "90b90b127f944f619130694a36ceafbae97f2b8db2dae558432e8c818ab32c87"
+  },
+  {
+    "artifact": "results/aggregates.json",
+    "private_source_alias": "accepted-campaign/mixed_fifo/80short-saturated/aggregate.json",
+    "source_sha256": "2c94caa81e5eff46f05522c522b34ba6539ca17cecfc44ffa92326d4765aa2a6"
+  },
+  {
+    "artifact": "results/per-run.json",
+    "private_source_alias": "accepted-campaign/mixed_fifo/80short-saturated/repeat-1/summary.json",
+    "source_sha256": "3310ed80274decc147bfb8798b4662b824f9692723df472aca3fe5dc8491d2ed"
+  },
+  {
+    "artifact": "results/per-run.json",
+    "private_source_alias": "accepted-campaign/mixed_fifo/80short-saturated/repeat-2/summary.json",
+    "source_sha256": "a0233d9231e0ebabcc43a2db8ffd2194a604955b8062e766e340d06cc8018fda"
+  },
+  {
+    "artifact": "results/per-run.json",
+    "private_source_alias": "accepted-campaign/mixed_fifo/80short-saturated/repeat-3/summary.json",
+    "source_sha256": "9f5d1c0c898bdf9d3a67cf6e8e87374c285727445356588436da60dc57f92497"
+  },
+  {
+    "artifact": "results/aggregates.json",
+    "private_source_alias": "accepted-campaign/pd_fifo/20short-low/aggregate.json",
+    "source_sha256": "91017b4ca1d963e43f8ee76a7c94c0dfd8c59cfc949e66b7f98ffb8e1ec172a0"
+  },
+  {
+    "artifact": "results/per-run.json",
+    "private_source_alias": "accepted-campaign/pd_fifo/20short-low/repeat-1/summary.json",
+    "source_sha256": "75456fb1cbbaa74dba5eb349da2d71d6634479e825925abba0c2dea14ed15a16"
+  },
+  {
+    "artifact": "results/per-run.json",
+    "private_source_alias": "accepted-campaign/pd_fifo/20short-low/repeat-2/summary.json",
+    "source_sha256": "7cf6248badf131536a55607bb3a28002a8a61836e858bd24e611b237ad83db71"
+  },
+  {
+    "artifact": "results/per-run.json",
+    "private_source_alias": "accepted-campaign/pd_fifo/20short-low/repeat-3/summary.json",
+    "source_sha256": "1ba83aa2939cb76b4dd5418a3c2a2ae8877aa3e59e73542aa4c9f748398d5626"
+  },
+  {
+    "artifact": "results/aggregates.json",
+    "private_source_alias": "accepted-campaign/pd_fifo/20short-saturated/aggregate.json",
+    "source_sha256": "1974d35cafc93a7bfb8bcecd4e9575dc83c719c2d837939f146f574dd4ba0b5c"
+  },
+  {
+    "artifact": "results/per-run.json",
+    "private_source_alias": "accepted-campaign/pd_fifo/20short-saturated/repeat-1/summary.json",
+    "source_sha256": "211f42cc9428d447a8e094ef9fe07631f5b2ea27bd38dc8bc0e0efdecc077bee"
+  },
+  {
+    "artifact": "results/per-run.json",
+    "private_source_alias": "accepted-campaign/pd_fifo/20short-saturated/repeat-2/summary.json",
+    "source_sha256": "6739aba1af3afbe313f90b60f1a226f9e586a8e23b94e80e7b281b782417f910"
+  },
+  {
+    "artifact": "results/per-run.json",
+    "private_source_alias": "accepted-campaign/pd_fifo/20short-saturated/repeat-3/summary.json",
+    "source_sha256": "27321c076e0515cdff16ae30def1d9c024692e8cc5df8b1f085e41fde1f0fef7"
+  },
+  {
+    "artifact": "results/aggregates.json",
+    "private_source_alias": "accepted-campaign/pd_fifo/80short-low/aggregate.json",
+    "source_sha256": "fe4ae5bc53e8f26f79c4cad33d9b17c2c1617d6be815dc55bca74c34f04b6c43"
+  },
+  {
+    "artifact": "results/per-run.json",
+    "private_source_alias": "accepted-campaign/pd_fifo/80short-low/repeat-1/summary.json",
+    "source_sha256": "478f64f6fcefb587324143e24f3318383b6890309885b02fc8b902076acdbc66"
+  },
+  {
+    "artifact": "results/per-run.json",
+    "private_source_alias": "accepted-campaign/pd_fifo/80short-low/repeat-2/summary.json",
+    "source_sha256": "e6dc4dad56ee71c045e6cd0a5d90753c6f2bee25b0fb0c0514e209c5bd463df7"
+  },
+  {
+    "artifact": "results/per-run.json",
+    "private_source_alias": "accepted-campaign/pd_fifo/80short-low/repeat-3/summary.json",
+    "source_sha256": "92558e2f288b3cf7753bb5270caab391e08b60246ab2f5e543237d6b6c4d9fdc"
+  },
+  {
+    "artifact": "results/aggregates.json",
+    "private_source_alias": "accepted-campaign/pd_fifo/80short-saturated/aggregate.json",
+    "source_sha256": "b8a3a1a4559892ddf29d0f4b52a389d06fb9254a9983b7d89b7022a9f7c1c2d0"
+  },
+  {
+    "artifact": "results/per-run.json",
+    "private_source_alias": "accepted-campaign/pd_fifo/80short-saturated/repeat-1/summary.json",
+    "source_sha256": "bbce1d778e46938ef6369e4ae98ea8b7056706d58c2233760c4a71a2338e9842"
+  },
+  {
+    "artifact": "results/per-run.json",
+    "private_source_alias": "accepted-campaign/pd_fifo/80short-saturated/repeat-2/summary.json",
+    "source_sha256": "349b1af8d35ddb044d8817cec3ba9e667683d18227d1ceae22c9c723e107a0b2"
+  },
+  {
+    "artifact": "results/per-run.json",
+    "private_source_alias": "accepted-campaign/pd_fifo/80short-saturated/repeat-3/summary.json",
+    "source_sha256": "2dd43769bbd4249d34cfd357afe96e5ea6a1343fa2646ef51e20c56f5e4fc4e7"
+  },
+  {
+    "artifact": "results/aggregates.json",
+    "private_source_alias": "accepted-campaign/pd_fair/20short-low/aggregate.json",
+    "source_sha256": "9d1ef992559acde9a3c4f24c7b8b7da3704d659f8f77fc36a69b69d996eda61d"
+  },
+  {
+    "artifact": "results/per-run.json",
+    "private_source_alias": "accepted-campaign/pd_fair/20short-low/repeat-1/summary.json",
+    "source_sha256": "0e222864a8f67d64262cf31652b4e2ac2ae3b9ca34d4c838909782c5a725dc83"
+  },
+  {
+    "artifact": "results/per-run.json",
+    "private_source_alias": "accepted-campaign/pd_fair/20short-low/repeat-2/summary.json",
+    "source_sha256": "527a9bf4d380270700b55768aad9dea5e7ee39d86ddf680ab46393a61d90009e"
+  },
+  {
+    "artifact": "results/per-run.json",
+    "private_source_alias": "accepted-campaign/pd_fair/20short-low/repeat-3/summary.json",
+    "source_sha256": "2dad016e990fa2de7998e87e6e53380782e59b56753c9c2494ec56508500e3b5"
+  },
+  {
+    "artifact": "results/aggregates.json",
+    "private_source_alias": "accepted-campaign/pd_fair/20short-saturated/aggregate.json",
+    "source_sha256": "6b307e2463cf887ca05951a001b68b89911dbcf7214a98da0c4cd47378f1e125"
+  },
+  {
+    "artifact": "results/per-run.json",
+    "private_source_alias": "accepted-campaign/pd_fair/20short-saturated/repeat-1/summary.json",
+    "source_sha256": "6b6b6bbc4c09443372caa2daac37ce96a2565c1d57498c75de4a3d955cb81611"
+  },
+  {
+    "artifact": "results/per-run.json",
+    "private_source_alias": "accepted-campaign/pd_fair/20short-saturated/repeat-2/summary.json",
+    "source_sha256": "209bbf2d20c33f0db3004f4dc0beb99e1bdd8f287d3a96ea2ca024ebad6c462e"
+  },
+  {
+    "artifact": "results/per-run.json",
+    "private_source_alias": "accepted-campaign/pd_fair/20short-saturated/repeat-3/summary.json",
+    "source_sha256": "4d21013f361a5596331f3f046ebf110435b2832ea7af917d5921cfa4e43d31b6"
+  },
+  {
+    "artifact": "results/aggregates.json",
+    "private_source_alias": "accepted-campaign/pd_fair/80short-low/aggregate.json",
+    "source_sha256": "d71d1d898ebfa1f45b346063bd234bc54d71ac92c5cfbc47ade1940a43c5beb7"
+  },
+  {
+    "artifact": "results/per-run.json",
+    "private_source_alias": "accepted-campaign/pd_fair/80short-low/repeat-1/summary.json",
+    "source_sha256": "ed8d9bc7e0e7bf0386c28bfcb383ce75ca53edd22ca0afed237359d73012bfee"
+  },
+  {
+    "artifact": "results/per-run.json",
+    "private_source_alias": "accepted-campaign/pd_fair/80short-low/repeat-2/summary.json",
+    "source_sha256": "a46b04da0da0aaf33ab4b64d60991c557330eeb301c3da3dbca4cad7216df3c8"
+  },
+  {
+    "artifact": "results/per-run.json",
+    "private_source_alias": "accepted-campaign/pd_fair/80short-low/repeat-3/summary.json",
+    "source_sha256": "2da24c3b585cd43cde90a08a1c7f524bda1c4d999dc5eeeb394e49bd1fe28944"
+  },
+  {
+    "artifact": "results/aggregates.json",
+    "private_source_alias": "accepted-campaign/pd_fair/80short-saturated/aggregate.json",
+    "source_sha256": "6bf5e07be99d2a6b01528b57e776ab8a54b2eff383822343ec1fdf458cd6f7cc"
+  },
+  {
+    "artifact": "results/per-run.json",
+    "private_source_alias": "accepted-campaign/pd_fair/80short-saturated/repeat-1/summary.json",
+    "source_sha256": "3f97ceae0e8a5efd37acc46d9a47b6fb57187355f9b35c6b3471d8873851a05d"
+  },
+  {
+    "artifact": "results/per-run.json",
+    "private_source_alias": "accepted-campaign/pd_fair/80short-saturated/repeat-2/summary.json",
+    "source_sha256": "6d1e52bcd4f310a48a2b367b5dc7345371a88a9bc9f06b3fc66641d3720953c9"
+  },
+  {
+    "artifact": "results/per-run.json",
+    "private_source_alias": "accepted-campaign/pd_fair/80short-saturated/repeat-3/summary.json",
+    "source_sha256": "e006c47aa365ec0ef860cbe3a7afe48ab09423b30fdf903a7bc35165c3872756"
+  }
+]

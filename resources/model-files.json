@@ -1,0 +1,93 @@
+{
+  "model_id": "Qwen/Qwen2.5-7B-Instruct",
+  "source": "existing-local-files",
+  "revision_requested": null,
+  "upstream_revision_verified": false,
+  "config": {
+    "hidden_size": 3584,
+    "num_hidden_layers": 28,
+    "num_attention_heads": 28,
+    "num_key_value_heads": 4,
+    "vocab_size": 152064
+  },
+  "tokenizer_smoke_token_count": 5,
+  "weights_shards": [
+    "model-00001-of-00004.safetensors",
+    "model-00002-of-00004.safetensors",
+    "model-00003-of-00004.safetensors",
+    "model-00004-of-00004.safetensors"
+  ],
+  "files": [
+    {
+      "path": "LICENSE",
+      "bytes": 11343,
+      "sha256": "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e"
+    },
+    {
+      "path": "README.md",
+      "bytes": 6240,
+      "sha256": "f366f33bbf6bcadbb7d87f0a21a7b65584a56b8d58b0743c77c88bee625b93a6"
+    },
+    {
+      "path": "config.json",
+      "bytes": 663,
+      "sha256": "7463bb0ea78315365e6c6b74de4e73bbcc8359dfb0c5a737584e077d42c0b03c"
+    },
+    {
+      "path": "configuration.json",
+      "bytes": 2,
+      "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a"
+    },
+    {
+      "path": "generation_config.json",
+      "bytes": 243,
+      "sha256": "3a8f9087e486054c8a4a08dae2e5a3ba62e23da212b5b8c08bc42cb983c3459f"
+    },
+    {
+      "path": "merges.txt",
+      "bytes": 1671839,
+      "sha256": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3"
+    },
+    {
+      "path": "model-00001-of-00004.safetensors",
+      "bytes": 3945441440,
+      "sha256": "a1333e6293854747c481288ea83b348226af178dd565c49b6f9495ba1966aba7"
+    },
+    {
+      "path": "model-00002-of-00004.safetensors",
+      "bytes": 3864726352,
+      "sha256": "f5d25a2772cb825164a2a2c0fb6d51a87e282abf21e4dd75bc5cfb3cd0ea6185"
+    },
+    {
+      "path": "model-00003-of-00004.safetensors",
+      "bytes": 3864726424,
+      "sha256": "8efdec4c1bc12317ae1a38dc42b595ce777738a64deea3fcb8a0a91381bcdfd5"
+    },
+    {
+      "path": "model-00004-of-00004.safetensors",
+      "bytes": 3556377672,
+      "sha256": "1a72d403cdf0c1ec3cb7f289f17b394a01e64394c2e9b3c0f94dbce3faf879bd"
+    },
+    {
+      "path": "model.safetensors.index.json",
+      "bytes": 27752,
+      "sha256": "624bf7c47cd12468fdc16e38a47cf4f19e0415b859a223ba3c027eed2f0e1028"
+    },
+    {
+      "path": "tokenizer.json",
+      "bytes": 7031645,
+      "sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539"
+    },
+    {
+      "path": "tokenizer_config.json",
+      "bytes": 7305,
+      "sha256": "5b5d4f65d0acd3b2d56a35b56d374a36cbc1c8fa5cf3b3febbbfabf22f359583"
+    },
+    {
+      "path": "vocab.json",
+      "bytes": 2776833,
+      "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+    }
+  ],
+  "note": "Hashes record these local bytes; they do not prove upstream provenance or weight correctness."
+}

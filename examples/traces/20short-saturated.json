@@ -1,0 +1,290 @@
+{
+  "schema": "pdserve.openloop.v1",
+  "seed": 2028,
+  "count": 40,
+  "short_percent": 20,
+  "arrival_rate_rps": 2.0,
+  "prompt_pattern": "' hello' repeated input_tokens times",
+  "requests": [
+    {
+      "index": 0,
+      "class": "long",
+      "input_tokens": 8192,
+      "output_tokens": 128,
+      "scheduled_offset_s": 0.0
+    },
+    {
+      "index": 1,
+      "class": "long",
+      "input_tokens": 8192,
+      "output_tokens": 512,
+      "scheduled_offset_s": 0.367810138
+    },
+    {
+      "index": 2,
+      "class": "long",
+      "input_tokens": 8192,
+      "output_tokens": 128,
+      "scheduled_offset_s": 1.421996005
+    },
+    {
+      "index": 3,
+      "class": "short",
+      "input_tokens": 512,
+      "output_tokens": 128,
+      "scheduled_offset_s": 2.418009266
+    },
+    {
+      "index": 4,
+      "class": "long",
+      "input_tokens": 8192,
+      "output_tokens": 128,
+      "scheduled_offset_s": 2.484634834
+    },
+    {
+      "index": 5,
+      "class": "long",
+      "input_tokens": 8192,
+      "output_tokens": 128,
+      "scheduled_offset_s": 3.478813874
+    },
+    {
+      "index": 6,
+      "class": "long",
+      "input_tokens": 8192,
+      "output_tokens": 128,
+      "scheduled_offset_s": 3.920750953
+    },
+    {
+      "index": 7,
+      "class": "long",
+      "input_tokens": 8192,
+      "output_tokens": 512,
+      "scheduled_offset_s": 4.446084106
+    },
+    {
+      "index": 8,
+      "class": "long",
+      "input_tokens": 8192,
+      "output_tokens": 128,
+      "scheduled_offset_s": 5.023509728
+    },
+    {
+      "index": 9,
+      "class": "short",
+      "input_tokens": 512,
+      "output_tokens": 128,
+      "scheduled_offset_s": 5.53895352
+    },
+    {
+      "index": 10,
+      "class": "long",
+      "input_tokens": 8192,
+      "output_tokens": 512,
+      "scheduled_offset_s": 5.968052878
+    },
+    {
+      "index": 11,
+      "class": "short",
+      "input_tokens": 512,
+      "output_tokens": 512,
+      "scheduled_offset_s": 6.394424726
+    },
+    {
+      "index": 12,
+      "class": "short",
+      "input_tokens": 512,
+      "output_tokens": 512,
+      "scheduled_offset_s": 6.524735273
+    },
+    {
+      "index": 13,
+      "class": "long",
+      "input_tokens": 8192,
+      "output_tokens": 128,
+      "scheduled_offset_s": 7.552319866
+    },
+    {
+      "index": 14,
+      "class": "short",
+      "input_tokens": 512,
+      "output_tokens": 512,
+      "scheduled_offset_s": 7.554291823
+    },
+    {
+      "index": 15,
+      "class": "long",
+      "input_tokens": 8192,
+      "output_tokens": 128,
+      "scheduled_offset_s": 8.43802422
+    },
+    {
+      "index": 16,
+      "class": "long",
+      "input_tokens": 8192,
+      "output_tokens": 512,
+      "scheduled_offset_s": 9.106552314
+    },
+    {
+      "index": 17,
+      "class": "long",
+      "input_tokens": 8192,
+      "output_tokens": 512,
+      "scheduled_offset_s": 9.423446465
+    },
+    {
+      "index": 18,
+      "class": "short",
+      "input_tokens": 512,
+      "output_tokens": 128,
+      "scheduled_offset_s": 9.555418305
+    },
+    {
+      "index": 19,
+      "class": "long",
+      "input_tokens": 8192,
+      "output_tokens": 512,
+      "scheduled_offset_s": 9.577101117
+    },
+    {
+      "index": 20,
+      "class": "long",
+      "input_tokens": 8192,
+      "output_tokens": 128,
+      "scheduled_offset_s": 10.441306476
+    },
+    {
+      "index": 21,
+      "class": "long",
+      "input_tokens": 8192,
+      "output_tokens": 128,
+      "scheduled_offset_s": 10.444712068
+    },
+    {
+      "index": 22,
+      "class": "long",
+      "input_tokens": 8192,
+      "output_tokens": 512,
+      "scheduled_offset_s": 11.554099101
+    },
+    {
+      "index": 23,
+      "class": "long",
+      "input_tokens": 8192,
+      "output_tokens": 128,
+      "scheduled_offset_s": 11.605619153
+    },
+    {
+      "index": 24,
+      "class": "long",
+      "input_tokens": 8192,
+      "output_tokens": 128,
+      "scheduled_offset_s": 12.426173112
+    },
+    {
+      "index": 25,
+      "class": "long",
+      "input_tokens": 8192,
+      "output_tokens": 512,
+      "scheduled_offset_s": 12.662080702
+    },
+    {
+      "index": 26,
+      "class": "long",
+      "input_tokens": 8192,
+      "output_tokens": 128,
+      "scheduled_offset_s": 13.538030763
+    },
+    {
+      "index": 27,
+      "class": "long",
+      "input_tokens": 8192,
+      "output_tokens": 512,
+      "scheduled_offset_s": 14.1955483
+    },
+    {
+      "index": 28,
+      "class": "long",
+      "input_tokens": 8192,
+      "output_tokens": 512,
+      "scheduled_offset_s": 15.334430559
+    },
+    {
+      "index": 29,
+      "class": "long",
+      "input_tokens": 8192,
+      "output_tokens": 512,
+      "scheduled_offset_s": 15.972283631
+    },
+    {
+      "index": 30,
+      "class": "long",
+      "input_tokens": 8192,
+      "output_tokens": 512,
+      "scheduled_offset_s": 17.02794766
+    },
+    {
+      "index": 31,
+      "class": "long",
+      "input_tokens": 8192,
+      "output_tokens": 128,
+      "scheduled_offset_s": 19.129439944
+    },
+    {
+      "index": 32,
+      "class": "short",
+      "input_tokens": 512,
+      "output_tokens": 128,
+      "scheduled_offset_s": 21.292501859
+    },
+    {
+      "index": 33,
+      "class": "long",
+      "input_tokens": 8192,
+      "output_tokens": 512,
+      "scheduled_offset_s": 22.130396636
+    },
+    {
+      "index": 34,
+      "class": "long",
+      "input_tokens": 8192,
+      "output_tokens": 512,
+      "scheduled_offset_s": 22.278628025
+    },
+    {
+      "index": 35,
+      "class": "long",
+      "input_tokens": 8192,
+      "output_tokens": 512,
+      "scheduled_offset_s": 22.398450052
+    },
+    {
+      "index": 36,
+      "class": "long",
+      "input_tokens": 8192,
+      "output_tokens": 128,
+      "scheduled_offset_s": 23.394775287
+    },
+    {
+      "index": 37,
+      "class": "short",
+      "input_tokens": 512,
+      "output_tokens": 512,
+      "scheduled_offset_s": 25.224802452
+    },
+    {
+      "index": 38,
+      "class": "long",
+      "input_tokens": 8192,
+      "output_tokens": 128,
+      "scheduled_offset_s": 25.522302941
+    },
+    {
+      "index": 39,
+      "class": "long",
+      "input_tokens": 8192,
+      "output_tokens": 512,
+      "scheduled_offset_s": 25.530328473
+    }
+  ]
+}

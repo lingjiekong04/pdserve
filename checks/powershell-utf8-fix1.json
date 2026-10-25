@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "git_commands_executed": 0,
+  "network_requests": 0,
+  "repository_created": false,
+  "validation": [
+    {
+      "family": "Windows PowerShell 5.1",
+      "exit_code": 0,
+      "invocation": "Trusted local script evaluated as ScriptBlock, no execution policy changes.",
+      "powershell_version": "5.1.26100.9711",
+      "all_file_hashes_passed": true
+    },
+    {
+      "family": "PowerShell 7",
+      "exit_code": 0,
+      "invocation": "Trusted local script evaluated as ScriptBlock, no execution policy changes.",
+      "powershell_version": "7.6.5",
+      "all_file_hashes_passed": true
+    }
+  ],
+  "note": "Sandbox blocked -File and script-module Get-FileHash; validation uses trusted ScriptBlock and .NET SHA256 without changing execution policy.",
+  "inherited_pdf_sha256": "f08d5c6484548d49dfc164a732bb200f38de5ecc7b9be7e96199c4cca74012d6",
+  "original_pdf_unchanged": true
+}

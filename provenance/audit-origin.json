@@ -1,0 +1,11 @@
+{
+  "remote_inventory_archive_sha256": "8292f88ef4c6dc7d25a2f126b2fa5bc63a7a8f98e9128c3aa3d9c3c575103dcd",
+  "private_review_archive_sha256": "3154c5100d9bf84e4ea80f786ea9de82b5514b8d312ea5e5862581e8224022a8",
+  "remote_commit": "aef33d60d383b6b976f5cfa48afdcdb91ef46ec1",
+  "stage3d_commit": "53f1f3bac4cb803a06102b52244b24e522d8bb6a",
+  "remote_evidence_zip_sha256": "e2fecc5264d3b1d1f14495c8e27e795e36f7f3818e9b742aee8be0086e04579d",
+  "raw_runs_recomputed": 36,
+  "raw_sha256_matches": 37,
+  "private_evidence_archives_verified": 12,
+  "public_evidence": "sanitized aggregates and per-run group statistics only; no raw prompt/response or host IDs"
+}

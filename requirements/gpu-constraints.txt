@@ -1,0 +1,15 @@
+# Public versions match SGLang v0.4.6.post5; local CUDA tags are intentional.
+torch==2.6.0+cu124
+torchvision==0.21.0+cu124
+sglang==0.4.6.post5
+sgl-kernel==0.1.4
+flashinfer-python==0.2.5+cu124torch2.6
+transformers==4.51.1
+torchao==0.9.0
+xgrammar==0.1.19
+cuda-python==12.4.0
+mooncake-transfer-engine==0.3.2
+modelscope==1.25.0
+numpy==1.26.4
+outlines==0.1.11
+compressed-tensors==0.9.3

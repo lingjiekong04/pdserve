@@ -1,0 +1,5 @@
+PDServe public candidate
+
+Project-specific serving, admission, lifecycle observation, benchmark and documentation work is distributed under Apache License 2.0.
+This candidate contains modifications to SGLang 0.4.6.post5, whose code is Apache-2.0. SGLang and all upstream contributors retain their original rights. Reconstructed upstream files keep their original notices.
+Mooncake, FlashInfer, PyTorch and Qwen are external dependencies/resources, not project-authored engines or redistributed model weights.

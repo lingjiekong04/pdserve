@@ -1,0 +1,47 @@
+{
+  "schema": "pdserve.upstream.patch.v1",
+  "sglang_version": "0.4.6.post5",
+  "upstream_url": "https://github.com/sgl-project/sglang/tree/v0.4.6.post5",
+  "files": {
+    "sglang/srt/disaggregation/decode.py": {
+      "before_sha256": "4a92871fcc5d1b5ff95c082b77d631385544ae6929edef206d14c2aec5584f2b",
+      "after_sha256": "71dcd3ad80251b613b379443f88127868524c4372ddb9a2a6ffb1a8a51237d17"
+    },
+    "sglang/srt/disaggregation/mooncake/conn.py": {
+      "before_sha256": "df525663bfb13ea7d03aca293fede2f15f0e521c103f73823a9421628db7f659",
+      "after_sha256": "6efb747f6e3439b0d746c27ee1a886ae7807e828b4c3e1ec84d93d0dc4ca3a4b"
+    },
+    "sglang/srt/disaggregation/prefill.py": {
+      "before_sha256": "33db1b2ec1e3560242e984721a74147cbec066fbe2ca8b7677f6974b373de672",
+      "after_sha256": "1a57ab8a2a64dbf7af1661294079a76f866f12c218127c17317aaea275d92fcb"
+    },
+    "sglang/srt/entrypoints/http_server.py": {
+      "before_sha256": "9e8207a237adca5115390228ca41c7a27746954c89501e1343b659bd32b44d7f",
+      "after_sha256": "e084d78233aa9e2fa3738096b650159b56683059d0dd18092fd6540ab6b666ee"
+    },
+    "sglang/srt/managers/io_struct.py": {
+      "before_sha256": "2c475e7e0fd3397784825cd772e8bb7fa3e1ca4fd87dbdc845d33cb18897ef61",
+      "after_sha256": "8d52ab517b37c7633aa91334f1a122a65751bfa7a362e6ffd4ac6efa2ed96ca3"
+    },
+    "sglang/srt/managers/scheduler.py": {
+      "before_sha256": "7d272a842edb400cb5043b64e22e727830c20893295ca84e17a4570e7a0cfef6",
+      "after_sha256": "99747e570ece5c159db84dc7857a7f007f4e6fd928591fcc21b0a110afea4b3d"
+    },
+    "sglang/srt/managers/scheduler_output_processor_mixin.py": {
+      "before_sha256": "69a8f4cf53c3ddf18838fa13b56c2aa0ab228b4c90091eedc5515730f102bde4",
+      "after_sha256": "d77f1ae9481a0540295801d41e5210d851f7d88004dd790f1e6ca4215d6aae60"
+    },
+    "sglang/srt/pdserve_fault_guard.py": {
+      "before_sha256": null,
+      "after_sha256": "0ce6ae8f0c2a804afd909dfd61ea5ce6e36186c18fa73e97663934eeb8064848"
+    },
+    "sglang/srt/pdserve_lifecycle.py": {
+      "before_sha256": null,
+      "after_sha256": "f913c673cc1b168ab729db05217646c3fc9b52da494728af99fbe7bde1045d98"
+    },
+    "sglang/srt/pdserve_observer.py": {
+      "before_sha256": null,
+      "after_sha256": "fb9ce9cb017842fffe84ef8f48f5541d61768e94f46cdf884c8785b666665aa2"
+    }
+  }
+}

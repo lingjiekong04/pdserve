@@ -1,0 +1,7346 @@
+[
+  {
+    "topology": "mixed_fifo",
+    "scenario": "20short-low",
+    "repeat": 1,
+    "trace_sha256": "6fb9143ecacc18adeab1600e5f54161c0a2faa354c515366a28f804b5f43f0ea",
+    "duration_s": 156.814536049,
+    "completed_throughput_rps": 0.25507839392836107,
+    "groups": {
+      "all": {
+        "requests": 40,
+        "completed": 40,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 40,
+          "p50": 0.5910444159999999,
+          "p95": 0.6243137102499999,
+          "p99": 0.8210628069099999
+        },
+        "itl_s": {
+          "count": 12742,
+          "p50": 0.010787623999999999,
+          "p95": 0.01115932955,
+          "p99": 0.01277798469
+        },
+        "itl_single_token_coverage": 0.99858934169279,
+        "batched_token_increments": 18,
+        "e2e_s": {
+          "count": 40,
+          "p50": 3.7341450325000003,
+          "p95": 6.627866902700001,
+          "p99": 6.66729850866
+        },
+        "queue_s": {
+          "count": 40,
+          "p50": 0.000161932,
+          "p95": 0.00020736995,
+          "p99": 0.00021683291
+        },
+        "client_lateness_s": {
+          "count": 40,
+          "p50": 0.000828737,
+          "p95": 0.003634022849999998,
+          "p99": 0.007629449569999997
+        },
+        "prefill_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "transfer_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "decode_kv_wait_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "decode_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        }
+      },
+      "short": {
+        "requests": 8,
+        "completed": 8,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 8,
+          "p50": 0.060289364,
+          "p95": 0.0643060265,
+          "p99": 0.0644159685
+        },
+        "itl_s": {
+          "count": 2550,
+          "p50": 0.0104191995,
+          "p95": 0.0109305431,
+          "p99": 0.012383668799999976
+        },
+        "itl_single_token_coverage": 0.9992163009404389,
+        "batched_token_increments": 2,
+        "e2e_s": {
+          "count": 8,
+          "p50": 3.6295763150000004,
+          "p95": 5.40763824075,
+          "p99": 5.409223459350001
+        },
+        "queue_s": {
+          "count": 8,
+          "p50": 0.0001662755,
+          "p95": 0.00018627230000000002,
+          "p99": 0.00018869766
+        },
+        "client_lateness_s": {
+          "count": 8,
+          "p50": 0.0008261495,
+          "p95": 0.0024327564499999994,
+          "p99": 0.0028564000899999995
+        },
+        "prefill_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "transfer_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "decode_kv_wait_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "decode_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        }
+      },
+      "long": {
+        "requests": 32,
+        "completed": 32,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 32,
+          "p50": 0.5954995905,
+          "p95": 0.62504804025,
+          "p99": 0.8466372413900004
+        },
+        "itl_s": {
+          "count": 10192,
+          "p50": 0.010815743,
+          "p95": 0.011176382449999998,
+          "p99": 0.012837781880000001
+        },
+        "itl_single_token_coverage": 0.9984326018808778,
+        "batched_token_increments": 16,
+        "e2e_s": {
+          "count": 32,
+          "p50": 4.072556818000001,
+          "p95": 6.6320920763,
+          "p99": 6.67115382914
+        },
+        "queue_s": {
+          "count": 32,
+          "p50": 0.0001614715,
+          "p95": 0.00020913755,
+          "p99": 0.00021752339
+        },
+        "client_lateness_s": {
+          "count": 32,
+          "p50": 0.000828737,
+          "p95": 0.0038567416499999995,
+          "p99": 0.008084068530000007
+        },
+        "prefill_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "transfer_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "decode_kv_wait_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "decode_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        }
+      }
+    },
+    "dispatch_reordering_observed": false,
+    "maximum_gateway_queue_ms": 0.220199
+  },
+  {
+    "topology": "mixed_fifo",
+    "scenario": "20short-low",
+    "repeat": 2,
+    "trace_sha256": "6fb9143ecacc18adeab1600e5f54161c0a2faa354c515366a28f804b5f43f0ea",
+    "duration_s": 156.816756668,
+    "completed_throughput_rps": 0.25507478186584887,
+    "groups": {
+      "all": {
+        "requests": 40,
+        "completed": 40,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 40,
+          "p50": 0.590628181,
+          "p95": 0.626380125,
+          "p99": 0.8307300940099998
+        },
+        "itl_s": {
+          "count": 12750,
+          "p50": 0.0107809175,
+          "p95": 0.01119681585,
+          "p99": 0.012707081080000003
+        },
+        "itl_single_token_coverage": 0.9992163009404389,
+        "batched_token_increments": 10,
+        "e2e_s": {
+          "count": 40,
+          "p50": 3.695257583,
+          "p95": 6.62651533765,
+          "p99": 6.69334748723
+        },
+        "queue_s": {
+          "count": 40,
+          "p50": 0.000165668,
+          "p95": 0.00022001399999999996,
+          "p99": 0.00024732319
+        },
+        "client_lateness_s": {
+          "count": 40,
+          "p50": 0.0009529625000000001,
+          "p95": 0.00421617569999999,
+          "p99": 0.009467169049999998
+        },
+        "prefill_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "transfer_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "decode_kv_wait_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "decode_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        }
+      },
+      "short": {
+        "requests": 8,
+        "completed": 8,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 8,
+          "p50": 0.0624149695,
+          "p95": 0.0650711763,
+          "p99": 0.06539744966
+        },
+        "itl_s": {
+          "count": 2550,
+          "p50": 0.010422513500000001,
+          "p95": 0.01090016855,
+          "p99": 0.012299059299999953
+        },
+        "itl_single_token_coverage": 0.9992163009404389,
+        "batched_token_increments": 2,
+        "e2e_s": {
+          "count": 8,
+          "p50": 3.634408982,
+          "p95": 5.41759555255,
+          "p99": 5.420222884109999
+        },
+        "queue_s": {
+          "count": 8,
+          "p50": 0.00016035099999999998,
+          "p95": 0.0001706518,
+          "p99": 0.00017223436
+        },
+        "client_lateness_s": {
+          "count": 8,
+          "p50": 0.0007996424999999999,
+          "p95": 0.0029549053999999987,
+          "p99": 0.0035432850799999994
+        },
+        "prefill_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "transfer_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "decode_kv_wait_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "decode_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        }
+      },
+      "long": {
+        "requests": 32,
+        "completed": 32,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 32,
+          "p50": 0.5934686025,
+          "p95": 0.629402645,
+          "p99": 0.8565886492900004
+        },
+        "itl_s": {
+          "count": 10200,
+          "p50": 0.0108160395,
+          "p95": 0.011231140349999998,
+          "p99": 0.012938745840000003
+        },
+        "itl_single_token_coverage": 0.9992163009404389,
+        "batched_token_increments": 8,
+        "e2e_s": {
+          "count": 32,
+          "p50": 4.0482179505,
+          "p95": 6.63746555885,
+          "p99": 6.69870163467
+        },
+        "queue_s": {
+          "count": 32,
+          "p50": 0.000175318,
+          "p95": 0.000225174,
+          "p99": 0.00024929751
+        },
+        "client_lateness_s": {
+          "count": 32,
+          "p50": 0.0009529625000000001,
+          "p95": 0.005582365299999998,
+          "p99": 0.009730289450000004
+        },
+        "prefill_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "transfer_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "decode_kv_wait_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "decode_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        }
+      }
+    },
+    "dispatch_reordering_observed": false,
+    "maximum_gateway_queue_ms": 0.256948
+  },
+  {
+    "topology": "mixed_fifo",
+    "scenario": "20short-low",
+    "repeat": 3,
+    "trace_sha256": "6fb9143ecacc18adeab1600e5f54161c0a2faa354c515366a28f804b5f43f0ea",
+    "duration_s": 156.800960609,
+    "completed_throughput_rps": 0.2551004779858734,
+    "groups": {
+      "all": {
+        "requests": 40,
+        "completed": 40,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 40,
+          "p50": 0.5822349125,
+          "p95": 0.6189923499,
+          "p99": 0.8214776219399997
+        },
+        "itl_s": {
+          "count": 12748,
+          "p50": 0.0107785945,
+          "p95": 0.011194372550000001,
+          "p99": 0.012573531300000019
+        },
+        "itl_single_token_coverage": 0.9990595611285267,
+        "batched_token_increments": 12,
+        "e2e_s": {
+          "count": 40,
+          "p50": 3.7348630480000002,
+          "p95": 6.605007413049999,
+          "p99": 6.678408826030001
+        },
+        "queue_s": {
+          "count": 40,
+          "p50": 0.0001613215,
+          "p95": 0.00021820255000000002,
+          "p99": 0.00022264859000000001
+        },
+        "client_lateness_s": {
+          "count": 40,
+          "p50": 0.0009510510000000001,
+          "p95": 0.006639713749999998,
+          "p99": 0.007945808569999999
+        },
+        "prefill_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "transfer_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "decode_kv_wait_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "decode_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        }
+      },
+      "short": {
+        "requests": 8,
+        "completed": 8,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 8,
+          "p50": 0.060937274,
+          "p95": 0.06445737055,
+          "p99": 0.06483013091
+        },
+        "itl_s": {
+          "count": 2550,
+          "p50": 0.010414054,
+          "p95": 0.01087059615,
+          "p99": 0.011606881609999951
+        },
+        "itl_single_token_coverage": 0.9992163009404389,
+        "batched_token_increments": 2,
+        "e2e_s": {
+          "count": 8,
+          "p50": 3.627481177,
+          "p95": 5.4081680687,
+          "p99": 5.41240022334
+        },
+        "queue_s": {
+          "count": 8,
+          "p50": 0.0001624965,
+          "p95": 0.00021496195,
+          "p99": 0.00021742679
+        },
+        "client_lateness_s": {
+          "count": 8,
+          "p50": 0.0010170600000000002,
+          "p95": 0.0035541888999999984,
+          "p99": 0.004395758579999999
+        },
+        "prefill_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "transfer_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "decode_kv_wait_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "decode_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        }
+      },
+      "long": {
+        "requests": 32,
+        "completed": 32,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 32,
+          "p50": 0.589199721,
+          "p95": 0.6276304931,
+          "p99": 0.8453424982600003
+        },
+        "itl_s": {
+          "count": 10198,
+          "p50": 0.01080619,
+          "p95": 0.0112221305,
+          "p99": 0.012794309560000027
+        },
+        "itl_single_token_coverage": 0.9990203761755486,
+        "batched_token_increments": 10,
+        "e2e_s": {
+          "count": 32,
+          "p50": 4.085266667,
+          "p95": 6.60812929345,
+          "p99": 6.687062851870001
+        },
+        "queue_s": {
+          "count": 32,
+          "p50": 0.0001611835,
+          "p95": 0.00021217934999999999,
+          "p99": 0.00022283411
+        },
+        "client_lateness_s": {
+          "count": 32,
+          "p50": 0.0008578934999999999,
+          "p95": 0.00685024775,
+          "p99": 0.00805152353
+        },
+        "prefill_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "transfer_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "decode_kv_wait_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "decode_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        }
+      }
+    },
+    "dispatch_reordering_observed": false,
+    "maximum_gateway_queue_ms": 0.223553
+  },
+  {
+    "topology": "mixed_fifo",
+    "scenario": "20short-saturated",
+    "repeat": 1,
+    "trace_sha256": "a58b0871a6653f9a2a54739d05944b8601b888580ba318220b9e164003d115d4",
+    "duration_s": 31.702527983,
+    "completed_throughput_rps": 1.2617290337682028,
+    "groups": {
+      "all": {
+        "requests": 40,
+        "completed": 40,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 40,
+          "p50": 0.5806063185,
+          "p95": 0.6108445669999993,
+          "p99": 0.87599212461
+        },
+        "itl_s": {
+          "count": 12584,
+          "p50": 0.011210986499999999,
+          "p95": 0.012937283949999996,
+          "p99": 0.03090098945
+        },
+        "itl_single_token_coverage": 0.9862068965517241,
+        "batched_token_increments": 176,
+        "e2e_s": {
+          "count": 40,
+          "p50": 5.096918211,
+          "p95": 9.5831289205,
+          "p99": 9.88182524966
+        },
+        "queue_s": {
+          "count": 40,
+          "p50": 0.0001665775,
+          "p95": 0.00020389789999999998,
+          "p99": 0.00021025928
+        },
+        "client_lateness_s": {
+          "count": 40,
+          "p50": 0.0005348919999999999,
+          "p95": 0.0015698742499999998,
+          "p99": 0.00173535836
+        },
+        "prefill_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "transfer_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "decode_kv_wait_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "decode_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        }
+      },
+      "short": {
+        "requests": 8,
+        "completed": 8,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 8,
+          "p50": 0.0669541295,
+          "p95": 0.14466431834999993,
+          "p99": 0.17651813166999997
+        },
+        "itl_s": {
+          "count": 2502,
+          "p50": 0.011156164,
+          "p95": 0.013065482299999999,
+          "p99": 0.05108066707999642
+        },
+        "itl_single_token_coverage": 0.9804075235109718,
+        "batched_token_increments": 50,
+        "e2e_s": {
+          "count": 8,
+          "p50": 4.3828594835,
+          "p95": 9.778197853,
+          "p99": 9.943949313000001
+        },
+        "queue_s": {
+          "count": 8,
+          "p50": 0.00017263499999999998,
+          "p95": 0.0002093579,
+          "p99": 0.00021177878
+        },
+        "client_lateness_s": {
+          "count": 8,
+          "p50": 0.0006491225,
+          "p95": 0.00107071385,
+          "p99": 0.00108849637
+        },
+        "prefill_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "transfer_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "decode_kv_wait_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "decode_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        }
+      },
+      "long": {
+        "requests": 32,
+        "completed": 32,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 32,
+          "p50": 0.5833419095000001,
+          "p95": 0.6987132629999999,
+          "p99": 0.8833966366900001
+        },
+        "itl_s": {
+          "count": 10082,
+          "p50": 0.0112264245,
+          "p95": 0.01289551504999999,
+          "p99": 0.024540593940000216
+        },
+        "itl_single_token_coverage": 0.9876567398119123,
+        "batched_token_increments": 126,
+        "e2e_s": {
+          "count": 32,
+          "p50": 5.106118309999999,
+          "p95": 9.5282115927,
+          "p99": 9.6752315573
+        },
+        "queue_s": {
+          "count": 32,
+          "p50": 0.000164401,
+          "p95": 0.0001983721,
+          "p99": 0.00020505151000000003
+        },
+        "client_lateness_s": {
+          "count": 32,
+          "p50": 0.0005276549999999999,
+          "p95": 0.0016024442499999998,
+          "p99": 0.0017469164400000002
+        },
+        "prefill_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "transfer_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "decode_kv_wait_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "decode_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        }
+      }
+    },
+    "dispatch_reordering_observed": false,
+    "maximum_gateway_queue_ms": 0.21238400000000002
+  },
+  {
+    "topology": "mixed_fifo",
+    "scenario": "20short-saturated",
+    "repeat": 2,
+    "trace_sha256": "a58b0871a6653f9a2a54739d05944b8601b888580ba318220b9e164003d115d4",
+    "duration_s": 31.775167314,
+    "completed_throughput_rps": 1.2588446696353406,
+    "groups": {
+      "all": {
+        "requests": 40,
+        "completed": 40,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 40,
+          "p50": 0.5813995045,
+          "p95": 0.6419275173999995,
+          "p99": 0.8775017763699999
+        },
+        "itl_s": {
+          "count": 12574,
+          "p50": 0.011237859,
+          "p95": 0.012937967799999998,
+          "p99": 0.02589230322000001
+        },
+        "itl_single_token_coverage": 0.985423197492163,
+        "batched_token_increments": 186,
+        "e2e_s": {
+          "count": 40,
+          "p50": 5.120015046000001,
+          "p95": 9.5816762415,
+          "p99": 9.88731156001
+        },
+        "queue_s": {
+          "count": 40,
+          "p50": 0.00016001349999999998,
+          "p95": 0.00018834614999999999,
+          "p99": 0.00020278821999999999
+        },
+        "client_lateness_s": {
+          "count": 40,
+          "p50": 0.000670446,
+          "p95": 0.0011876549499999997,
+          "p99": 0.0017025490399999997
+        },
+        "prefill_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "transfer_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "decode_kv_wait_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "decode_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        }
+      },
+      "short": {
+        "requests": 8,
+        "completed": 8,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 8,
+          "p50": 0.06778946150000001,
+          "p95": 0.12907948474999995,
+          "p99": 0.15355333135
+        },
+        "itl_s": {
+          "count": 2500,
+          "p50": 0.0111950055,
+          "p95": 0.01309428965,
+          "p99": 0.03809914911
+        },
+        "itl_single_token_coverage": 0.9796238244514106,
+        "batched_token_increments": 52,
+        "e2e_s": {
+          "count": 8,
+          "p50": 4.402993476500001,
+          "p95": 9.79348597315,
+          "p99": 9.95560855783
+        },
+        "queue_s": {
+          "count": 8,
+          "p50": 0.0001646655,
+          "p95": 0.00018596344999999997,
+          "p99": 0.00018878388999999998
+        },
+        "client_lateness_s": {
+          "count": 8,
+          "p50": 0.0008455425000000001,
+          "p95": 0.0011556453,
+          "p99": 0.00117774906
+        },
+        "prefill_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "transfer_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "decode_kv_wait_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "decode_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        }
+      },
+      "long": {
+        "requests": 32,
+        "completed": 32,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 32,
+          "p50": 0.5844891194999999,
+          "p95": 0.7152461765999998,
+          "p99": 0.88555980173
+        },
+        "itl_s": {
+          "count": 10074,
+          "p50": 0.011247603,
+          "p95": 0.012918109950000003,
+          "p99": 0.02526734898000006
+        },
+        "itl_single_token_coverage": 0.986873040752351,
+        "batched_token_increments": 134,
+        "e2e_s": {
+          "count": 32,
+          "p50": 5.134464781,
+          "p95": 9.51215713435,
+          "p99": 9.6729050223
+        },
+        "queue_s": {
+          "count": 32,
+          "p50": 0.000158072,
+          "p95": 0.000187582,
+          "p99": 0.00020415945000000003
+        },
+        "client_lateness_s": {
+          "count": 32,
+          "p50": 0.0006464785,
+          "p95": 0.00120457535,
+          "p99": 0.001759162160000001
+        },
+        "prefill_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "transfer_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "decode_kv_wait_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "decode_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        }
+      }
+    },
+    "dispatch_reordering_observed": false,
+    "maximum_gateway_queue_ms": 0.211291
+  },
+  {
+    "topology": "mixed_fifo",
+    "scenario": "20short-saturated",
+    "repeat": 3,
+    "trace_sha256": "a58b0871a6653f9a2a54739d05944b8601b888580ba318220b9e164003d115d4",
+    "duration_s": 31.755739376,
+    "completed_throughput_rps": 1.2596148219502883,
+    "groups": {
+      "all": {
+        "requests": 40,
+        "completed": 40,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 40,
+          "p50": 0.5811284165,
+          "p95": 0.6167640413499994,
+          "p99": 0.8864263406699999
+        },
+        "itl_s": {
+          "count": 12584,
+          "p50": 0.0112412315,
+          "p95": 0.013035146449999993,
+          "p99": 0.03028497455000001
+        },
+        "itl_single_token_coverage": 0.9862068965517241,
+        "batched_token_increments": 176,
+        "e2e_s": {
+          "count": 40,
+          "p50": 5.1222317324999995,
+          "p95": 9.639742685249999,
+          "p99": 9.92525016181
+        },
+        "queue_s": {
+          "count": 40,
+          "p50": 0.000170965,
+          "p95": 0.00020972569999999996,
+          "p99": 0.00021745944999999997
+        },
+        "client_lateness_s": {
+          "count": 40,
+          "p50": 0.000715604,
+          "p95": 0.0011867993999999985,
+          "p99": 0.00184813906
+        },
+        "prefill_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "transfer_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "decode_kv_wait_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "decode_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        }
+      },
+      "short": {
+        "requests": 8,
+        "completed": 8,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 8,
+          "p50": 0.070663243,
+          "p95": 0.14845260969999993,
+          "p99": 0.17922121553999998
+        },
+        "itl_s": {
+          "count": 2502,
+          "p50": 0.011196898,
+          "p95": 0.01312431995,
+          "p99": 0.048566321149997344
+        },
+        "itl_single_token_coverage": 0.9804075235109718,
+        "batched_token_increments": 50,
+        "e2e_s": {
+          "count": 8,
+          "p50": 4.4153581675,
+          "p95": 9.8247346525,
+          "p99": 9.9889125769
+        },
+        "queue_s": {
+          "count": 8,
+          "p50": 0.000175426,
+          "p95": 0.00021757325000000002,
+          "p99": 0.00021836985
+        },
+        "client_lateness_s": {
+          "count": 8,
+          "p50": 0.000764831,
+          "p95": 0.0009791173000000002,
+          "p99": 0.0009890186600000001
+        },
+        "prefill_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "transfer_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "decode_kv_wait_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "decode_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        }
+      },
+      "long": {
+        "requests": 32,
+        "completed": 32,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 32,
+          "p50": 0.584317975,
+          "p95": 0.7023184281499999,
+          "p99": 0.8951438004300001
+        },
+        "itl_s": {
+          "count": 10082,
+          "p50": 0.011253929999999999,
+          "p95": 0.013013296699999996,
+          "p99": 0.02632281397
+        },
+        "itl_single_token_coverage": 0.9876567398119123,
+        "batched_token_increments": 126,
+        "e2e_s": {
+          "count": 32,
+          "p50": 5.1256673975,
+          "p95": 9.553559471749999,
+          "p99": 9.72175373485
+        },
+        "queue_s": {
+          "count": 32,
+          "p50": 0.000169862,
+          "p95": 0.00020372765,
+          "p99": 0.00020799578
+        },
+        "client_lateness_s": {
+          "count": 32,
+          "p50": 0.000715604,
+          "p95": 0.0013772265999999994,
+          "p99": 0.0018755587400000003
+        },
+        "prefill_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "transfer_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "decode_kv_wait_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "decode_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        }
+      }
+    },
+    "dispatch_reordering_observed": false,
+    "maximum_gateway_queue_ms": 0.218569
+  },
+  {
+    "topology": "mixed_fifo",
+    "scenario": "80short-low",
+    "repeat": 1,
+    "trace_sha256": "77abba08835644e4838c68a0533f36bd11cbe4aad406a58bf7a62b449bfe1ad5",
+    "duration_s": 224.991489791,
+    "completed_throughput_rps": 0.17778450214786773,
+    "groups": {
+      "all": {
+        "requests": 40,
+        "completed": 40,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 40,
+          "p50": 0.06578956899999999,
+          "p95": 0.6149967173499999,
+          "p99": 0.63124594821
+        },
+        "itl_s": {
+          "count": 12758,
+          "p50": 0.0104442965,
+          "p95": 0.011008858199999999,
+          "p99": 0.012405433510000004
+        },
+        "itl_single_token_coverage": 0.9998432601880878,
+        "batched_token_increments": 2,
+        "e2e_s": {
+          "count": 40,
+          "p50": 3.6956024249999997,
+          "p95": 6.1377736859,
+          "p99": 6.144946559999999
+        },
+        "queue_s": {
+          "count": 40,
+          "p50": 0.0001889845,
+          "p95": 0.00021820225,
+          "p99": 0.00022436334
+        },
+        "client_lateness_s": {
+          "count": 40,
+          "p50": 0.001854484,
+          "p95": 0.005123159199999997,
+          "p99": 0.00655004279
+        },
+        "prefill_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "transfer_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "decode_kv_wait_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "decode_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        }
+      },
+      "short": {
+        "requests": 32,
+        "completed": 32,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 32,
+          "p50": 0.0644693385,
+          "p95": 0.07106600939999999,
+          "p99": 0.07456270955
+        },
+        "itl_s": {
+          "count": 10208,
+          "p50": 0.0104164575,
+          "p95": 0.01092143885,
+          "p99": 0.012194581880000017
+        },
+        "itl_single_token_coverage": 1.0,
+        "batched_token_increments": 0,
+        "e2e_s": {
+          "count": 32,
+          "p50": 3.4006880795,
+          "p95": 5.43432079955,
+          "p99": 5.736461333280001
+        },
+        "queue_s": {
+          "count": 32,
+          "p50": 0.0001888685,
+          "p95": 0.0002112899,
+          "p99": 0.00021200528000000002
+        },
+        "client_lateness_s": {
+          "count": 32,
+          "p50": 0.001854484,
+          "p95": 0.0055270727999999995,
+          "p99": 0.006611365910000002
+        },
+        "prefill_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "transfer_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "decode_kv_wait_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "decode_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        }
+      },
+      "long": {
+        "requests": 8,
+        "completed": 8,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 8,
+          "p50": 0.601251752,
+          "p95": 0.6316797466499999,
+          "p99": 0.63471633573
+        },
+        "itl_s": {
+          "count": 2550,
+          "p50": 0.010790658,
+          "p95": 0.0111575458,
+          "p99": 0.012674686269999997
+        },
+        "itl_single_token_coverage": 0.9992163009404389,
+        "batched_token_increments": 2,
+        "e2e_s": {
+          "count": 8,
+          "p50": 4.0475796515,
+          "p95": 6.145067396,
+          "p99": 6.145913248
+        },
+        "queue_s": {
+          "count": 8,
+          "p50": 0.0001930245,
+          "p95": 0.00022436709999999998,
+          "p99": 0.00022439342
+        },
+        "client_lateness_s": {
+          "count": 8,
+          "p50": 0.0015368735,
+          "p95": 0.00377065315,
+          "p99": 0.00387971063
+        },
+        "prefill_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "transfer_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "decode_kv_wait_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "decode_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        }
+      }
+    },
+    "dispatch_reordering_observed": false,
+    "maximum_gateway_queue_ms": 0.22440000000000002
+  },
+  {
+    "topology": "mixed_fifo",
+    "scenario": "80short-low",
+    "repeat": 2,
+    "trace_sha256": "77abba08835644e4838c68a0533f36bd11cbe4aad406a58bf7a62b449bfe1ad5",
+    "duration_s": 224.98820021,
+    "completed_throughput_rps": 0.17778710155761374,
+    "groups": {
+      "all": {
+        "requests": 40,
+        "completed": 40,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 40,
+          "p50": 0.06518816,
+          "p95": 0.62042575215,
+          "p99": 0.63251843821
+        },
+        "itl_s": {
+          "count": 12758,
+          "p50": 0.0104354485,
+          "p95": 0.0110231728,
+          "p99": 0.01183962145
+        },
+        "itl_single_token_coverage": 0.9998432601880878,
+        "batched_token_increments": 2,
+        "e2e_s": {
+          "count": 40,
+          "p50": 3.6900292494999998,
+          "p95": 6.182946268799999,
+          "p99": 6.272869237929999
+        },
+        "queue_s": {
+          "count": 40,
+          "p50": 0.000189628,
+          "p95": 0.0002386066,
+          "p99": 0.00025212552
+        },
+        "client_lateness_s": {
+          "count": 40,
+          "p50": 0.0012514614999999999,
+          "p95": 0.004485321499999997,
+          "p99": 0.0058599292899999995
+        },
+        "prefill_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "transfer_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "decode_kv_wait_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "decode_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        }
+      },
+      "short": {
+        "requests": 32,
+        "completed": 32,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 32,
+          "p50": 0.06427836849999999,
+          "p95": 0.07105074495,
+          "p99": 0.0718908966
+        },
+        "itl_s": {
+          "count": 10206,
+          "p50": 0.010409773,
+          "p95": 0.0109507925,
+          "p99": 0.01173201815000002
+        },
+        "itl_single_token_coverage": 0.9998040752351097,
+        "batched_token_increments": 2,
+        "e2e_s": {
+          "count": 32,
+          "p50": 3.4388454829999997,
+          "p95": 5.4720405024000005,
+          "p99": 5.755673850750001
+        },
+        "queue_s": {
+          "count": 32,
+          "p50": 0.000189628,
+          "p95": 0.00023614629999999998,
+          "p99": 0.00025356808000000003
+        },
+        "client_lateness_s": {
+          "count": 32,
+          "p50": 0.0012695195,
+          "p95": 0.004924949499999999,
+          "p99": 0.005903272410000001
+        },
+        "prefill_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "transfer_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "decode_kv_wait_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "decode_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        }
+      },
+      "long": {
+        "requests": 8,
+        "completed": 8,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 8,
+          "p50": 0.6076830005,
+          "p95": 0.63262242865,
+          "p99": 0.6333503617299999
+        },
+        "itl_s": {
+          "count": 2552,
+          "p50": 0.010795207000000001,
+          "p95": 0.011159526749999999,
+          "p99": 0.012375376689999993
+        },
+        "itl_single_token_coverage": 1.0,
+        "batched_token_increments": 0,
+        "e2e_s": {
+          "count": 8,
+          "p50": 4.0509906425,
+          "p95": 6.27332479445,
+          "p99": 6.27651369009
+        },
+        "queue_s": {
+          "count": 8,
+          "p50": 0.000189741,
+          "p95": 0.00023254044999999998,
+          "p99": 0.00023728728999999999
+        },
+        "client_lateness_s": {
+          "count": 8,
+          "p50": 0.0011365585,
+          "p95": 0.002928620249999999,
+          "p99": 0.0035090112499999997
+        },
+        "prefill_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "transfer_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "decode_kv_wait_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "decode_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        }
+      }
+    },
+    "dispatch_reordering_observed": false,
+    "maximum_gateway_queue_ms": 0.259158
+  },
+  {
+    "topology": "mixed_fifo",
+    "scenario": "80short-low",
+    "repeat": 3,
+    "trace_sha256": "77abba08835644e4838c68a0533f36bd11cbe4aad406a58bf7a62b449bfe1ad5",
+    "duration_s": 224.99226282,
+    "completed_throughput_rps": 0.17778389131541425,
+    "groups": {
+      "all": {
+        "requests": 40,
+        "completed": 40,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 40,
+          "p50": 0.0645923985,
+          "p95": 0.6215872343500001,
+          "p99": 0.6305367823
+        },
+        "itl_s": {
+          "count": 12754,
+          "p50": 0.010441235,
+          "p95": 0.010996232750000001,
+          "p99": 0.012385529189999994
+        },
+        "itl_single_token_coverage": 0.9995297805642633,
+        "batched_token_increments": 6,
+        "e2e_s": {
+          "count": 40,
+          "p50": 3.7189011545,
+          "p95": 6.142208724700001,
+          "p99": 6.1752183379700005
+        },
+        "queue_s": {
+          "count": 40,
+          "p50": 0.0001892115,
+          "p95": 0.00021715389999999994,
+          "p99": 0.00024261653999999998
+        },
+        "client_lateness_s": {
+          "count": 40,
+          "p50": 0.001614272,
+          "p95": 0.007297746,
+          "p99": 0.00777015876
+        },
+        "prefill_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "transfer_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "decode_kv_wait_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "decode_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        }
+      },
+      "short": {
+        "requests": 32,
+        "completed": 32,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 32,
+          "p50": 0.0639959235,
+          "p95": 0.06812221069999999,
+          "p99": 0.06831173089
+        },
+        "itl_s": {
+          "count": 10202,
+          "p50": 0.0104155745,
+          "p95": 0.0109297166,
+          "p99": 0.012210381589999996
+        },
+        "itl_single_token_coverage": 0.9994122257053292,
+        "batched_token_increments": 6,
+        "e2e_s": {
+          "count": 32,
+          "p50": 3.4014585175,
+          "p95": 5.43725123115,
+          "p99": 5.74118751968
+        },
+        "queue_s": {
+          "count": 32,
+          "p50": 0.0001892115,
+          "p95": 0.0002135673,
+          "p99": 0.00023693468000000003
+        },
+        "client_lateness_s": {
+          "count": 32,
+          "p50": 0.001614272,
+          "p95": 0.0063792834499999986,
+          "p99": 0.0073485108
+        },
+        "prefill_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "transfer_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "decode_kv_wait_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "decode_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        }
+      },
+      "long": {
+        "requests": 8,
+        "completed": 8,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 8,
+          "p50": 0.612548329,
+          "p95": 0.6310685275000001,
+          "p99": 0.6347907439
+        },
+        "itl_s": {
+          "count": 2552,
+          "p50": 0.0107826195,
+          "p95": 0.01112997535,
+          "p99": 0.012998346429999995
+        },
+        "itl_single_token_coverage": 1.0,
+        "batched_token_increments": 0,
+        "e2e_s": {
+          "count": 8,
+          "p50": 4.0684670425,
+          "p95": 6.177128409050001,
+          "p99": 6.19049890661
+        },
+        "queue_s": {
+          "count": 8,
+          "p50": 0.000193131,
+          "p95": 0.0002251987,
+          "p99": 0.00023453894
+        },
+        "client_lateness_s": {
+          "count": 8,
+          "p50": 0.0018257875,
+          "p95": 0.006514103749999998,
+          "p99": 0.007722033549999998
+        },
+        "prefill_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "transfer_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "decode_kv_wait_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "decode_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        }
+      }
+    },
+    "dispatch_reordering_observed": false,
+    "maximum_gateway_queue_ms": 0.246288
+  },
+  {
+    "topology": "mixed_fifo",
+    "scenario": "80short-saturated",
+    "repeat": 1,
+    "trace_sha256": "6351d639f571a9216185aaf467a1e641978347d50accd4cddbb0fa1408eab092",
+    "duration_s": 19.618970447,
+    "completed_throughput_rps": 2.0388429712995735,
+    "groups": {
+      "all": {
+        "requests": 40,
+        "completed": 40,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 40,
+          "p50": 0.068916061,
+          "p95": 0.5933460268999999,
+          "p99": 0.5998981636
+        },
+        "itl_s": {
+          "count": 12704,
+          "p50": 0.011184809,
+          "p95": 0.013029337749999988,
+          "p99": 0.03365039452
+        },
+        "itl_single_token_coverage": 0.9956112852664577,
+        "batched_token_increments": 56,
+        "e2e_s": {
+          "count": 40,
+          "p50": 3.9332612764999997,
+          "p95": 7.4024096442500005,
+          "p99": 7.51227683466
+        },
+        "queue_s": {
+          "count": 40,
+          "p50": 0.000166645,
+          "p95": 0.00018968835,
+          "p99": 0.00019594076
+        },
+        "client_lateness_s": {
+          "count": 40,
+          "p50": 0.0006060194999999999,
+          "p95": 0.001067488,
+          "p99": 0.00111255202
+        },
+        "prefill_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "transfer_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "decode_kv_wait_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "decode_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        }
+      },
+      "short": {
+        "requests": 32,
+        "completed": 32,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 32,
+          "p50": 0.067860172,
+          "p95": 0.07943585784999999,
+          "p99": 0.22775429273000025
+        },
+        "itl_s": {
+          "count": 10158,
+          "p50": 0.011120437,
+          "p95": 0.0129863,
+          "p99": 0.03364911216
+        },
+        "itl_single_token_coverage": 0.995101880877743,
+        "batched_token_increments": 50,
+        "e2e_s": {
+          "count": 32,
+          "p50": 3.9332612764999997,
+          "p95": 7.2678394657,
+          "p99": 7.42010374025
+        },
+        "queue_s": {
+          "count": 32,
+          "p50": 0.0001656925,
+          "p95": 0.00018894225000000003,
+          "p99": 0.00019385283
+        },
+        "client_lateness_s": {
+          "count": 32,
+          "p50": 0.0006830425,
+          "p95": 0.001083128,
+          "p99": 0.00111359058
+        },
+        "prefill_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "transfer_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "decode_kv_wait_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "decode_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        }
+      },
+      "long": {
+        "requests": 8,
+        "completed": 8,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 8,
+          "p50": 0.588097182,
+          "p95": 0.600171718,
+          "p99": 0.6020865988
+        },
+        "itl_s": {
+          "count": 2546,
+          "p50": 0.011382930999999999,
+          "p95": 0.013295613250000001,
+          "p99": 0.033709619750000024
+        },
+        "itl_single_token_coverage": 0.9976489028213166,
+        "batched_token_increments": 6,
+        "e2e_s": {
+          "count": 8,
+          "p50": 4.2102295765,
+          "p95": 7.45370832955,
+          "p99": 7.54332376511
+        },
+        "queue_s": {
+          "count": 8,
+          "p50": 0.000177527,
+          "p95": 0.00019271805,
+          "p99": 0.00019533240999999998
+        },
+        "client_lateness_s": {
+          "count": 8,
+          "p50": 0.0004515645,
+          "p95": 0.0008879803499999998,
+          "p99": 0.0009520608699999999
+        },
+        "prefill_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "transfer_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "decode_kv_wait_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "decode_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        }
+      }
+    },
+    "dispatch_reordering_observed": false,
+    "maximum_gateway_queue_ms": 0.195986
+  },
+  {
+    "topology": "mixed_fifo",
+    "scenario": "80short-saturated",
+    "repeat": 2,
+    "trace_sha256": "6351d639f571a9216185aaf467a1e641978347d50accd4cddbb0fa1408eab092",
+    "duration_s": 19.617835837,
+    "completed_throughput_rps": 2.0389608890782154,
+    "groups": {
+      "all": {
+        "requests": 40,
+        "completed": 40,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 40,
+          "p50": 0.067854737,
+          "p95": 0.5933664744999999,
+          "p99": 0.59385734015
+        },
+        "itl_s": {
+          "count": 12704,
+          "p50": 0.0111511675,
+          "p95": 0.013001090199999996,
+          "p99": 0.03349012123999999
+        },
+        "itl_single_token_coverage": 0.9956112852664577,
+        "batched_token_increments": 56,
+        "e2e_s": {
+          "count": 40,
+          "p50": 3.9273317115,
+          "p95": 7.4281715915,
+          "p99": 7.5369101724
+        },
+        "queue_s": {
+          "count": 40,
+          "p50": 0.0001666005,
+          "p95": 0.00019159534999999995,
+          "p99": 0.00020895328
+        },
+        "client_lateness_s": {
+          "count": 40,
+          "p50": 0.00040932299999999996,
+          "p95": 0.0010416756999999995,
+          "p99": 0.0015047983599999995
+        },
+        "prefill_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "transfer_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "decode_kv_wait_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "decode_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        }
+      },
+      "short": {
+        "requests": 32,
+        "completed": 32,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 32,
+          "p50": 0.0659066955,
+          "p95": 0.07908086165,
+          "p99": 0.23028764843000027
+        },
+        "itl_s": {
+          "count": 10158,
+          "p50": 0.011089591999999999,
+          "p95": 0.012908713599999996,
+          "p99": 0.03339363668000002
+        },
+        "itl_single_token_coverage": 0.995101880877743,
+        "batched_token_increments": 50,
+        "e2e_s": {
+          "count": 32,
+          "p50": 3.9273317115,
+          "p95": 7.26467082995,
+          "p99": 7.4472308491
+        },
+        "queue_s": {
+          "count": 32,
+          "p50": 0.0001708135,
+          "p95": 0.00019819814999999996,
+          "p99": 0.00020917312
+        },
+        "client_lateness_s": {
+          "count": 32,
+          "p50": 0.00040932299999999996,
+          "p95": 0.0010811373,
+          "p99": 0.001553244440000001
+        },
+        "prefill_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "transfer_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "decode_kv_wait_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "decode_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        }
+      },
+      "long": {
+        "requests": 8,
+        "completed": 8,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 8,
+          "p50": 0.5913114479999999,
+          "p95": 0.5938769687500001,
+          "p99": 0.59401436895
+        },
+        "itl_s": {
+          "count": 2546,
+          "p50": 0.011376539,
+          "p95": 0.01334436625,
+          "p99": 0.03368562630000001
+        },
+        "itl_single_token_coverage": 0.9976489028213166,
+        "batched_token_increments": 6,
+        "e2e_s": {
+          "count": 8,
+          "p50": 4.2081030705,
+          "p95": 7.46260262975,
+          "p99": 7.563195579549999
+        },
+        "queue_s": {
+          "count": 8,
+          "p50": 0.000163991,
+          "p95": 0.0001727651,
+          "p99": 0.00017438741999999997
+        },
+        "client_lateness_s": {
+          "count": 8,
+          "p50": 0.00041607199999999997,
+          "p95": 0.00101901715,
+          "p99": 0.00102516903
+        },
+        "prefill_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "transfer_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "decode_kv_wait_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "decode_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        }
+      }
+    },
+    "dispatch_reordering_observed": false,
+    "maximum_gateway_queue_ms": 0.210025
+  },
+  {
+    "topology": "mixed_fifo",
+    "scenario": "80short-saturated",
+    "repeat": 3,
+    "trace_sha256": "6351d639f571a9216185aaf467a1e641978347d50accd4cddbb0fa1408eab092",
+    "duration_s": 19.468530467,
+    "completed_throughput_rps": 2.054597806845346,
+    "groups": {
+      "all": {
+        "requests": 40,
+        "completed": 40,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 40,
+          "p50": 0.0691983085,
+          "p95": 0.5866870950499999,
+          "p99": 0.59621543113
+        },
+        "itl_s": {
+          "count": 12692,
+          "p50": 0.011156376999999999,
+          "p95": 0.012909183099999999,
+          "p99": 0.03280950135
+        },
+        "itl_single_token_coverage": 0.9946708463949844,
+        "batched_token_increments": 68,
+        "e2e_s": {
+          "count": 40,
+          "p50": 4.0984888250000004,
+          "p95": 7.1616388336,
+          "p99": 7.210446437249999
+        },
+        "queue_s": {
+          "count": 40,
+          "p50": 0.0001594915,
+          "p95": 0.0002042916,
+          "p99": 0.00021093311
+        },
+        "client_lateness_s": {
+          "count": 40,
+          "p50": 0.0005424495,
+          "p95": 0.00104787955,
+          "p99": 0.00106350168
+        },
+        "prefill_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "transfer_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "decode_kv_wait_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "decode_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        }
+      },
+      "short": {
+        "requests": 32,
+        "completed": 32,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 32,
+          "p50": 0.068378489,
+          "p95": 0.18152275604999987,
+          "p99": 0.4656476136800004
+        },
+        "itl_s": {
+          "count": 10148,
+          "p50": 0.011132321,
+          "p95": 0.0128988749,
+          "p99": 0.0319841528100007
+        },
+        "itl_single_token_coverage": 0.9941222570532915,
+        "batched_token_increments": 60,
+        "e2e_s": {
+          "count": 32,
+          "p50": 4.014058466,
+          "p95": 7.14637773545,
+          "p99": 7.18053899482
+        },
+        "queue_s": {
+          "count": 32,
+          "p50": 0.0001593315,
+          "p95": 0.00019685415,
+          "p99": 0.00021067767000000002
+        },
+        "client_lateness_s": {
+          "count": 32,
+          "p50": 0.0005424495,
+          "p95": 0.00103977875,
+          "p99": 0.0010558609900000002
+        },
+        "prefill_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "transfer_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "decode_kv_wait_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "decode_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        }
+      },
+      "long": {
+        "requests": 8,
+        "completed": 8,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 8,
+          "p50": 0.5778115305,
+          "p95": 0.59663953645,
+          "p99": 0.59960827369
+        },
+        "itl_s": {
+          "count": 2544,
+          "p50": 0.01123826,
+          "p95": 0.0129876131,
+          "p99": 0.03332218859000002
+        },
+        "itl_single_token_coverage": 0.9968652037617555,
+        "batched_token_increments": 8,
+        "e2e_s": {
+          "count": 8,
+          "p50": 4.356698507,
+          "p95": 7.20133470305,
+          "p99": 7.219077658209999
+        },
+        "queue_s": {
+          "count": 8,
+          "p50": 0.0001594915,
+          "p95": 0.00019513574999999997,
+          "p99": 0.00020443035
+        },
+        "client_lateness_s": {
+          "count": 8,
+          "p50": 0.000593699,
+          "p95": 0.0010511558499999999,
+          "p99": 0.00106296317
+        },
+        "prefill_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "transfer_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "decode_kv_wait_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "decode_s": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "p99": null
+        }
+      }
+    },
+    "dispatch_reordering_observed": false,
+    "maximum_gateway_queue_ms": 0.21360500000000002
+  },
+  {
+    "topology": "pd_fifo",
+    "scenario": "20short-low",
+    "repeat": 1,
+    "trace_sha256": "6fb9143ecacc18adeab1600e5f54161c0a2faa354c515366a28f804b5f43f0ea",
+    "duration_s": 157.079589962,
+    "completed_throughput_rps": 0.2546479781980372,
+    "groups": {
+      "all": {
+        "requests": 40,
+        "completed": 40,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 40,
+          "p50": 0.6485965075,
+          "p95": 0.718411644449999,
+          "p99": 1.0504981631099999
+        },
+        "itl_s": {
+          "count": 11566,
+          "p50": 0.011029272,
+          "p95": 0.011608374500000001,
+          "p99": 0.014027049150000023
+        },
+        "itl_single_token_coverage": 0.9064263322884013,
+        "batched_token_increments": 1194,
+        "e2e_s": {
+          "count": 40,
+          "p50": 4.1482686635,
+          "p95": 6.56543667775,
+          "p99": 6.77392619927
+        },
+        "queue_s": {
+          "count": 40,
+          "p50": 0.00023490449999999998,
+          "p95": 0.0002733229,
+          "p99": 0.0003849685299999999
+        },
+        "client_lateness_s": {
+          "count": 40,
+          "p50": 0.000926794,
+          "p95": 0.008601890149999994,
+          "p99": 0.01076181045
+        },
+        "prefill_s": {
+          "count": 40,
+          "p50": 0.5074248690000001,
+          "p95": 0.53430611115,
+          "p99": 0.5385196091
+        },
+        "transfer_s": {
+          "count": 40,
+          "p50": 0.0363776285,
+          "p95": 0.49572067985,
+          "p99": 0.49652460619999994
+        },
+        "decode_kv_wait_s": {
+          "count": 40,
+          "p50": 0.5559114085,
+          "p95": 0.6149022835999989,
+          "p99": 0.9879100734
+        },
+        "decode_s": {
+          "count": 40,
+          "p50": 3.4747998545,
+          "p95": 5.786170988199999,
+          "p99": 5.7924638433
+        }
+      },
+      "short": {
+        "requests": 8,
+        "completed": 8,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 8,
+          "p50": 0.08191812949999999,
+          "p95": 0.4714541268999997,
+          "p99": 0.62161925978
+        },
+        "itl_s": {
+          "count": 2284,
+          "p50": 0.010610066,
+          "p95": 0.0113087078,
+          "p99": 0.013660214100000017
+        },
+        "itl_single_token_coverage": 0.8949843260188087,
+        "batched_token_increments": 268,
+        "e2e_s": {
+          "count": 8,
+          "p50": 3.9222667319999998,
+          "p95": 5.75065554405,
+          "p99": 5.7811360576099995
+        },
+        "queue_s": {
+          "count": 8,
+          "p50": 0.0002338045,
+          "p95": 0.0003919034499999999,
+          "p99": 0.00044044789
+        },
+        "client_lateness_s": {
+          "count": 8,
+          "p50": 0.0008587989999999999,
+          "p95": 0.0030686392999999985,
+          "p99": 0.0038344902599999993
+        },
+        "prefill_s": {
+          "count": 8,
+          "p50": 0.045300573499999996,
+          "p95": 0.34762837369999977,
+          "p99": 0.4755915819399999
+        },
+        "transfer_s": {
+          "count": 8,
+          "p50": 0.008998287,
+          "p95": 0.3268460195999997,
+          "p99": 0.4619412327199999
+        },
+        "decode_kv_wait_s": {
+          "count": 8,
+          "p50": 0.061070003,
+          "p95": 0.3917101449999997,
+          "p99": 0.5268237473999998
+        },
+        "decode_s": {
+          "count": 8,
+          "p50": 3.4459242075,
+          "p95": 5.5474767193000005,
+          "p99": 5.56771516466
+        }
+      },
+      "long": {
+        "requests": 32,
+        "completed": 32,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 32,
+          "p50": 0.654761361,
+          "p95": 0.8475548800499997,
+          "p99": 1.05382555119
+        },
+        "itl_s": {
+          "count": 9282,
+          "p50": 0.011085481500000001,
+          "p95": 0.011657963449999998,
+          "p99": 0.014103308030000018
+        },
+        "itl_single_token_coverage": 0.9092868338557993,
+        "batched_token_increments": 926,
+        "e2e_s": {
+          "count": 32,
+          "p50": 4.5297723825,
+          "p95": 6.57418687575,
+          "p99": 6.79854361583
+        },
+        "queue_s": {
+          "count": 32,
+          "p50": 0.00023490449999999998,
+          "p95": 0.00026765655,
+          "p99": 0.00027215709
+        },
+        "client_lateness_s": {
+          "count": 32,
+          "p50": 0.000958084,
+          "p95": 0.009137459349999998,
+          "p99": 0.010878262050000002
+        },
+        "prefill_s": {
+          "count": 32,
+          "p50": 0.5146016955,
+          "p95": 0.53482903235,
+          "p99": 0.5389093219
+        },
+        "transfer_s": {
+          "count": 32,
+          "p50": 0.037278449000000005,
+          "p95": 0.2532030425999997,
+          "p99": 0.4966159758
+        },
+        "decode_kv_wait_s": {
+          "count": 32,
+          "p50": 0.5634924674999999,
+          "p95": 0.7622229443999997,
+          "p99": 0.9909423646000001
+        },
+        "decode_s": {
+          "count": 32,
+          "p50": 3.566482559,
+          "p95": 5.7862646138,
+          "p99": 5.7932599737
+        }
+      }
+    },
+    "dispatch_reordering_observed": false,
+    "maximum_gateway_queue_ms": 0.45258400000000004
+  },
+  {
+    "topology": "pd_fifo",
+    "scenario": "20short-low",
+    "repeat": 2,
+    "trace_sha256": "6fb9143ecacc18adeab1600e5f54161c0a2faa354c515366a28f804b5f43f0ea",
+    "duration_s": 157.219703294,
+    "completed_throughput_rps": 0.25442103732507504,
+    "groups": {
+      "all": {
+        "requests": 40,
+        "completed": 40,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 40,
+          "p50": 0.6338402350000001,
+          "p95": 0.7188974363499991,
+          "p99": 1.05384904836
+        },
+        "itl_s": {
+          "count": 10508,
+          "p50": 0.011038107,
+          "p95": 0.0115872442,
+          "p99": 0.0159222782
+        },
+        "itl_single_token_coverage": 0.8235109717868339,
+        "batched_token_increments": 2252,
+        "e2e_s": {
+          "count": 40,
+          "p50": 4.180511337,
+          "p95": 6.60415330915,
+          "p99": 6.80884755743
+        },
+        "queue_s": {
+          "count": 40,
+          "p50": 0.0002433305,
+          "p95": 0.00029539454999999963,
+          "p99": 0.0005001899299999999
+        },
+        "client_lateness_s": {
+          "count": 40,
+          "p50": 0.0008542974999999999,
+          "p95": 0.007273876949999996,
+          "p99": 0.010227157089999998
+        },
+        "prefill_s": {
+          "count": 40,
+          "p50": 0.506139042,
+          "p95": 0.53811430295,
+          "p99": 0.5439732157799999
+        },
+        "transfer_s": {
+          "count": 40,
+          "p50": 0.038267098,
+          "p95": 0.08824932499999881,
+          "p99": 0.49430186480999994
+        },
+        "decode_kv_wait_s": {
+          "count": 40,
+          "p50": 0.553382512,
+          "p95": 0.6007057905499991,
+          "p99": 0.9755974985499999
+        },
+        "decode_s": {
+          "count": 40,
+          "p50": 3.4880547045,
+          "p95": 5.80897003815,
+          "p99": 5.832038119089999
+        }
+      },
+      "short": {
+        "requests": 8,
+        "completed": 8,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 8,
+          "p50": 0.1014097865,
+          "p95": 0.4502375702499998,
+          "p99": 0.5702712980499999
+        },
+        "itl_s": {
+          "count": 2038,
+          "p50": 0.010613652000000001,
+          "p95": 0.0112769065,
+          "p99": 0.012550354539999992
+        },
+        "itl_single_token_coverage": 0.79858934169279,
+        "batched_token_increments": 514,
+        "e2e_s": {
+          "count": 8,
+          "p50": 3.908003914,
+          "p95": 5.81241484045,
+          "p99": 5.81432928249
+        },
+        "queue_s": {
+          "count": 8,
+          "p50": 0.0002475515,
+          "p95": 0.00026507475,
+          "p99": 0.00026647335
+        },
+        "client_lateness_s": {
+          "count": 8,
+          "p50": 0.000740484,
+          "p95": 0.0028695774999999996,
+          "p99": 0.0030058170999999996
+        },
+        "prefill_s": {
+          "count": 8,
+          "p50": 0.047902789,
+          "p95": 0.3729961795999997,
+          "p99": 0.5114404559199999
+        },
+        "transfer_s": {
+          "count": 8,
+          "p50": 0.010422058000000001,
+          "p95": 0.32104988479999974,
+          "p99": 0.4530209049599999
+        },
+        "decode_kv_wait_s": {
+          "count": 8,
+          "p50": 0.066657728,
+          "p95": 0.4022279072499997,
+          "p99": 0.5435794406499999
+        },
+        "decode_s": {
+          "count": 8,
+          "p50": 3.4608616805000003,
+          "p95": 5.5906014793,
+          "p99": 5.59928736546
+        }
+      },
+      "long": {
+        "requests": 32,
+        "completed": 32,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 32,
+          "p50": 0.6514003545,
+          "p95": 0.8342349591499998,
+          "p99": 1.06185232644
+        },
+        "itl_s": {
+          "count": 8470,
+          "p50": 0.011084962,
+          "p95": 0.011636694199999999,
+          "p99": 0.01637089965999995
+        },
+        "itl_single_token_coverage": 0.8297413793103449,
+        "batched_token_increments": 1738,
+        "e2e_s": {
+          "count": 32,
+          "p50": 4.5713463789999995,
+          "p95": 6.60804959835,
+          "p99": 6.834479106470001
+        },
+        "queue_s": {
+          "count": 32,
+          "p50": 0.000240143,
+          "p95": 0.0003446869499999999,
+          "p99": 0.0005116949700000002
+        },
+        "client_lateness_s": {
+          "count": 32,
+          "p50": 0.0009242985,
+          "p95": 0.007912148549999998,
+          "p99": 0.010415666610000002
+        },
+        "prefill_s": {
+          "count": 32,
+          "p50": 0.5127560755,
+          "p95": 0.53560423175,
+          "p99": 0.5398714223100001
+        },
+        "transfer_s": {
+          "count": 32,
+          "p50": 0.0386964585,
+          "p95": 0.05932638659999999,
+          "p99": 0.36559205949000056
+        },
+        "decode_kv_wait_s": {
+          "count": 32,
+          "p50": 0.5555991485,
+          "p95": 0.7356959949499998,
+          "p99": 0.98271749495
+        },
+        "decode_s": {
+          "count": 32,
+          "p50": 3.592414776,
+          "p95": 5.81761623135,
+          "p99": 5.832370364609999
+        }
+      }
+    },
+    "dispatch_reordering_observed": false,
+    "maximum_gateway_queue_ms": 0.556277
+  },
+  {
+    "topology": "pd_fifo",
+    "scenario": "20short-low",
+    "repeat": 3,
+    "trace_sha256": "6fb9143ecacc18adeab1600e5f54161c0a2faa354c515366a28f804b5f43f0ea",
+    "duration_s": 157.138612392,
+    "completed_throughput_rps": 0.25455233052596576,
+    "groups": {
+      "all": {
+        "requests": 40,
+        "completed": 40,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 40,
+          "p50": 0.649956744,
+          "p95": 0.9493554797499998,
+          "p99": 1.0597802062100001
+        },
+        "itl_s": {
+          "count": 9997,
+          "p50": 0.011037879,
+          "p95": 0.011602482999999999,
+          "p99": 0.017827920119999882
+        },
+        "itl_single_token_coverage": 0.7834639498432602,
+        "batched_token_increments": 2762,
+        "e2e_s": {
+          "count": 40,
+          "p50": 4.17759324,
+          "p95": 6.7470735747,
+          "p99": 6.82848755335
+        },
+        "queue_s": {
+          "count": 40,
+          "p50": 0.000231391,
+          "p95": 0.0002905469,
+          "p99": 0.0004009516699999999
+        },
+        "client_lateness_s": {
+          "count": 40,
+          "p50": 0.0009272589999999999,
+          "p95": 0.005660949349999999,
+          "p99": 0.007926391569999998
+        },
+        "prefill_s": {
+          "count": 40,
+          "p50": 0.510707338,
+          "p95": 0.5394892351,
+          "p99": 0.54095335602
+        },
+        "transfer_s": {
+          "count": 40,
+          "p50": 0.0409728295,
+          "p95": 0.08257318424999875,
+          "p99": 0.51728039408
+        },
+        "decode_kv_wait_s": {
+          "count": 40,
+          "p50": 0.5645707485,
+          "p95": 0.8849604507999996,
+          "p99": 1.01241046073
+        },
+        "decode_s": {
+          "count": 40,
+          "p50": 3.518329183,
+          "p95": 5.869141289499999,
+          "p99": 5.97505199027
+        }
+      },
+      "short": {
+        "requests": 8,
+        "completed": 8,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 8,
+          "p50": 0.0904037595,
+          "p95": 0.7310629630499995,
+          "p99": 0.9742215366099997
+        },
+        "itl_s": {
+          "count": 1929,
+          "p50": 0.010610529,
+          "p95": 0.0112594584,
+          "p99": 0.01224173632
+        },
+        "itl_single_token_coverage": 0.7558777429467085,
+        "batched_token_increments": 622,
+        "e2e_s": {
+          "count": 8,
+          "p50": 4.15624181,
+          "p95": 5.86920130875,
+          "p99": 5.913883780150001
+        },
+        "queue_s": {
+          "count": 8,
+          "p50": 0.0002319195,
+          "p95": 0.00027904525,
+          "p99": 0.00028503865000000005
+        },
+        "client_lateness_s": {
+          "count": 8,
+          "p50": 0.0008711865,
+          "p95": 0.0027893766499999992,
+          "p99": 0.0033544225299999993
+        },
+        "prefill_s": {
+          "count": 8,
+          "p50": 0.0459431215,
+          "p95": 0.3508154984999997,
+          "p99": 0.4786135940999998
+        },
+        "transfer_s": {
+          "count": 8,
+          "p50": 0.0099173005,
+          "p95": 0.0172682635,
+          "p99": 0.017838323899999998
+        },
+        "decode_kv_wait_s": {
+          "count": 8,
+          "p50": 0.0646062085,
+          "p95": 0.6884254917999996,
+          "p99": 0.9500062551599998
+        },
+        "decode_s": {
+          "count": 8,
+          "p50": 3.490944953,
+          "p95": 5.62556502615,
+          "p99": 5.652811504430001
+        }
+      },
+      "long": {
+        "requests": 32,
+        "completed": 32,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 32,
+          "p50": 0.6531060550000001,
+          "p95": 0.8579469450999999,
+          "p99": 1.0350777956400001
+        },
+        "itl_s": {
+          "count": 8068,
+          "p50": 0.011085737,
+          "p95": 0.011643154700000002,
+          "p99": 0.019535356149999995
+        },
+        "itl_single_token_coverage": 0.7903605015673981,
+        "batched_token_increments": 2140,
+        "e2e_s": {
+          "count": 32,
+          "p50": 4.5567053955,
+          "p95": 6.755601324300001,
+          "p99": 6.83650861215
+        },
+        "queue_s": {
+          "count": 32,
+          "p50": 0.000231391,
+          "p95": 0.00029513010000000004,
+          "p99": 0.00041400343000000026
+        },
+        "client_lateness_s": {
+          "count": 32,
+          "p50": 0.0009272589999999999,
+          "p95": 0.00586411215,
+          "p99": 0.008160218530000004
+        },
+        "prefill_s": {
+          "count": 32,
+          "p50": 0.513510132,
+          "p95": 0.5396121639,
+          "p99": 0.5411070825800001
+        },
+        "transfer_s": {
+          "count": 32,
+          "p50": 0.0416777125,
+          "p95": 0.2580357782499997,
+          "p99": 0.51963889232
+        },
+        "decode_kv_wait_s": {
+          "count": 32,
+          "p50": 0.5700229450000001,
+          "p95": 0.7212501711999997,
+          "p99": 0.9676698754400002
+        },
+        "decode_s": {
+          "count": 32,
+          "p50": 3.632228376,
+          "p95": 5.905862645499999,
+          "p99": 5.97750411883
+        }
+      }
+    },
+    "dispatch_reordering_observed": false,
+    "maximum_gateway_queue_ms": 0.464579
+  },
+  {
+    "topology": "pd_fifo",
+    "scenario": "20short-saturated",
+    "repeat": 1,
+    "trace_sha256": "a58b0871a6653f9a2a54739d05944b8601b888580ba318220b9e164003d115d4",
+    "duration_s": 32.934879379,
+    "completed_throughput_rps": 1.2145178835998676,
+    "groups": {
+      "all": {
+        "requests": 40,
+        "completed": 40,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 40,
+          "p50": 1.191714761,
+          "p95": 2.2311254360499997,
+          "p99": 2.33639576825
+        },
+        "itl_s": {
+          "count": 9892,
+          "p50": 0.0123413675,
+          "p95": 0.014524144999999999,
+          "p99": 0.03209677931000002
+        },
+        "itl_single_token_coverage": 0.7752351097178684,
+        "batched_token_increments": 2868,
+        "e2e_s": {
+          "count": 40,
+          "p50": 5.4009449895,
+          "p95": 9.0517358371,
+          "p99": 9.306776178580002
+        },
+        "queue_s": {
+          "count": 40,
+          "p50": 0.00022158250000000002,
+          "p95": 0.00027935145,
+          "p99": 0.00028320034
+        },
+        "client_lateness_s": {
+          "count": 40,
+          "p50": 0.0006937194999999999,
+          "p95": 0.00202913925,
+          "p99": 0.0021260483499999996
+        },
+        "prefill_s": {
+          "count": 40,
+          "p50": 0.5017950595,
+          "p95": 1.29217947755,
+          "p99": 1.31675676226
+        },
+        "transfer_s": {
+          "count": 40,
+          "p50": 0.5278370210000001,
+          "p95": 1.3298235719499998,
+          "p99": 1.9710654397299996
+        },
+        "decode_kv_wait_s": {
+          "count": 40,
+          "p50": 1.0823966525,
+          "p95": 2.0231844014499996,
+          "p99": 2.24936434205
+        },
+        "decode_s": {
+          "count": 40,
+          "p50": 3.8484398315000004,
+          "p95": 6.9559786971,
+          "p99": 6.96006477133
+        }
+      },
+      "short": {
+        "requests": 8,
+        "completed": 8,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 8,
+          "p50": 0.2050419835,
+          "p95": 1.6683023670499995,
+          "p99": 2.01224641981
+        },
+        "itl_s": {
+          "count": 2038,
+          "p50": 0.0121569195,
+          "p95": 0.013686393749999996,
+          "p99": 0.03149951361
+        },
+        "itl_single_token_coverage": 0.79858934169279,
+        "batched_token_increments": 514,
+        "e2e_s": {
+          "count": 8,
+          "p50": 5.1885513545,
+          "p95": 6.798090559449999,
+          "p99": 6.82650368629
+        },
+        "queue_s": {
+          "count": 8,
+          "p50": 0.00021943750000000001,
+          "p95": 0.00025950319999999997,
+          "p99": 0.00026492624000000003
+        },
+        "client_lateness_s": {
+          "count": 8,
+          "p50": 0.000646634,
+          "p95": 0.0018300739999999992,
+          "p99": 0.0021033371999999995
+        },
+        "prefill_s": {
+          "count": 8,
+          "p50": 0.0547015925,
+          "p95": 0.7277116496999996,
+          "p99": 0.9186831067399999
+        },
+        "transfer_s": {
+          "count": 8,
+          "p50": 0.008575074,
+          "p95": 1.0520646296499996,
+          "p99": 1.2704891803299998
+        },
+        "decode_kv_wait_s": {
+          "count": 8,
+          "p50": 0.1159518065,
+          "p95": 1.6032048327499993,
+          "p99": 1.9323960209499995
+        },
+        "decode_s": {
+          "count": 8,
+          "p50": 3.987113962,
+          "p95": 6.445772090149999,
+          "p99": 6.46323902523
+        }
+      },
+      "long": {
+        "requests": 32,
+        "completed": 32,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 32,
+          "p50": 1.290026939,
+          "p95": 2.2602443164499997,
+          "p99": 2.34113189825
+        },
+        "itl_s": {
+          "count": 7854,
+          "p50": 0.012440892,
+          "p95": 0.0145675036,
+          "p99": 0.032493742350000146
+        },
+        "itl_single_token_coverage": 0.7693965517241379,
+        "batched_token_increments": 2354,
+        "e2e_s": {
+          "count": 32,
+          "p50": 5.6313379975,
+          "p95": 9.1362333819,
+          "p99": 9.313905184820001
+        },
+        "queue_s": {
+          "count": 32,
+          "p50": 0.00022158250000000002,
+          "p95": 0.00028020305000000004,
+          "p99": 0.00028343986
+        },
+        "client_lateness_s": {
+          "count": 32,
+          "p50": 0.0006937194999999999,
+          "p95": 0.0015527420499999996,
+          "p99": 0.00204637125
+        },
+        "prefill_s": {
+          "count": 32,
+          "p50": 0.507656857,
+          "p95": 1.29218894595,
+          "p99": 1.31997706354
+        },
+        "transfer_s": {
+          "count": 32,
+          "p50": 0.531212239,
+          "p95": 1.3656265765,
+          "p99": 2.0433808551700015
+        },
+        "decode_kv_wait_s": {
+          "count": 32,
+          "p50": 1.179948835,
+          "p95": 2.0905937890499997,
+          "p99": 2.2580309184500003
+        },
+        "decode_s": {
+          "count": 32,
+          "p50": 3.8484398315000004,
+          "p95": 6.9570814818999995,
+          "p99": 6.960257159569999
+        }
+      }
+    },
+    "dispatch_reordering_observed": false,
+    "maximum_gateway_queue_ms": 0.284368
+  },
+  {
+    "topology": "pd_fifo",
+    "scenario": "20short-saturated",
+    "repeat": 2,
+    "trace_sha256": "a58b0871a6653f9a2a54739d05944b8601b888580ba318220b9e164003d115d4",
+    "duration_s": 32.779158804,
+    "completed_throughput_rps": 1.22028756867058,
+    "groups": {
+      "all": {
+        "requests": 40,
+        "completed": 40,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 40,
+          "p50": 1.131079613,
+          "p95": 2.3057575999,
+          "p99": 2.4225491232999996
+        },
+        "itl_s": {
+          "count": 9510,
+          "p50": 0.01232764,
+          "p95": 0.014185529899999999,
+          "p99": 0.03881737235
+        },
+        "itl_single_token_coverage": 0.7452978056426333,
+        "batched_token_increments": 3250,
+        "e2e_s": {
+          "count": 40,
+          "p50": 5.3591117275,
+          "p95": 9.088141106099998,
+          "p99": 9.474784161619999
+        },
+        "queue_s": {
+          "count": 40,
+          "p50": 0.00024285,
+          "p95": 0.00029030029999999995,
+          "p99": 0.00036788985999999997
+        },
+        "client_lateness_s": {
+          "count": 40,
+          "p50": 0.0006871939999999999,
+          "p95": 0.0011673567,
+          "p99": 0.0014244818699999998
+        },
+        "prefill_s": {
+          "count": 40,
+          "p50": 0.5018146555,
+          "p95": 1.2427559182999999,
+          "p99": 1.26354066743
+        },
+        "transfer_s": {
+          "count": 40,
+          "p50": 0.5294045519999999,
+          "p95": 1.3091510593499982,
+          "p99": 2.1430243088999994
+        },
+        "decode_kv_wait_s": {
+          "count": 40,
+          "p50": 0.9657087310000001,
+          "p95": 2.18612210885,
+          "p99": 2.3167033128699996
+        },
+        "decode_s": {
+          "count": 40,
+          "p50": 3.8624343615,
+          "p95": 6.94767470845,
+          "p99": 6.96584587457
+        }
+      },
+      "short": {
+        "requests": 8,
+        "completed": 8,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 8,
+          "p50": 0.2599737645,
+          "p95": 1.7106400259999992,
+          "p99": 2.0932057283999996
+        },
+        "itl_s": {
+          "count": 1956,
+          "p50": 0.012182163499999999,
+          "p95": 0.0140264605,
+          "p99": 0.0400593666
+        },
+        "itl_single_token_coverage": 0.7664576802507836,
+        "batched_token_increments": 596,
+        "e2e_s": {
+          "count": 8,
+          "p50": 5.282542124,
+          "p95": 6.83391910985,
+          "p99": 6.838070302769999
+        },
+        "queue_s": {
+          "count": 8,
+          "p50": 0.0002400695,
+          "p95": 0.00037204289999999993,
+          "p99": 0.00040111418
+        },
+        "client_lateness_s": {
+          "count": 8,
+          "p50": 0.0005625235000000001,
+          "p95": 0.0013795449999999998,
+          "p99": 0.0015283033999999999
+        },
+        "prefill_s": {
+          "count": 8,
+          "p50": 0.0564040995,
+          "p95": 0.7117622490499996,
+          "p99": 0.9093920106099999
+        },
+        "transfer_s": {
+          "count": 8,
+          "p50": 0.0218741735,
+          "p95": 1.0159567537499996,
+          "p99": 1.2226509379499997
+        },
+        "decode_kv_wait_s": {
+          "count": 8,
+          "p50": 0.10842498449999999,
+          "p95": 1.5304803600999994,
+          "p99": 1.9565416080199998
+        },
+        "decode_s": {
+          "count": 8,
+          "p50": 3.9990025155,
+          "p95": 6.47273653955,
+          "p99": 6.49804022551
+        }
+      },
+      "long": {
+        "requests": 32,
+        "completed": 32,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 32,
+          "p50": 1.252509974,
+          "p95": 2.3118615511,
+          "p99": 2.4359648137
+        },
+        "itl_s": {
+          "count": 7554,
+          "p50": 0.012411128,
+          "p95": 0.014190712749999999,
+          "p99": 0.038563111050000105
+        },
+        "itl_single_token_coverage": 0.7400078369905956,
+        "batched_token_increments": 2654,
+        "e2e_s": {
+          "count": 32,
+          "p50": 5.545992727,
+          "p95": 9.2156073309,
+          "p99": 9.48578885298
+        },
+        "queue_s": {
+          "count": 32,
+          "p50": 0.0002437805,
+          "p95": 0.0002773205,
+          "p99": 0.00028709046000000005
+        },
+        "client_lateness_s": {
+          "count": 32,
+          "p50": 0.0007397510000000001,
+          "p95": 0.0011505545,
+          "p99": 0.00119199286
+        },
+        "prefill_s": {
+          "count": 32,
+          "p50": 0.502574191,
+          "p95": 1.2428457606999999,
+          "p99": 1.26623855247
+        },
+        "transfer_s": {
+          "count": 32,
+          "p50": 0.53089067,
+          "p95": 1.5748991741499996,
+          "p99": 2.1696107321
+        },
+        "decode_kv_wait_s": {
+          "count": 32,
+          "p50": 1.0371119795000001,
+          "p95": 2.19789918765,
+          "p99": 2.3301604462300003
+        },
+        "decode_s": {
+          "count": 32,
+          "p50": 3.8624343615,
+          "p95": 6.95409711205,
+          "p99": 6.96622855753
+        }
+      }
+    },
+    "dispatch_reordering_observed": false,
+    "maximum_gateway_queue_ms": 0.40838199999999997
+  },
+  {
+    "topology": "pd_fifo",
+    "scenario": "20short-saturated",
+    "repeat": 3,
+    "trace_sha256": "a58b0871a6653f9a2a54739d05944b8601b888580ba318220b9e164003d115d4",
+    "duration_s": 33.251762386,
+    "completed_throughput_rps": 1.2029437578575146,
+    "groups": {
+      "all": {
+        "requests": 40,
+        "completed": 40,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 40,
+          "p50": 1.161875041,
+          "p95": 2.12777434575,
+          "p99": 2.24577349567
+        },
+        "itl_s": {
+          "count": 9500,
+          "p50": 0.012258903,
+          "p95": 0.014166682699999999,
+          "p99": 0.043506976020000004
+        },
+        "itl_single_token_coverage": 0.7445141065830722,
+        "batched_token_increments": 3260,
+        "e2e_s": {
+          "count": 40,
+          "p50": 5.2843696675,
+          "p95": 8.983357341249999,
+          "p99": 9.30978148096
+        },
+        "queue_s": {
+          "count": 40,
+          "p50": 0.00024377699999999998,
+          "p95": 0.0002936018,
+          "p99": 0.00033902543999999994
+        },
+        "client_lateness_s": {
+          "count": 40,
+          "p50": 0.000706829,
+          "p95": 0.001181166899999998,
+          "p99": 0.00196824737
+        },
+        "prefill_s": {
+          "count": 40,
+          "p50": 0.500751349,
+          "p95": 1.1911018837,
+          "p99": 1.21460861267
+        },
+        "transfer_s": {
+          "count": 40,
+          "p50": 0.5236106655,
+          "p95": 1.224771623,
+          "p99": 1.8382320623299995
+        },
+        "decode_kv_wait_s": {
+          "count": 40,
+          "p50": 0.963881057,
+          "p95": 2.02317793115,
+          "p99": 2.10251874948
+        },
+        "decode_s": {
+          "count": 40,
+          "p50": 3.86596024,
+          "p95": 6.9654012415999995,
+          "p99": 6.98287493357
+        }
+      },
+      "short": {
+        "requests": 8,
+        "completed": 8,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 8,
+          "p50": 0.298017563,
+          "p95": 1.5240783900999992,
+          "p99": 1.8975984332199995
+        },
+        "itl_s": {
+          "count": 2050,
+          "p50": 0.0121424875,
+          "p95": 0.01423518935,
+          "p99": 0.04566346451
+        },
+        "itl_single_token_coverage": 0.8032915360501567,
+        "batched_token_increments": 502,
+        "e2e_s": {
+          "count": 8,
+          "p50": 5.178417281,
+          "p95": 6.992572719050001,
+          "p99": 7.028678522210001
+        },
+        "queue_s": {
+          "count": 8,
+          "p50": 0.000237804,
+          "p95": 0.00027347609999999996,
+          "p99": 0.00027661601999999996
+        },
+        "client_lateness_s": {
+          "count": 8,
+          "p50": 0.0006939555,
+          "p95": 0.001073383,
+          "p99": 0.0010944782000000001
+        },
+        "prefill_s": {
+          "count": 8,
+          "p50": 0.054045157499999996,
+          "p95": 0.7239831989499996,
+          "p99": 0.9178360253899998
+        },
+        "transfer_s": {
+          "count": 8,
+          "p50": 0.008158139,
+          "p95": 0.9801941905999996,
+          "p99": 1.1776875997199996
+        },
+        "decode_kv_wait_s": {
+          "count": 8,
+          "p50": 0.2069833955,
+          "p95": 1.4349290441999993,
+          "p99": 1.7783692288399997
+        },
+        "decode_s": {
+          "count": 8,
+          "p50": 3.986238262,
+          "p95": 6.4807477817,
+          "p99": 6.50034490274
+        }
+      },
+      "long": {
+        "requests": 32,
+        "completed": 32,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 32,
+          "p50": 1.3225399155,
+          "p95": 2.16999784775,
+          "p99": 2.24809721143
+        },
+        "itl_s": {
+          "count": 7450,
+          "p50": 0.012305577500000001,
+          "p95": 0.01416184785,
+          "p99": 0.042201781610000266
+        },
+        "itl_single_token_coverage": 0.729819749216301,
+        "batched_token_increments": 2758,
+        "e2e_s": {
+          "count": 32,
+          "p50": 5.442132445,
+          "p95": 9.062237919249998,
+          "p99": 9.32802184384
+        },
+        "queue_s": {
+          "count": 32,
+          "p50": 0.0002465975,
+          "p95": 0.0002942082,
+          "p99": 0.00034479376000000014
+        },
+        "client_lateness_s": {
+          "count": 32,
+          "p50": 0.0007131185,
+          "p95": 0.0014909900999999994,
+          "p99": 0.0019749687300000002
+        },
+        "prefill_s": {
+          "count": 32,
+          "p50": 0.5034585485,
+          "p95": 1.1911992972999998,
+          "p99": 1.21766112043
+        },
+        "transfer_s": {
+          "count": 32,
+          "p50": 0.5310047385,
+          "p95": 1.1046473162,
+          "p99": 1.9176386063700013
+        },
+        "decode_kv_wait_s": {
+          "count": 32,
+          "p50": 1.1037601435,
+          "p95": 2.0244878123500003,
+          "p99": 2.1125161069200002
+        },
+        "decode_s": {
+          "count": 32,
+          "p50": 3.86596024,
+          "p95": 6.9672690384,
+          "p99": 6.984584792530001
+        }
+      }
+    },
+    "dispatch_reordering_observed": false,
+    "maximum_gateway_queue_ms": 0.367146
+  },
+  {
+    "topology": "pd_fifo",
+    "scenario": "80short-low",
+    "repeat": 1,
+    "trace_sha256": "77abba08835644e4838c68a0533f36bd11cbe4aad406a58bf7a62b449bfe1ad5",
+    "duration_s": 225.333559916,
+    "completed_throughput_rps": 0.17751461440058564,
+    "groups": {
+      "all": {
+        "requests": 40,
+        "completed": 40,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 40,
+          "p50": 0.1578369885,
+          "p95": 0.8642811502499996,
+          "p99": 1.0586601704099998
+        },
+        "itl_s": {
+          "count": 8508,
+          "p50": 0.010669379,
+          "p95": 0.011309353849999999,
+          "p99": 0.012719317190000037
+        },
+        "itl_single_token_coverage": 0.6667711598746081,
+        "batched_token_increments": 4250,
+        "e2e_s": {
+          "count": 40,
+          "p50": 4.143427175,
+          "p95": 6.768724034199999,
+          "p99": 7.22282224766
+        },
+        "queue_s": {
+          "count": 40,
+          "p50": 0.00022338099999999998,
+          "p95": 0.0002953279499999999,
+          "p99": 0.00031925374
+        },
+        "client_lateness_s": {
+          "count": 40,
+          "p50": 0.001663838,
+          "p95": 0.011282163249999998,
+          "p99": 0.011967399569999999
+        },
+        "prefill_s": {
+          "count": 40,
+          "p50": 0.046576317,
+          "p95": 0.5321231405,
+          "p99": 0.53427356315
+        },
+        "transfer_s": {
+          "count": 40,
+          "p50": 0.009358486999999999,
+          "p95": 0.26104845244999964,
+          "p99": 0.41306815226
+        },
+        "decode_kv_wait_s": {
+          "count": 40,
+          "p50": 0.064257805,
+          "p95": 0.7957620510999995,
+          "p99": 0.9498882981199999
+        },
+        "decode_s": {
+          "count": 40,
+          "p50": 3.5792906585,
+          "p95": 5.9112936747500004,
+          "p99": 5.94229478142
+        }
+      },
+      "short": {
+        "requests": 32,
+        "completed": 32,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 32,
+          "p50": 0.110332447,
+          "p95": 0.3225334288499999,
+          "p99": 0.42044481983000004
+        },
+        "itl_s": {
+          "count": 6772,
+          "p50": 0.010650283,
+          "p95": 0.01121303705,
+          "p99": 0.012446251389999998
+        },
+        "itl_single_token_coverage": 0.6634012539184952,
+        "batched_token_increments": 3434,
+        "e2e_s": {
+          "count": 32,
+          "p50": 3.8938783470000002,
+          "p95": 6.124479765749999,
+          "p99": 6.20512453433
+        },
+        "queue_s": {
+          "count": 32,
+          "p50": 0.00022338099999999998,
+          "p95": 0.0002933279,
+          "p99": 0.00031572537000000003
+        },
+        "client_lateness_s": {
+          "count": 32,
+          "p50": 0.001663838,
+          "p95": 0.011472997249999999,
+          "p99": 0.01199782653
+        },
+        "prefill_s": {
+          "count": 32,
+          "p50": 0.045991998,
+          "p95": 0.04906752515,
+          "p99": 0.04923979428
+        },
+        "transfer_s": {
+          "count": 32,
+          "p50": 0.009202062,
+          "p95": 0.03147767605,
+          "p99": 0.13054450861000017
+        },
+        "decode_kv_wait_s": {
+          "count": 32,
+          "p50": 0.063031276,
+          "p95": 0.19037987819999996,
+          "p99": 0.2367918203
+        },
+        "decode_s": {
+          "count": 32,
+          "p50": 3.5746574515000002,
+          "p95": 5.7547073827499995,
+          "p99": 5.839974515540001
+        }
+      },
+      "long": {
+        "requests": 8,
+        "completed": 8,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 8,
+          "p50": 0.7859639095,
+          "p95": 1.06274771765,
+          "p99": 1.09136054833
+        },
+        "itl_s": {
+          "count": 1736,
+          "p50": 0.01101643,
+          "p95": 0.011599513499999999,
+          "p99": 0.014479448300000036
+        },
+        "itl_single_token_coverage": 0.6802507836990596,
+        "batched_token_increments": 816,
+        "e2e_s": {
+          "count": 8,
+          "p50": 4.4921074995,
+          "p95": 7.2252542399,
+          "p99": 7.242278185579999
+        },
+        "queue_s": {
+          "count": 8,
+          "p50": 0.000248128,
+          "p95": 0.00030313625,
+          "p99": 0.00030854725
+        },
+        "client_lateness_s": {
+          "count": 8,
+          "p50": 0.002279358,
+          "p95": 0.0073510864999999995,
+          "p99": 0.0078446005
+        },
+        "prefill_s": {
+          "count": 8,
+          "p50": 0.530079814,
+          "p95": 0.53427590375,
+          "p99": 0.53429228795
+        },
+        "transfer_s": {
+          "count": 8,
+          "p50": 0.12245070999999999,
+          "p95": 0.4145725989,
+          "p99": 0.42510372538
+        },
+        "decode_kv_wait_s": {
+          "count": 8,
+          "p50": 0.662957206,
+          "p95": 0.9514938338000001,
+          "p99": 0.96273258356
+        },
+        "decode_s": {
+          "count": 8,
+          "p50": 3.665473835,
+          "p95": 5.9426131983,
+          "p99": 5.94484211646
+        }
+      }
+    },
+    "dispatch_reordering_observed": false,
+    "maximum_gateway_queue_ms": 0.32523399999999997
+  },
+  {
+    "topology": "pd_fifo",
+    "scenario": "80short-low",
+    "repeat": 2,
+    "trace_sha256": "77abba08835644e4838c68a0533f36bd11cbe4aad406a58bf7a62b449bfe1ad5",
+    "duration_s": 225.38379452,
+    "completed_throughput_rps": 0.17747504910540718,
+    "groups": {
+      "all": {
+        "requests": 40,
+        "completed": 40,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 40,
+          "p50": 0.19347656200000002,
+          "p95": 2.736106861049999,
+          "p99": 3.58788722336
+        },
+        "itl_s": {
+          "count": 8496,
+          "p50": 0.010670438,
+          "p95": 0.0112991115,
+          "p99": 0.012579408999999995
+        },
+        "itl_single_token_coverage": 0.6658307210031348,
+        "batched_token_increments": 4262,
+        "e2e_s": {
+          "count": 40,
+          "p50": 5.3744222090000004,
+          "p95": 8.041346941899997,
+          "p99": 9.50209689682
+        },
+        "queue_s": {
+          "count": 40,
+          "p50": 0.000213241,
+          "p95": 0.00029428734999999997,
+          "p99": 0.0003002683
+        },
+        "client_lateness_s": {
+          "count": 40,
+          "p50": 0.0011628505,
+          "p95": 0.006247022449999995,
+          "p99": 0.011298110989999997
+        },
+        "prefill_s": {
+          "count": 40,
+          "p50": 0.048011883500000005,
+          "p95": 0.5236724424,
+          "p99": 0.5303552761099999
+        },
+        "transfer_s": {
+          "count": 40,
+          "p50": 0.010328266,
+          "p95": 2.1240407149499982,
+          "p99": 2.9449261588099995
+        },
+        "decode_kv_wait_s": {
+          "count": 40,
+          "p50": 0.0820087895,
+          "p95": 2.638609466849998,
+          "p99": 3.46577207485
+        },
+        "decode_s": {
+          "count": 40,
+          "p50": 3.5672012795,
+          "p95": 5.88446449345,
+          "p99": 6.04208903087
+        }
+      },
+      "short": {
+        "requests": 32,
+        "completed": 32,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 32,
+          "p50": 0.1614093035,
+          "p95": 0.51399588505,
+          "p99": 0.7388369991300004
+        },
+        "itl_s": {
+          "count": 6745,
+          "p50": 0.010652324,
+          "p95": 0.011237755799999999,
+          "p99": 0.012370344919999995
+        },
+        "itl_single_token_coverage": 0.6607562695924765,
+        "batched_token_increments": 3462,
+        "e2e_s": {
+          "count": 32,
+          "p50": 4.008541314,
+          "p95": 6.26464908185,
+          "p99": 6.662911154730001
+        },
+        "queue_s": {
+          "count": 32,
+          "p50": 0.000218874,
+          "p95": 0.00029408935,
+          "p99": 0.0003007827
+        },
+        "client_lateness_s": {
+          "count": 32,
+          "p50": 0.0011817575,
+          "p95": 0.006898994049999999,
+          "p99": 0.011757475710000007
+        },
+        "prefill_s": {
+          "count": 32,
+          "p50": 0.047063808,
+          "p95": 0.12204268699999987,
+          "p99": 0.23956441879
+        },
+        "transfer_s": {
+          "count": 32,
+          "p50": 0.0096113255,
+          "p95": 0.35719370824999985,
+          "p99": 0.45104365621
+        },
+        "decode_kv_wait_s": {
+          "count": 32,
+          "p50": 0.065578152,
+          "p95": 0.47828500479999997,
+          "p99": 0.7193480905300005
+        },
+        "decode_s": {
+          "count": 32,
+          "p50": 3.5473870745,
+          "p95": 5.7936871496,
+          "p99": 5.84170135109
+        }
+      },
+      "long": {
+        "requests": 8,
+        "completed": 8,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 8,
+          "p50": 1.790759492,
+          "p95": 3.6073771584,
+          "p99": 3.74380670368
+        },
+        "itl_s": {
+          "count": 1751,
+          "p50": 0.011007419,
+          "p95": 0.011662788,
+          "p99": 0.0129489415
+        },
+        "itl_single_token_coverage": 0.6861285266457681,
+        "batched_token_increments": 800,
+        "e2e_s": {
+          "count": 8,
+          "p50": 5.9080070325000005,
+          "p95": 9.5512689313,
+          "p99": 9.89547317266
+        },
+        "queue_s": {
+          "count": 8,
+          "p50": 0.0002021945,
+          "p95": 0.0002727905,
+          "p99": 0.00028990129999999995
+        },
+        "client_lateness_s": {
+          "count": 8,
+          "p50": 0.0009067915,
+          "p95": 0.004518854849999999,
+          "p99": 0.005151914969999999
+        },
+        "prefill_s": {
+          "count": 8,
+          "p50": 0.5162658259999999,
+          "p95": 0.53045235015,
+          "p99": 0.5311318684299999
+        },
+        "transfer_s": {
+          "count": 8,
+          "p50": 1.1413734345,
+          "p95": 2.96076813965,
+          "p99": 3.07166200553
+        },
+        "decode_kv_wait_s": {
+          "count": 8,
+          "p50": 1.670846998,
+          "p95": 3.48202313025,
+          "p99": 3.5957805180499998
+        },
+        "decode_s": {
+          "count": 8,
+          "p50": 3.686670364,
+          "p95": 6.04842434955,
+          "p99": 6.09277158031
+        }
+      }
+    },
+    "dispatch_reordering_observed": false,
+    "maximum_gateway_queue_ms": 0.302776
+  },
+  {
+    "topology": "pd_fifo",
+    "scenario": "80short-low",
+    "repeat": 3,
+    "trace_sha256": "77abba08835644e4838c68a0533f36bd11cbe4aad406a58bf7a62b449bfe1ad5",
+    "duration_s": 226.033822116,
+    "completed_throughput_rps": 0.17696466672793817,
+    "groups": {
+      "all": {
+        "requests": 40,
+        "completed": 40,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 40,
+          "p50": 0.263707676,
+          "p95": 2.048107862499998,
+          "p99": 3.6074746497399994
+        },
+        "itl_s": {
+          "count": 8275,
+          "p50": 0.010671155,
+          "p95": 0.0113048916,
+          "p99": 0.012279428140000001
+        },
+        "itl_single_token_coverage": 0.6485109717868338,
+        "batched_token_increments": 4482,
+        "e2e_s": {
+          "count": 40,
+          "p50": 5.1579336255,
+          "p95": 7.655980591399999,
+          "p99": 9.365234319359999
+        },
+        "queue_s": {
+          "count": 40,
+          "p50": 0.00018307650000000001,
+          "p95": 0.00038421599999999967,
+          "p99": 0.000617446
+        },
+        "client_lateness_s": {
+          "count": 40,
+          "p50": 0.0014647165,
+          "p95": 0.0059756189,
+          "p99": 0.007998655699999998
+        },
+        "prefill_s": {
+          "count": 40,
+          "p50": 0.047790261,
+          "p95": 0.52949952135,
+          "p99": 0.5345473243600001
+        },
+        "transfer_s": {
+          "count": 40,
+          "p50": 0.0113843525,
+          "p95": 1.379429530649997,
+          "p99": 3.121653357599999
+        },
+        "decode_kv_wait_s": {
+          "count": 40,
+          "p50": 0.0978519285,
+          "p95": 1.8993391686499979,
+          "p99": 3.533795618269999
+        },
+        "decode_s": {
+          "count": 40,
+          "p50": 3.5902952315,
+          "p95": 5.921381617199999,
+          "p99": 5.97111162426
+        }
+      },
+      "short": {
+        "requests": 32,
+        "completed": 32,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 32,
+          "p50": 0.22283767999999998,
+          "p95": 1.2759094901999997,
+          "p99": 2.3425427091100013
+        },
+        "itl_s": {
+          "count": 6678,
+          "p50": 0.0106543155,
+          "p95": 0.011192193,
+          "p99": 0.012045583629999988
+        },
+        "itl_single_token_coverage": 0.654192789968652,
+        "batched_token_increments": 3528,
+        "e2e_s": {
+          "count": 32,
+          "p50": 5.1579336255,
+          "p95": 6.745898174299999,
+          "p99": 7.38154585859
+        },
+        "queue_s": {
+          "count": 32,
+          "p50": 0.00018307650000000001,
+          "p95": 0.00033254494999999994,
+          "p99": 0.00045754720000000017
+        },
+        "client_lateness_s": {
+          "count": 32,
+          "p50": 0.00126538,
+          "p95": 0.005888247500000001,
+          "p99": 0.00606704802
+        },
+        "prefill_s": {
+          "count": 32,
+          "p50": 0.046798959,
+          "p95": 0.14122005909999985,
+          "p99": 0.26077336901000003
+        },
+        "transfer_s": {
+          "count": 32,
+          "p50": 0.0097912375,
+          "p95": 0.9355182487999998,
+          "p99": 2.0244041288200014
+        },
+        "decode_kv_wait_s": {
+          "count": 32,
+          "p50": 0.0751885665,
+          "p95": 1.1453842391499993,
+          "p99": 2.3288332223000014
+        },
+        "decode_s": {
+          "count": 32,
+          "p50": 3.5875156695,
+          "p95": 5.8575529775,
+          "p99": 5.91501617704
+        }
+      },
+      "long": {
+        "requests": 8,
+        "completed": 8,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 8,
+          "p50": 1.7028928415,
+          "p95": 3.441615797599999,
+          "p99": 4.05590243952
+        },
+        "itl_s": {
+          "count": 1597,
+          "p50": 0.011022808,
+          "p95": 0.011684136799999998,
+          "p99": 0.012494076679999995
+        },
+        "itl_single_token_coverage": 0.6257836990595611,
+        "batched_token_increments": 954,
+        "e2e_s": {
+          "count": 8,
+          "p50": 5.277054408,
+          "p95": 9.4516672544,
+          "p99": 10.056697799679998
+        },
+        "queue_s": {
+          "count": 8,
+          "p50": 0.0001857125,
+          "p95": 0.0005452111999999998,
+          "p99": 0.00066661584
+        },
+        "client_lateness_s": {
+          "count": 8,
+          "p50": 0.002327926,
+          "p95": 0.007963730449999998,
+          "p99": 0.008956989289999998
+        },
+        "prefill_s": {
+          "count": 8,
+          "p50": 0.5244757575,
+          "p95": 0.5348138794,
+          "p99": 0.53667976468
+        },
+        "transfer_s": {
+          "count": 8,
+          "p50": 0.9822436620000001,
+          "p95": 2.796639033449999,
+          "p99": 3.4300763226899993
+        },
+        "decode_kv_wait_s": {
+          "count": 8,
+          "p50": 1.499822414,
+          "p95": 3.3138883139999993,
+          "p99": 3.9403196019999998
+        },
+        "decode_s": {
+          "count": 8,
+          "p50": 3.6835767214999997,
+          "p95": 5.9725397709,
+          "p99": 5.98253679738
+        }
+      }
+    },
+    "dispatch_reordering_observed": false,
+    "maximum_gateway_queue_ms": 0.696967
+  },
+  {
+    "topology": "pd_fifo",
+    "scenario": "80short-saturated",
+    "repeat": 1,
+    "trace_sha256": "6351d639f571a9216185aaf467a1e641978347d50accd4cddbb0fa1408eab092",
+    "duration_s": 21.201346355,
+    "completed_throughput_rps": 1.886672635323777,
+    "groups": {
+      "all": {
+        "requests": 40,
+        "completed": 40,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 40,
+          "p50": 0.5954655975,
+          "p95": 1.9093775566999995,
+          "p99": 2.17258701843
+        },
+        "itl_s": {
+          "count": 8118,
+          "p50": 0.011752595000000001,
+          "p95": 0.0133652922,
+          "p99": 0.035943913179999995
+        },
+        "itl_single_token_coverage": 0.6362068965517241,
+        "batched_token_increments": 4636,
+        "e2e_s": {
+          "count": 40,
+          "p50": 4.996874847,
+          "p95": 8.09182715165,
+          "p99": 8.64066311471
+        },
+        "queue_s": {
+          "count": 40,
+          "p50": 0.000192906,
+          "p95": 0.00027660924999999996,
+          "p99": 0.0003158852
+        },
+        "client_lateness_s": {
+          "count": 40,
+          "p50": 0.0007195195,
+          "p95": 0.0017559934499999988,
+          "p99": 0.003187266699999999
+        },
+        "prefill_s": {
+          "count": 40,
+          "p50": 0.194713291,
+          "p95": 0.5183828489499999,
+          "p99": 0.5520143955500001
+        },
+        "transfer_s": {
+          "count": 40,
+          "p50": 0.23009691599999998,
+          "p95": 1.1650288291499997,
+          "p99": 1.3361547315
+        },
+        "decode_kv_wait_s": {
+          "count": 40,
+          "p50": 0.533598881,
+          "p95": 1.7304037644999997,
+          "p99": 1.9619680869899998
+        },
+        "decode_s": {
+          "count": 40,
+          "p50": 3.8458929035,
+          "p95": 6.64346019275,
+          "p99": 6.643473354519999
+        }
+      },
+      "short": {
+        "requests": 32,
+        "completed": 32,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 32,
+          "p50": 0.4585961085,
+          "p95": 1.67272898155,
+          "p99": 1.7632805285000002
+        },
+        "itl_s": {
+          "count": 6520,
+          "p50": 0.011704911,
+          "p95": 0.013346037649999996,
+          "p99": 0.035943418259999985
+        },
+        "itl_single_token_coverage": 0.6387147335423198,
+        "batched_token_increments": 3682,
+        "e2e_s": {
+          "count": 32,
+          "p50": 4.8345031865,
+          "p95": 7.89013871255,
+          "p99": 8.03335596585
+        },
+        "queue_s": {
+          "count": 32,
+          "p50": 0.00019566149999999998,
+          "p95": 0.0002772915,
+          "p99": 0.00032079880000000007
+        },
+        "client_lateness_s": {
+          "count": 32,
+          "p50": 0.0007195195,
+          "p95": 0.0017739028999999996,
+          "p99": 0.0033235203000000022
+        },
+        "prefill_s": {
+          "count": 32,
+          "p50": 0.095942238,
+          "p95": 0.4481582035999999,
+          "p99": 0.5410894380600001
+        },
+        "transfer_s": {
+          "count": 32,
+          "p50": 0.0644607495,
+          "p95": 1.0491518789,
+          "p99": 1.08223100323
+        },
+        "decode_kv_wait_s": {
+          "count": 32,
+          "p50": 0.2683031785,
+          "p95": 1.4883732848999998,
+          "p99": 1.57200436627
+        },
+        "decode_s": {
+          "count": 32,
+          "p50": 3.8360126475,
+          "p95": 6.643460974750001,
+          "p99": 6.643474837079999
+        }
+      },
+      "long": {
+        "requests": 8,
+        "completed": 8,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 8,
+          "p50": 1.655971579,
+          "p95": 2.17878286095,
+          "p99": 2.22215375859
+        },
+        "itl_s": {
+          "count": 1598,
+          "p50": 0.011980059500000001,
+          "p95": 0.013403422449999996,
+          "p99": 0.0358706548
+        },
+        "itl_single_token_coverage": 0.6261755485893417,
+        "batched_token_increments": 954,
+        "e2e_s": {
+          "count": 8,
+          "p50": 5.819263911,
+          "p95": 8.66132284715,
+          "p99": 8.80594097423
+        },
+        "queue_s": {
+          "count": 8,
+          "p50": 0.000154959,
+          "p95": 0.0002679047,
+          "p99": 0.00027479214
+        },
+        "client_lateness_s": {
+          "count": 8,
+          "p50": 0.0007146195000000001,
+          "p95": 0.00162709355,
+          "p99": 0.00171369391
+        },
+        "prefill_s": {
+          "count": 8,
+          "p50": 0.4994788965,
+          "p95": 0.5395291825999999,
+          "p99": 0.5494307061199999
+        },
+        "transfer_s": {
+          "count": 8,
+          "p50": 0.8950415275,
+          "p95": 1.3414988575,
+          "p99": 1.3789077395
+        },
+        "decode_kv_wait_s": {
+          "count": 8,
+          "p50": 1.246544588,
+          "p95": 1.97174219335,
+          "p99": 2.0401609378699996
+        },
+        "decode_s": {
+          "count": 8,
+          "p50": 4.0177416175000005,
+          "p95": 6.608565442,
+          "p99": 6.61575405
+        }
+      }
+    },
+    "dispatch_reordering_observed": false,
+    "maximum_gateway_queue_ms": 0.339839
+  },
+  {
+    "topology": "pd_fifo",
+    "scenario": "80short-saturated",
+    "repeat": 2,
+    "trace_sha256": "6351d639f571a9216185aaf467a1e641978347d50accd4cddbb0fa1408eab092",
+    "duration_s": 21.19044599,
+    "completed_throughput_rps": 1.8876431396902373,
+    "groups": {
+      "all": {
+        "requests": 40,
+        "completed": 40,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 40,
+          "p50": 0.8545651585,
+          "p95": 1.7835537742999996,
+          "p99": 2.05440332248
+        },
+        "itl_s": {
+          "count": 7974,
+          "p50": 0.0117975225,
+          "p95": 0.013850871399999992,
+          "p99": 0.03532543484999995
+        },
+        "itl_single_token_coverage": 0.6249216300940439,
+        "batched_token_increments": 4784,
+        "e2e_s": {
+          "count": 40,
+          "p50": 5.1695930175,
+          "p95": 8.0662444794,
+          "p99": 8.34140220492
+        },
+        "queue_s": {
+          "count": 40,
+          "p50": 0.00024278100000000002,
+          "p95": 0.0003044754499999998,
+          "p99": 0.0004300691499999999
+        },
+        "client_lateness_s": {
+          "count": 40,
+          "p50": 0.0006116175,
+          "p95": 0.00200137895,
+          "p99": 0.0021437247299999997
+        },
+        "prefill_s": {
+          "count": 40,
+          "p50": 0.21974509650000001,
+          "p95": 0.6327548609999999,
+          "p99": 0.69965922522
+        },
+        "transfer_s": {
+          "count": 40,
+          "p50": 0.3831016785,
+          "p95": 0.9635127787999999,
+          "p99": 1.15943256813
+        },
+        "decode_kv_wait_s": {
+          "count": 40,
+          "p50": 0.727732501,
+          "p95": 1.447439827149999,
+          "p99": 1.78943901949
+        },
+        "decode_s": {
+          "count": 40,
+          "p50": 3.9986285385,
+          "p95": 6.6359842636,
+          "p99": 6.63834163663
+        }
+      },
+      "short": {
+        "requests": 32,
+        "completed": 32,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 32,
+          "p50": 0.6995858585,
+          "p95": 1.5249294124000001,
+          "p99": 1.7782371052200006
+        },
+        "itl_s": {
+          "count": 6392,
+          "p50": 0.0117840255,
+          "p95": 0.013796740849999992,
+          "p99": 0.03542467722000003
+        },
+        "itl_single_token_coverage": 0.6261755485893417,
+        "batched_token_increments": 3814,
+        "e2e_s": {
+          "count": 32,
+          "p50": 4.8659209685,
+          "p95": 7.8545873557000006,
+          "p99": 8.106075216390002
+        },
+        "queue_s": {
+          "count": 32,
+          "p50": 0.00023067649999999998,
+          "p95": 0.00029642975,
+          "p99": 0.00034667001000000005
+        },
+        "client_lateness_s": {
+          "count": 32,
+          "p50": 0.0006728439999999999,
+          "p95": 0.0018462209999999999,
+          "p99": 0.00201155431
+        },
+        "prefill_s": {
+          "count": 32,
+          "p50": 0.16159211099999998,
+          "p95": 0.6327824837,
+          "p99": 0.7084159933800003
+        },
+        "transfer_s": {
+          "count": 32,
+          "p50": 0.2382613905,
+          "p95": 0.9580062382000001,
+          "p99": 0.99607063864
+        },
+        "decode_kv_wait_s": {
+          "count": 32,
+          "p50": 0.581528396,
+          "p95": 1.25554104215,
+          "p99": 1.3804402929500001
+        },
+        "decode_s": {
+          "count": 32,
+          "p50": 3.986378379,
+          "p95": 6.629538596750001,
+          "p99": 6.634855307279999
+        }
+      },
+      "long": {
+        "requests": 8,
+        "completed": 8,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 8,
+          "p50": 1.253286654,
+          "p95": 2.0283396011,
+          "p99": 2.13607520502
+        },
+        "itl_s": {
+          "count": 1582,
+          "p50": 0.011860591,
+          "p95": 0.013892758149999997,
+          "p99": 0.03501530871000002
+        },
+        "itl_single_token_coverage": 0.6199059561128527,
+        "batched_token_increments": 970,
+        "e2e_s": {
+          "count": 8,
+          "p50": 5.774501891,
+          "p95": 8.312575617999999,
+          "p99": 8.421135986
+        },
+        "queue_s": {
+          "count": 8,
+          "p50": 0.000260238,
+          "p95": 0.0004034036999999999,
+          "p99": 0.00045693913999999994
+        },
+        "client_lateness_s": {
+          "count": 8,
+          "p50": 0.0004428945,
+          "p95": 0.001731419199999999,
+          "p99": 0.0021263446399999997
+        },
+        "prefill_s": {
+          "count": 8,
+          "p50": 0.5093846895,
+          "p95": 0.6034976342499999,
+          "p99": 0.62689777325
+        },
+        "transfer_s": {
+          "count": 8,
+          "p50": 0.5335129439999999,
+          "p95": 1.1117050833499997,
+          "p99": 1.22537660467
+        },
+        "decode_kv_wait_s": {
+          "count": 8,
+          "p50": 1.014173446,
+          "p95": 1.79567179985,
+          "p99": 1.83930126237
+        },
+        "decode_s": {
+          "count": 8,
+          "p50": 3.9986285385,
+          "p95": 6.638404263950001,
+          "p99": 6.63884265519
+        }
+      }
+    },
+    "dispatch_reordering_observed": false,
+    "maximum_gateway_queue_ms": 0.470323
+  },
+  {
+    "topology": "pd_fifo",
+    "scenario": "80short-saturated",
+    "repeat": 3,
+    "trace_sha256": "6351d639f571a9216185aaf467a1e641978347d50accd4cddbb0fa1408eab092",
+    "duration_s": 22.961135301,
+    "completed_throughput_rps": 1.7420741385665686,
+    "groups": {
+      "all": {
+        "requests": 40,
+        "completed": 40,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 40,
+          "p50": 1.5228899120000001,
+          "p95": 3.07678914735,
+          "p99": 3.3826411159199994
+        },
+        "itl_s": {
+          "count": 8121,
+          "p50": 0.011689848,
+          "p95": 0.01371563,
+          "p99": 0.03296515120000001
+        },
+        "itl_single_token_coverage": 0.6364420062695925,
+        "batched_token_increments": 4636,
+        "e2e_s": {
+          "count": 40,
+          "p50": 5.7271475380000005,
+          "p95": 9.297637905999999,
+          "p99": 9.981407924300001
+        },
+        "queue_s": {
+          "count": 40,
+          "p50": 0.0002254155,
+          "p95": 0.00029211434999999996,
+          "p99": 0.0005613643099999997
+        },
+        "client_lateness_s": {
+          "count": 40,
+          "p50": 0.0007416475,
+          "p95": 0.0012162745999999987,
+          "p99": 0.00185722991
+        },
+        "prefill_s": {
+          "count": 40,
+          "p50": 0.2610446525,
+          "p95": 0.5587180263999999,
+          "p99": 0.59010516284
+        },
+        "transfer_s": {
+          "count": 40,
+          "p50": 0.746573726,
+          "p95": 2.4256389416500004,
+          "p99": 2.44511027648
+        },
+        "decode_kv_wait_s": {
+          "count": 40,
+          "p50": 1.182439455,
+          "p95": 3.05054450285,
+          "p99": 3.26093846096
+        },
+        "decode_s": {
+          "count": 40,
+          "p50": 3.8897983199999997,
+          "p95": 6.76165891125,
+          "p99": 6.830729273519999
+        }
+      },
+      "short": {
+        "requests": 32,
+        "completed": 32,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 32,
+          "p50": 1.487305079,
+          "p95": 2.6002554671499993,
+          "p99": 3.02203645685
+        },
+        "itl_s": {
+          "count": 6517,
+          "p50": 0.011687698,
+          "p95": 0.013637199799999998,
+          "p99": 0.0330286148
+        },
+        "itl_single_token_coverage": 0.6384208463949843,
+        "batched_token_increments": 3688,
+        "e2e_s": {
+          "count": 32,
+          "p50": 5.7271475380000005,
+          "p95": 8.69989012365,
+          "p99": 8.837270422549999
+        },
+        "queue_s": {
+          "count": 32,
+          "p50": 0.00023867700000000002,
+          "p95": 0.0002865983,
+          "p99": 0.00029771243
+        },
+        "client_lateness_s": {
+          "count": 32,
+          "p50": 0.0007623395000000001,
+          "p95": 0.0011768583,
+          "p99": 0.0015282310800000005
+        },
+        "prefill_s": {
+          "count": 32,
+          "p50": 0.2355418855,
+          "p95": 0.5569619279,
+          "p99": 0.56522639632
+        },
+        "transfer_s": {
+          "count": 32,
+          "p50": 0.746573726,
+          "p95": 2.04880580525,
+          "p99": 2.3556339865000004
+        },
+        "decode_kv_wait_s": {
+          "count": 32,
+          "p50": 1.053358572,
+          "p95": 2.5402082700499995,
+          "p99": 2.99639364093
+        },
+        "decode_s": {
+          "count": 32,
+          "p50": 3.8897983199999997,
+          "p95": 6.7152513818,
+          "p99": 6.78759555445
+        }
+      },
+      "long": {
+        "requests": 8,
+        "completed": 8,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 8,
+          "p50": 1.8039694665,
+          "p95": 3.3982817547999997,
+          "p99": 3.5077662269599994
+        },
+        "itl_s": {
+          "count": 1604,
+          "p50": 0.011693585,
+          "p95": 0.013805267599999999,
+          "p99": 0.027316480090000015
+        },
+        "itl_single_token_coverage": 0.6285266457680251,
+        "batched_token_increments": 948,
+        "e2e_s": {
+          "count": 8,
+          "p50": 6.053302868,
+          "p95": 10.0071221975,
+          "p99": 10.1871221099
+        },
+        "queue_s": {
+          "count": 8,
+          "p50": 0.000201261,
+          "p95": 0.0005620538499999997,
+          "p99": 0.0006949667699999998
+        },
+        "client_lateness_s": {
+          "count": 8,
+          "p50": 0.0005931385,
+          "p95": 0.0016855906999999999,
+          "p99": 0.0019138909399999998
+        },
+        "prefill_s": {
+          "count": 8,
+          "p50": 0.5205220815,
+          "p95": 0.5872414854,
+          "p99": 0.60064488268
+        },
+        "transfer_s": {
+          "count": 8,
+          "p50": 0.886456531,
+          "p95": 2.4441860756500002,
+          "p99": 2.45229059193
+        },
+        "decode_kv_wait_s": {
+          "count": 8,
+          "p50": 1.5702984839999998,
+          "p95": 3.2746970504000004,
+          "p99": 3.37100717648
+        },
+        "decode_s": {
+          "count": 8,
+          "p50": 4.05074549,
+          "p95": 6.7904249583,
+          "p99": 6.83830455006
+        }
+      }
+    },
+    "dispatch_reordering_observed": false,
+    "maximum_gateway_queue_ms": 0.7281949999999999
+  },
+  {
+    "topology": "pd_fair",
+    "scenario": "20short-low",
+    "repeat": 1,
+    "trace_sha256": "6fb9143ecacc18adeab1600e5f54161c0a2faa354c515366a28f804b5f43f0ea",
+    "duration_s": 157.766267006,
+    "completed_throughput_rps": 0.2535396238948771,
+    "groups": {
+      "all": {
+        "requests": 40,
+        "completed": 40,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 40,
+          "p50": 1.652950334,
+          "p95": 3.41232314025,
+          "p99": 3.8547073142199997
+        },
+        "itl_s": {
+          "count": 8005,
+          "p50": 0.011151578,
+          "p95": 0.011781999399999996,
+          "p99": 0.015623671840000011
+        },
+        "itl_single_token_coverage": 0.6273510971786834,
+        "batched_token_increments": 4750,
+        "e2e_s": {
+          "count": 40,
+          "p50": 5.5770447260000005,
+          "p95": 9.2343278911,
+          "p99": 10.08211986892
+        },
+        "queue_s": {
+          "count": 40,
+          "p50": 0.00019423649999999998,
+          "p95": 0.00029775784999999975,
+          "p99": 0.00039890753000000004
+        },
+        "client_lateness_s": {
+          "count": 40,
+          "p50": 0.0010045205,
+          "p95": 0.004776439699999995,
+          "p99": 0.00682035074
+        },
+        "prefill_s": {
+          "count": 40,
+          "p50": 0.506948658,
+          "p95": 0.5513821525999988,
+          "p99": 0.95068637672
+        },
+        "transfer_s": {
+          "count": 40,
+          "p50": 1.04261191,
+          "p95": 2.7767441469499996,
+          "p99": 2.96853802983
+        },
+        "decode_kv_wait_s": {
+          "count": 40,
+          "p50": 1.4872540035,
+          "p95": 3.341991366,
+          "p99": 3.7745745087099998
+        },
+        "decode_s": {
+          "count": 40,
+          "p50": 3.8004847765000003,
+          "p95": 6.24619958215,
+          "p99": 6.3022500612200005
+        }
+      },
+      "short": {
+        "requests": 8,
+        "completed": 8,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 8,
+          "p50": 0.143388877,
+          "p95": 0.41855826465,
+          "p99": 0.42990286252999993
+        },
+        "itl_s": {
+          "count": 1627,
+          "p50": 0.010744849,
+          "p95": 0.011530216699999998,
+          "p99": 0.015598391900000003
+        },
+        "itl_single_token_coverage": 0.637539184952978,
+        "batched_token_increments": 924,
+        "e2e_s": {
+          "count": 8,
+          "p50": 3.911282279,
+          "p95": 6.47029409535,
+          "p99": 6.5161940414699995
+        },
+        "queue_s": {
+          "count": 8,
+          "p50": 0.000197315,
+          "p95": 0.00027601819999999996,
+          "p99": 0.00027837803999999997
+        },
+        "client_lateness_s": {
+          "count": 8,
+          "p50": 0.001183716,
+          "p95": 0.0021461439999999996,
+          "p99": 0.0023175263999999996
+        },
+        "prefill_s": {
+          "count": 8,
+          "p50": 0.0436485655,
+          "p95": 0.14074432164999995,
+          "p99": 0.16642631392999996
+        },
+        "transfer_s": {
+          "count": 8,
+          "p50": 0.0095857515,
+          "p95": 0.7026332147499995,
+          "p99": 0.9154258381499998
+        },
+        "decode_kv_wait_s": {
+          "count": 8,
+          "p50": 0.0847783535,
+          "p95": 0.250481458,
+          "p99": 0.25494015
+        },
+        "decode_s": {
+          "count": 8,
+          "p50": 3.676824962,
+          "p95": 5.9903659954999995,
+          "p99": 6.044683231900001
+        }
+      },
+      "long": {
+        "requests": 32,
+        "completed": 32,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 32,
+          "p50": 2.1649338394999997,
+          "p95": 3.45387263025,
+          "p99": 3.899783266380001
+        },
+        "itl_s": {
+          "count": 6378,
+          "p50": 0.011194606,
+          "p95": 0.01182158325,
+          "p99": 0.014987594159999633
+        },
+        "itl_single_token_coverage": 0.6248040752351097,
+        "batched_token_increments": 3826,
+        "e2e_s": {
+          "count": 32,
+          "p50": 6.059903932,
+          "p95": 9.3259746359,
+          "p99": 10.164759994680002
+        },
+        "queue_s": {
+          "count": 32,
+          "p50": 0.000192418,
+          "p95": 0.0003347806499999999,
+          "p99": 0.00040064137
+        },
+        "client_lateness_s": {
+          "count": 32,
+          "p50": 0.0009676665,
+          "p95": 0.005505085299999999,
+          "p99": 0.00686144946
+        },
+        "prefill_s": {
+          "count": 32,
+          "p50": 0.5110667005,
+          "p95": 0.7194601493999997,
+          "p99": 0.9507019808799999
+        },
+        "transfer_s": {
+          "count": 32,
+          "p50": 1.3649729945,
+          "p95": 2.80122173855,
+          "p99": 2.9860671580700004
+        },
+        "decode_kv_wait_s": {
+          "count": 32,
+          "p50": 1.8849965385,
+          "p95": 3.378267766,
+          "p99": 3.820007517590001
+        },
+        "decode_s": {
+          "count": 32,
+          "p50": 3.883908266,
+          "p95": 6.25630999935,
+          "p99": 6.30645179738
+        }
+      }
+    },
+    "dispatch_reordering_observed": false,
+    "maximum_gateway_queue_ms": 0.40736
+  },
+  {
+    "topology": "pd_fair",
+    "scenario": "20short-low",
+    "repeat": 2,
+    "trace_sha256": "6fb9143ecacc18adeab1600e5f54161c0a2faa354c515366a28f804b5f43f0ea",
+    "duration_s": 157.534426943,
+    "completed_throughput_rps": 0.25391275276275344,
+    "groups": {
+      "all": {
+        "requests": 40,
+        "completed": 40,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 40,
+          "p50": 2.0334987135,
+          "p95": 4.352680766849997,
+          "p99": 5.63164285593
+        },
+        "itl_s": {
+          "count": 7974,
+          "p50": 0.011152382499999999,
+          "p95": 0.011688387449999997,
+          "p99": 0.013852110519999987
+        },
+        "itl_single_token_coverage": 0.6249216300940439,
+        "batched_token_increments": 4778,
+        "e2e_s": {
+          "count": 40,
+          "p50": 6.2276686545,
+          "p95": 9.578552745,
+          "p99": 10.06240412267
+        },
+        "queue_s": {
+          "count": 40,
+          "p50": 0.0002266665,
+          "p95": 0.0002996591,
+          "p99": 0.00031092431000000003
+        },
+        "client_lateness_s": {
+          "count": 40,
+          "p50": 0.001041245,
+          "p95": 0.004210612849999998,
+          "p99": 0.007674188329999998
+        },
+        "prefill_s": {
+          "count": 40,
+          "p50": 0.5084878644999999,
+          "p95": 0.53293426505,
+          "p99": 0.5365281093300001
+        },
+        "transfer_s": {
+          "count": 40,
+          "p50": 1.1945067015,
+          "p95": 3.438159748999996,
+          "p99": 4.80996486253
+        },
+        "decode_kv_wait_s": {
+          "count": 40,
+          "p50": 1.6916315465,
+          "p95": 3.931206676499996,
+          "p99": 5.36885182019
+        },
+        "decode_s": {
+          "count": 40,
+          "p50": 3.7882911200000002,
+          "p95": 6.18522318465,
+          "p99": 6.26906704776
+        }
+      },
+      "short": {
+        "requests": 8,
+        "completed": 8,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 8,
+          "p50": 0.4955524235,
+          "p95": 3.2308750014499994,
+          "p99": 3.5055823050899995
+        },
+        "itl_s": {
+          "count": 1540,
+          "p50": 0.010745263500000001,
+          "p95": 0.0114841851,
+          "p99": 0.012436612359999995
+        },
+        "itl_single_token_coverage": 0.603448275862069,
+        "batched_token_increments": 1012,
+        "e2e_s": {
+          "count": 8,
+          "p50": 5.1660673685,
+          "p95": 8.399334277399998,
+          "p99": 9.334369143479998
+        },
+        "queue_s": {
+          "count": 8,
+          "p50": 0.0002158625,
+          "p95": 0.0002497002,
+          "p99": 0.00025317444000000003
+        },
+        "client_lateness_s": {
+          "count": 8,
+          "p50": 0.0011636805,
+          "p95": 0.001873016,
+          "p99": 0.001962336
+        },
+        "prefill_s": {
+          "count": 8,
+          "p50": 0.0473454465,
+          "p95": 0.4360521304999999,
+          "p99": 0.5046905325
+        },
+        "transfer_s": {
+          "count": 8,
+          "p50": 0.1119486555,
+          "p95": 2.8194775770499994,
+          "p99": 3.0497350162099996
+        },
+        "decode_kv_wait_s": {
+          "count": 8,
+          "p50": 0.3913543185,
+          "p95": 3.07672964145,
+          "p99": 3.2910785546899994
+        },
+        "decode_s": {
+          "count": 8,
+          "p50": 3.7526698545,
+          "p95": 5.962068170849999,
+          "p99": 5.99536362857
+        }
+      },
+      "long": {
+        "requests": 32,
+        "completed": 32,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 32,
+          "p50": 2.1204627725,
+          "p95": 4.850312589649999,
+          "p99": 5.64437551297
+        },
+        "itl_s": {
+          "count": 6434,
+          "p50": 0.011196769,
+          "p95": 0.011726276299999998,
+          "p99": 0.014334141250000005
+        },
+        "itl_single_token_coverage": 0.6302899686520376,
+        "batched_token_increments": 3766,
+        "e2e_s": {
+          "count": 32,
+          "p50": 7.029979877500001,
+          "p95": 9.3063831214,
+          "p99": 10.099883278430001
+        },
+        "queue_s": {
+          "count": 32,
+          "p50": 0.0002299775,
+          "p95": 0.00030261190000000003,
+          "p99": 0.00031148199
+        },
+        "client_lateness_s": {
+          "count": 32,
+          "p50": 0.001018948,
+          "p95": 0.00449019565,
+          "p99": 0.008041344570000006
+        },
+        "prefill_s": {
+          "count": 32,
+          "p50": 0.5112204874999999,
+          "p95": 0.53392834545,
+          "p99": 0.53668980157
+        },
+        "transfer_s": {
+          "count": 32,
+          "p50": 1.387001611,
+          "p95": 3.983318204999999,
+          "p99": 4.82007027637
+        },
+        "decode_kv_wait_s": {
+          "count": 32,
+          "p50": 1.834446159,
+          "p95": 4.513155136499999,
+          "p99": 5.37613281051
+        },
+        "decode_s": {
+          "count": 32,
+          "p50": 3.875728769,
+          "p95": 6.22012731785,
+          "p99": 6.26919118504
+        }
+      }
+    },
+    "dispatch_reordering_observed": false,
+    "maximum_gateway_queue_ms": 0.313643
+  },
+  {
+    "topology": "pd_fair",
+    "scenario": "20short-low",
+    "repeat": 3,
+    "trace_sha256": "6fb9143ecacc18adeab1600e5f54161c0a2faa354c515366a28f804b5f43f0ea",
+    "duration_s": 157.807785035,
+    "completed_throughput_rps": 0.2534729195465765,
+    "groups": {
+      "all": {
+        "requests": 40,
+        "completed": 40,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 40,
+          "p50": 4.95572151,
+          "p95": 8.507010483399998,
+          "p99": 9.65557300838
+        },
+        "itl_s": {
+          "count": 8101,
+          "p50": 0.011173551,
+          "p95": 0.011889149,
+          "p99": 0.021385523
+        },
+        "itl_single_token_coverage": 0.6348746081504703,
+        "batched_token_increments": 4650,
+        "e2e_s": {
+          "count": 40,
+          "p50": 7.9474039765,
+          "p95": 14.122474078949999,
+          "p99": 15.657722035929998
+        },
+        "queue_s": {
+          "count": 40,
+          "p50": 0.000190187,
+          "p95": 0.00028220139999999996,
+          "p99": 0.00029757378
+        },
+        "client_lateness_s": {
+          "count": 40,
+          "p50": 0.0008963345,
+          "p95": 0.00271826534999999,
+          "p99": 0.00618739234
+        },
+        "prefill_s": {
+          "count": 40,
+          "p50": 0.512932889,
+          "p95": 0.6056355613,
+          "p99": 0.67402149733
+        },
+        "transfer_s": {
+          "count": 40,
+          "p50": 4.3243617345,
+          "p95": 7.675342424949999,
+          "p99": 8.95828865137
+        },
+        "decode_kv_wait_s": {
+          "count": 40,
+          "p50": 4.7747500515,
+          "p95": 8.044275992849999,
+          "p99": 9.48503783068
+        },
+        "decode_s": {
+          "count": 40,
+          "p50": 3.717442276,
+          "p95": 6.2090978552000005,
+          "p99": 6.26996970582
+        }
+      },
+      "short": {
+        "requests": 8,
+        "completed": 8,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 8,
+          "p50": 1.9445033884999998,
+          "p95": 5.7966634248,
+          "p99": 5.92514566176
+        },
+        "itl_s": {
+          "count": 1656,
+          "p50": 0.010807801,
+          "p95": 0.01161506825,
+          "p99": 0.017614177250000182
+        },
+        "itl_single_token_coverage": 0.6489028213166145,
+        "batched_token_increments": 896,
+        "e2e_s": {
+          "count": 8,
+          "p50": 6.372335336,
+          "p95": 9.129919766499999,
+          "p99": 9.7558055053
+        },
+        "queue_s": {
+          "count": 8,
+          "p50": 0.000182964,
+          "p95": 0.00027878814999999997,
+          "p99": 0.00028114883
+        },
+        "client_lateness_s": {
+          "count": 8,
+          "p50": 0.000945514,
+          "p95": 0.0023058524999999995,
+          "p99": 0.0024981256999999997
+        },
+        "prefill_s": {
+          "count": 8,
+          "p50": 0.095101288,
+          "p95": 0.5245617103499998,
+          "p99": 0.6588920236699999
+        },
+        "transfer_s": {
+          "count": 8,
+          "p50": 1.4036208335,
+          "p95": 5.4563052713,
+          "p99": 5.58056704866
+        },
+        "decode_kv_wait_s": {
+          "count": 8,
+          "p50": 1.875622594,
+          "p95": 5.7082630249,
+          "p99": 5.81234251538
+        },
+        "decode_s": {
+          "count": 8,
+          "p50": 3.6798686419999997,
+          "p95": 6.0121156098499995,
+          "p99": 6.04346800197
+        }
+      },
+      "long": {
+        "requests": 32,
+        "completed": 32,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 32,
+          "p50": 5.2629115925,
+          "p95": 8.6267772226,
+          "p99": 9.768899765020002
+        },
+        "itl_s": {
+          "count": 6445,
+          "p50": 0.011206034,
+          "p95": 0.011918832800000001,
+          "p99": 0.022310078439999756
+        },
+        "itl_single_token_coverage": 0.6313675548589341,
+        "batched_token_increments": 3754,
+        "e2e_s": {
+          "count": 32,
+          "p50": 8.89322796,
+          "p95": 14.21460414255,
+          "p99": 15.830369780970003
+        },
+        "queue_s": {
+          "count": 32,
+          "p50": 0.0001974415,
+          "p95": 0.00028459929999999996,
+          "p99": 0.00029843762
+        },
+        "client_lateness_s": {
+          "count": 32,
+          "p50": 0.0008963345,
+          "p95": 0.004042296849999998,
+          "p99": 0.00621359186
+        },
+        "prefill_s": {
+          "count": 32,
+          "p50": 0.5187607515,
+          "p95": 0.5766472985,
+          "p99": 0.63226184354
+        },
+        "transfer_s": {
+          "count": 32,
+          "p50": 4.7154095115,
+          "p95": 7.842067064549999,
+          "p99": 9.074613268730001
+        },
+        "decode_kv_wait_s": {
+          "count": 32,
+          "p50": 5.1079620895,
+          "p95": 8.24373134365,
+          "p99": 9.611864765720002
+        },
+        "decode_s": {
+          "count": 32,
+          "p50": 3.799231661,
+          "p95": 6.2225417048,
+          "p99": 6.27376547078
+        }
+      }
+    },
+    "dispatch_reordering_observed": false,
+    "maximum_gateway_queue_ms": 0.301785
+  },
+  {
+    "topology": "pd_fair",
+    "scenario": "20short-saturated",
+    "repeat": 1,
+    "trace_sha256": "a58b0871a6653f9a2a54739d05944b8601b888580ba318220b9e164003d115d4",
+    "duration_s": 70.245578205,
+    "completed_throughput_rps": 0.5694308598794172,
+    "groups": {
+      "all": {
+        "requests": 40,
+        "completed": 40,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 40,
+          "p50": 21.2025429445,
+          "p95": 35.622203120849996,
+          "p99": 37.85294094456
+        },
+        "itl_s": {
+          "count": 8109,
+          "p50": 0.011387867,
+          "p95": 0.012693122599999999,
+          "p99": 0.018388070120000013
+        },
+        "itl_single_token_coverage": 0.6355015673981191,
+        "batched_token_increments": 4648,
+        "e2e_s": {
+          "count": 40,
+          "p50": 23.9954453715,
+          "p95": 41.462405736950004,
+          "p99": 43.495273597579995
+        },
+        "queue_s": {
+          "count": 40,
+          "p50": 0.000214626,
+          "p95": 0.00027878475,
+          "p99": 0.00028307055
+        },
+        "client_lateness_s": {
+          "count": 40,
+          "p50": 0.0009074725,
+          "p95": 0.0016947839000000001,
+          "p99": 0.00173148198
+        },
+        "prefill_s": {
+          "count": 40,
+          "p50": 0.5043864035000001,
+          "p95": 1.3049320276,
+          "p99": 1.4539119983199997
+        },
+        "transfer_s": {
+          "count": 40,
+          "p50": 19.126518498,
+          "p95": 34.7321601321,
+          "p99": 36.7028153705
+        },
+        "decode_kv_wait_s": {
+          "count": 40,
+          "p50": 20.869149595499998,
+          "p95": 35.29633594594999,
+          "p99": 37.55960107307
+        },
+        "decode_s": {
+          "count": 40,
+          "p50": 3.87155306,
+          "p95": 6.503916875999999,
+          "p99": 6.61323351928
+        }
+      },
+      "short": {
+        "requests": 8,
+        "completed": 8,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 8,
+          "p50": 14.506415183000001,
+          "p95": 32.93600734845,
+          "p99": 34.576530880090004
+        },
+        "itl_s": {
+          "count": 1677,
+          "p50": 0.011513661,
+          "p95": 0.0129064736,
+          "p99": 0.019870868040000003
+        },
+        "itl_single_token_coverage": 0.6571316614420063,
+        "batched_token_increments": 874,
+        "e2e_s": {
+          "count": 8,
+          "p50": 20.624538186000002,
+          "p95": 37.803545958399994,
+          "p99": 40.83034032368
+        },
+        "queue_s": {
+          "count": 8,
+          "p50": 0.000140521,
+          "p95": 0.00025659025,
+          "p99": 0.00025801965
+        },
+        "client_lateness_s": {
+          "count": 8,
+          "p50": 0.0008549765,
+          "p95": 0.00118449755,
+          "p99": 0.0012381195100000001
+        },
+        "prefill_s": {
+          "count": 8,
+          "p50": 0.2322498395,
+          "p95": 0.7107166528499995,
+          "p99": 0.9127278801699998
+        },
+        "transfer_s": {
+          "count": 8,
+          "p50": 13.797474253,
+          "p95": 32.5935876942,
+          "p99": 34.25559239324
+        },
+        "decode_kv_wait_s": {
+          "count": 8,
+          "p50": 14.3149842125,
+          "p95": 32.8312217014,
+          "p99": 34.49212645628
+        },
+        "decode_s": {
+          "count": 8,
+          "p50": 3.97671326,
+          "p95": 6.42230004775,
+          "p99": 6.42489936475
+        }
+      },
+      "long": {
+        "requests": 32,
+        "completed": 32,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 32,
+          "p50": 22.257064083499998,
+          "p95": 36.12017554364999,
+          "p99": 37.99039056024
+        },
+        "itl_s": {
+          "count": 6432,
+          "p50": 0.011378523500000001,
+          "p95": 0.01261562205,
+          "p99": 0.01627204270999956
+        },
+        "itl_single_token_coverage": 0.6300940438871473,
+        "batched_token_increments": 3774,
+        "e2e_s": {
+          "count": 32,
+          "p50": 25.015341274,
+          "p95": 40.894584298750004,
+          "p99": 43.70486410993001
+        },
+        "queue_s": {
+          "count": 32,
+          "p50": 0.0002248415,
+          "p95": 0.00027947075,
+          "p99": 0.00028341895
+        },
+        "client_lateness_s": {
+          "count": 32,
+          "p50": 0.0009074725,
+          "p95": 0.0017038870999999999,
+          "p99": 0.00173345942
+        },
+        "prefill_s": {
+          "count": 32,
+          "p50": 0.5405973545,
+          "p95": 1.3051586004,
+          "p99": 1.4733797832800004
+        },
+        "transfer_s": {
+          "count": 32,
+          "p50": 20.296404201999998,
+          "p95": 34.9934597632,
+          "p99": 36.8090960945
+        },
+        "decode_kv_wait_s": {
+          "count": 32,
+          "p50": 22.034446868499998,
+          "p95": 35.82612564955,
+          "p99": 37.69140626403
+        },
+        "decode_s": {
+          "count": 32,
+          "p50": 3.87155306,
+          "p95": 6.541953436,
+          "p99": 6.61572267512
+        }
+      }
+    },
+    "dispatch_reordering_observed": false,
+    "maximum_gateway_queue_ms": 0.284769
+  },
+  {
+    "topology": "pd_fair",
+    "scenario": "20short-saturated",
+    "repeat": 2,
+    "trace_sha256": "a58b0871a6653f9a2a54739d05944b8601b888580ba318220b9e164003d115d4",
+    "duration_s": 44.738875555,
+    "completed_throughput_rps": 0.894077008055908,
+    "groups": {
+      "all": {
+        "requests": 40,
+        "completed": 40,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 40,
+          "p50": 5.7845999255,
+          "p95": 10.710053041799998,
+          "p99": 12.477532573099998
+        },
+        "itl_s": {
+          "count": 8441,
+          "p50": 0.011923995,
+          "p95": 0.013799857,
+          "p99": 0.04558194460000001
+        },
+        "itl_single_token_coverage": 0.6615203761755486,
+        "batched_token_increments": 4318,
+        "e2e_s": {
+          "count": 40,
+          "p50": 9.9404150255,
+          "p95": 17.14334802395,
+          "p99": 18.41819986459
+        },
+        "queue_s": {
+          "count": 40,
+          "p50": 0.00023681,
+          "p95": 0.00028840659999999994,
+          "p99": 0.00034101244999999996
+        },
+        "client_lateness_s": {
+          "count": 40,
+          "p50": 0.0006864025,
+          "p95": 0.0015353796999999971,
+          "p99": 0.0027252016399999996
+        },
+        "prefill_s": {
+          "count": 40,
+          "p50": 0.50118594,
+          "p95": 1.2298150536,
+          "p99": 1.30293266423
+        },
+        "transfer_s": {
+          "count": 40,
+          "p50": 5.068651838,
+          "p95": 9.346583134199998,
+          "p99": 11.145538159209998
+        },
+        "decode_kv_wait_s": {
+          "count": 40,
+          "p50": 5.5393594055,
+          "p95": 10.538195322149999,
+          "p99": 12.12108039876
+        },
+        "decode_s": {
+          "count": 40,
+          "p50": 3.8800776035,
+          "p95": 7.15693903665,
+          "p99": 7.26140710865
+        }
+      },
+      "short": {
+        "requests": 8,
+        "completed": 8,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 8,
+          "p50": 3.327535576,
+          "p95": 8.151864958549998,
+          "p99": 9.20009084131
+        },
+        "itl_s": {
+          "count": 1740,
+          "p50": 0.0119793955,
+          "p95": 0.013466449949999999,
+          "p99": 0.059885938939999994
+        },
+        "itl_single_token_coverage": 0.6818181818181818,
+        "batched_token_increments": 812,
+        "e2e_s": {
+          "count": 8,
+          "p50": 7.9725459555,
+          "p95": 13.725483697949997,
+          "p99": 15.327616986789998
+        },
+        "queue_s": {
+          "count": 8,
+          "p50": 0.0002388335,
+          "p95": 0.00026993535,
+          "p99": 0.00027079747
+        },
+        "client_lateness_s": {
+          "count": 8,
+          "p50": 0.000727477,
+          "p95": 0.0010661311,
+          "p99": 0.00108935822
+        },
+        "prefill_s": {
+          "count": 8,
+          "p50": 0.2757845785,
+          "p95": 0.7317800718999996,
+          "p99": 0.9134056687799998
+        },
+        "transfer_s": {
+          "count": 8,
+          "p50": 2.9094040705,
+          "p95": 7.8147737234999965,
+          "p99": 8.992126585499998
+        },
+        "decode_kv_wait_s": {
+          "count": 8,
+          "p50": 3.2992939065,
+          "p95": 8.020686382999997,
+          "p99": 9.1557609502
+        },
+        "decode_s": {
+          "count": 8,
+          "p50": 3.9558971525,
+          "p95": 6.47026024215,
+          "p99": 6.47026209323
+        }
+      },
+      "long": {
+        "requests": 32,
+        "completed": 32,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 32,
+          "p50": 6.985615119,
+          "p95": 10.8412089282,
+          "p99": 12.668481333900003
+        },
+        "itl_s": {
+          "count": 6701,
+          "p50": 0.011896032,
+          "p95": 0.013834574,
+          "p99": 0.039501482
+        },
+        "itl_single_token_coverage": 0.6564459247648903,
+        "batched_token_increments": 3506,
+        "e2e_s": {
+          "count": 32,
+          "p50": 10.7854818505,
+          "p95": 17.159445071550003,
+          "p99": 18.580379714110002
+        },
+        "queue_s": {
+          "count": 32,
+          "p50": 0.00023681,
+          "p95": 0.0002947234,
+          "p99": 0.00034594405000000006
+        },
+        "client_lateness_s": {
+          "count": 32,
+          "p50": 0.0006654845,
+          "p95": 0.0019228012999999993,
+          "p99": 0.0027605715600000007
+        },
+        "prefill_s": {
+          "count": 32,
+          "p50": 0.5052329845,
+          "p95": 1.2302211704000001,
+          "p99": 1.3123953636700003
+        },
+        "transfer_s": {
+          "count": 32,
+          "p50": 5.6410199665,
+          "p95": 9.5702857598,
+          "p99": 11.311788820090003
+        },
+        "decode_kv_wait_s": {
+          "count": 32,
+          "p50": 6.6390864385,
+          "p95": 10.66945189935,
+          "p99": 12.287788688040003
+        },
+        "decode_s": {
+          "count": 32,
+          "p50": 3.8800776035,
+          "p95": 7.18783194585,
+          "p99": 7.26548545785
+        }
+      }
+    },
+    "dispatch_reordering_observed": false,
+    "maximum_gateway_queue_ms": 0.36505400000000005
+  },
+  {
+    "topology": "pd_fair",
+    "scenario": "20short-saturated",
+    "repeat": 3,
+    "trace_sha256": "a58b0871a6653f9a2a54739d05944b8601b888580ba318220b9e164003d115d4",
+    "duration_s": 32.724609574,
+    "completed_throughput_rps": 1.2223216875834133,
+    "groups": {
+      "all": {
+        "requests": 40,
+        "completed": 40,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 40,
+          "p50": 0.8974833525,
+          "p95": 1.4788230673,
+          "p99": 1.8069209654999998
+        },
+        "itl_s": {
+          "count": 11858,
+          "p50": 0.012503710500000001,
+          "p95": 0.0142112761,
+          "p99": 0.02096839894
+        },
+        "itl_single_token_coverage": 0.9293103448275862,
+        "batched_token_increments": 902,
+        "e2e_s": {
+          "count": 40,
+          "p50": 5.118736678,
+          "p95": 8.1242663517,
+          "p99": 8.55310982825
+        },
+        "queue_s": {
+          "count": 40,
+          "p50": 0.0002177775,
+          "p95": 0.00026408019999999994,
+          "p99": 0.00029212892
+        },
+        "client_lateness_s": {
+          "count": 40,
+          "p50": 0.000861743,
+          "p95": 0.0017228681499999996,
+          "p99": 0.0019305796799999999
+        },
+        "prefill_s": {
+          "count": 40,
+          "p50": 0.48561785700000004,
+          "p95": 1.04523425275,
+          "p99": 1.0489351658700001
+        },
+        "transfer_s": {
+          "count": 40,
+          "p50": 0.097117555,
+          "p95": 0.9693614336,
+          "p99": 0.97076549484
+        },
+        "decode_kv_wait_s": {
+          "count": 40,
+          "p50": 0.6426924715,
+          "p95": 1.24359129815,
+          "p99": 1.3567982926500002
+        },
+        "decode_s": {
+          "count": 40,
+          "p50": 4.4211848415,
+          "p95": 6.7850756558,
+          "p99": 7.26532550212
+        }
+      },
+      "short": {
+        "requests": 8,
+        "completed": 8,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 8,
+          "p50": 0.1861000865,
+          "p95": 1.1223666654,
+          "p99": 1.1584160426799999
+        },
+        "itl_s": {
+          "count": 2410,
+          "p50": 0.0123417535,
+          "p95": 0.014441534099999997,
+          "p99": 0.02114377255
+        },
+        "itl_single_token_coverage": 0.9443573667711599,
+        "batched_token_increments": 142,
+        "e2e_s": {
+          "count": 8,
+          "p50": 4.615884919,
+          "p95": 6.80120277355,
+          "p99": 6.826712393909999
+        },
+        "queue_s": {
+          "count": 8,
+          "p50": 0.0002124845,
+          "p95": 0.00025561905,
+          "p99": 0.00025841821000000003
+        },
+        "client_lateness_s": {
+          "count": 8,
+          "p50": 0.0008748720000000001,
+          "p95": 0.001504931,
+          "p99": 0.0015516405999999997
+        },
+        "prefill_s": {
+          "count": 8,
+          "p50": 0.0582367575,
+          "p95": 0.7993942844499998,
+          "p99": 0.9165143008899997
+        },
+        "transfer_s": {
+          "count": 8,
+          "p50": 0.009943210000000001,
+          "p95": 0.35610253379999984,
+          "p99": 0.46148134355999987
+        },
+        "decode_kv_wait_s": {
+          "count": 8,
+          "p50": 0.164474196,
+          "p95": 0.9357959831999996,
+          "p99": 1.1014876262399997
+        },
+        "decode_s": {
+          "count": 8,
+          "p50": 3.87508366,
+          "p95": 6.5194028816,
+          "p99": 6.54091723152
+        }
+      },
+      "long": {
+        "requests": 32,
+        "completed": 32,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 32,
+          "p50": 0.9800872629999999,
+          "p95": 1.4826223417,
+          "p99": 1.8487668175000005
+        },
+        "itl_s": {
+          "count": 9448,
+          "p50": 0.0125561285,
+          "p95": 0.01414345215,
+          "p99": 0.020816368620000004
+        },
+        "itl_single_token_coverage": 0.9255485893416928,
+        "batched_token_increments": 760,
+        "e2e_s": {
+          "count": 32,
+          "p50": 5.4496409185,
+          "p95": 8.155161957299999,
+          "p99": 8.59972837425
+        },
+        "queue_s": {
+          "count": 32,
+          "p50": 0.0002177775,
+          "p95": 0.00027016979999999996,
+          "p99": 0.00029391068000000003
+        },
+        "client_lateness_s": {
+          "count": 32,
+          "p50": 0.000861743,
+          "p95": 0.0017644053499999998,
+          "p99": 0.0019448827200000004
+        },
+        "prefill_s": {
+          "count": 32,
+          "p50": 0.48660627450000005,
+          "p95": 1.0453856107500001,
+          "p99": 1.04937338723
+        },
+        "transfer_s": {
+          "count": 32,
+          "p50": 0.4933045925,
+          "p95": 0.9699337024,
+          "p99": 0.97077138636
+        },
+        "decode_kv_wait_s": {
+          "count": 32,
+          "p50": 0.8269873169999999,
+          "p95": 1.26314069935,
+          "p99": 1.3655559538500002
+        },
+        "decode_s": {
+          "count": 32,
+          "p50": 4.4211848415,
+          "p95": 6.7856324222,
+          "p99": 7.32813566948
+        }
+      }
+    },
+    "dispatch_reordering_observed": false,
+    "maximum_gateway_queue_ms": 0.300815
+  },
+  {
+    "topology": "pd_fair",
+    "scenario": "80short-low",
+    "repeat": 1,
+    "trace_sha256": "77abba08835644e4838c68a0533f36bd11cbe4aad406a58bf7a62b449bfe1ad5",
+    "duration_s": 225.171688115,
+    "completed_throughput_rps": 0.17764222640446317,
+    "groups": {
+      "all": {
+        "requests": 40,
+        "completed": 40,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 40,
+          "p50": 0.09989993450000001,
+          "p95": 0.6528293249999999,
+          "p99": 0.67087695056
+        },
+        "itl_s": {
+          "count": 10912,
+          "p50": 0.0106209565,
+          "p95": 0.0113147929,
+          "p99": 0.012626038189999977
+        },
+        "itl_single_token_coverage": 0.8551724137931035,
+        "batched_token_increments": 1844,
+        "e2e_s": {
+          "count": 40,
+          "p50": 3.9307132005,
+          "p95": 6.447112495150001,
+          "p99": 6.48847741246
+        },
+        "queue_s": {
+          "count": 40,
+          "p50": 0.00026791499999999997,
+          "p95": 0.00030541954999999994,
+          "p99": 0.00034528486
+        },
+        "client_lateness_s": {
+          "count": 40,
+          "p50": 0.001627543,
+          "p95": 0.009059895199999996,
+          "p99": 0.011073407599999998
+        },
+        "prefill_s": {
+          "count": 40,
+          "p50": 0.048360829,
+          "p95": 0.5084320931,
+          "p99": 0.52299386671
+        },
+        "transfer_s": {
+          "count": 40,
+          "p50": 0.0086990705,
+          "p95": 0.04046440805,
+          "p99": 0.04300628297
+        },
+        "decode_kv_wait_s": {
+          "count": 40,
+          "p50": 0.06392116749999999,
+          "p95": 0.5614319978500001,
+          "p99": 0.57587040525
+        },
+        "decode_s": {
+          "count": 40,
+          "p50": 3.4531234475,
+          "p95": 5.7021942867,
+          "p99": 5.72111708065
+        }
+      },
+      "short": {
+        "requests": 32,
+        "completed": 32,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 32,
+          "p50": 0.0880553205,
+          "p95": 0.1553088814,
+          "p99": 0.17345299624
+        },
+        "itl_s": {
+          "count": 8684,
+          "p50": 0.0105923405,
+          "p95": 0.01118390585,
+          "p99": 0.012518127400000002
+        },
+        "itl_single_token_coverage": 0.850705329153605,
+        "batched_token_increments": 1520,
+        "e2e_s": {
+          "count": 32,
+          "p50": 3.6587842525000003,
+          "p95": 5.79619144935,
+          "p99": 5.8218655120200005
+        },
+        "queue_s": {
+          "count": 32,
+          "p50": 0.00026791499999999997,
+          "p95": 0.00030953595,
+          "p99": 0.00034923094000000005
+        },
+        "client_lateness_s": {
+          "count": 32,
+          "p50": 0.0013999569999999999,
+          "p95": 0.009350739099999998,
+          "p99": 0.0111643164
+        },
+        "prefill_s": {
+          "count": 32,
+          "p50": 0.0471888385,
+          "p95": 0.051047179299999995,
+          "p99": 0.05536672046000001
+        },
+        "transfer_s": {
+          "count": 32,
+          "p50": 0.008417541,
+          "p95": 0.0139807128,
+          "p99": 0.016849412840000005
+        },
+        "decode_kv_wait_s": {
+          "count": 32,
+          "p50": 0.0635146865,
+          "p95": 0.07766755495,
+          "p99": 0.08452450567000001
+        },
+        "decode_s": {
+          "count": 32,
+          "p50": 3.432496096,
+          "p95": 5.55965233335,
+          "p99": 5.583389629639999
+        }
+      },
+      "long": {
+        "requests": 8,
+        "completed": 8,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 8,
+          "p50": 0.647829168,
+          "p95": 0.6714290744,
+          "p99": 0.67529394128
+        },
+        "itl_s": {
+          "count": 2228,
+          "p50": 0.0109664785,
+          "p95": 0.0115811694,
+          "p99": 0.013538137710000004
+        },
+        "itl_single_token_coverage": 0.8730407523510971,
+        "batched_token_increments": 324,
+        "e2e_s": {
+          "count": 8,
+          "p50": 4.311911414,
+          "p95": 6.4888843958999995,
+          "p99": 6.49173327998
+        },
+        "queue_s": {
+          "count": 8,
+          "p50": 0.000260987,
+          "p95": 0.000278699,
+          "p99": 0.00028013260000000004
+        },
+        "client_lateness_s": {
+          "count": 8,
+          "p50": 0.0022928905000000003,
+          "p95": 0.00819855315,
+          "p99": 0.00883203383
+        },
+        "prefill_s": {
+          "count": 8,
+          "p50": 0.5080951380000001,
+          "p95": 0.5239020991500001,
+          "p99": 0.53025972623
+        },
+        "transfer_s": {
+          "count": 8,
+          "p50": 0.039944988,
+          "p95": 0.04313600605,
+          "p99": 0.04404406761
+        },
+        "decode_kv_wait_s": {
+          "count": 8,
+          "p50": 0.557450438,
+          "p95": 0.57637114225,
+          "p99": 0.57987630125
+        },
+        "decode_s": {
+          "count": 8,
+          "p50": 3.553809724,
+          "p95": 5.72213507925,
+          "p99": 5.72926106945
+        }
+      }
+    },
+    "dispatch_reordering_observed": false,
+    "maximum_gateway_queue_ms": 0.364522
+  },
+  {
+    "topology": "pd_fair",
+    "scenario": "80short-low",
+    "repeat": 2,
+    "trace_sha256": "77abba08835644e4838c68a0533f36bd11cbe4aad406a58bf7a62b449bfe1ad5",
+    "duration_s": 225.182668557,
+    "completed_throughput_rps": 0.17763356414738857,
+    "groups": {
+      "all": {
+        "requests": 40,
+        "completed": 40,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 40,
+          "p50": 0.112979644,
+          "p95": 0.667831405,
+          "p99": 0.6769161028799999
+        },
+        "itl_s": {
+          "count": 9982,
+          "p50": 0.010620422000000001,
+          "p95": 0.011287032149999997,
+          "p99": 0.014237977010000008
+        },
+        "itl_single_token_coverage": 0.7822884012539185,
+        "batched_token_increments": 2774,
+        "e2e_s": {
+          "count": 40,
+          "p50": 3.9775067139999996,
+          "p95": 6.5338196992999995,
+          "p99": 6.58508071023
+        },
+        "queue_s": {
+          "count": 40,
+          "p50": 0.000247572,
+          "p95": 0.00028350235,
+          "p99": 0.00028848063
+        },
+        "client_lateness_s": {
+          "count": 40,
+          "p50": 0.00171543,
+          "p95": 0.011117366599999998,
+          "p99": 0.012015905930000001
+        },
+        "prefill_s": {
+          "count": 40,
+          "p50": 0.0500578485,
+          "p95": 0.5185971176499999,
+          "p99": 0.5350983501700001
+        },
+        "transfer_s": {
+          "count": 40,
+          "p50": 0.010693629,
+          "p95": 0.0437050207,
+          "p99": 0.050909094679999996
+        },
+        "decode_kv_wait_s": {
+          "count": 40,
+          "p50": 0.06720356350000001,
+          "p95": 0.5805748881999999,
+          "p99": 0.5861292824
+        },
+        "decode_s": {
+          "count": 40,
+          "p50": 3.4684346374999997,
+          "p95": 5.74831396615,
+          "p99": 5.76109961233
+        }
+      },
+      "short": {
+        "requests": 32,
+        "completed": 32,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 32,
+          "p50": 0.098276313,
+          "p95": 0.17083142315,
+          "p99": 0.17808914224
+        },
+        "itl_s": {
+          "count": 7954,
+          "p50": 0.0105948415,
+          "p95": 0.01115417245,
+          "p99": 0.013633469870000036
+        },
+        "itl_single_token_coverage": 0.779192789968652,
+        "batched_token_increments": 2250,
+        "e2e_s": {
+          "count": 32,
+          "p50": 3.7025284765,
+          "p95": 5.7946708203,
+          "p99": 5.83218743081
+        },
+        "queue_s": {
+          "count": 32,
+          "p50": 0.000246812,
+          "p95": 0.0002797859,
+          "p99": 0.00028879127
+        },
+        "client_lateness_s": {
+          "count": 32,
+          "p50": 0.001637854,
+          "p95": 0.0113787554,
+          "p99": 0.01205233097
+        },
+        "prefill_s": {
+          "count": 32,
+          "p50": 0.048930759000000004,
+          "p95": 0.05344056945,
+          "p99": 0.05746322351
+        },
+        "transfer_s": {
+          "count": 32,
+          "p50": 0.0100989715,
+          "p95": 0.020728938499999995,
+          "p99": 0.03697715403000003
+        },
+        "decode_kv_wait_s": {
+          "count": 32,
+          "p50": 0.0653063155,
+          "p95": 0.08746545574999998,
+          "p99": 0.10292971267
+        },
+        "decode_s": {
+          "count": 32,
+          "p50": 3.452780974,
+          "p95": 5.5978920986,
+          "p99": 5.62900351193
+        }
+      },
+      "long": {
+        "requests": 8,
+        "completed": 8,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 8,
+          "p50": 0.6446251235,
+          "p95": 0.6772016872,
+          "p99": 0.67920077744
+        },
+        "itl_s": {
+          "count": 2028,
+          "p50": 0.01098968,
+          "p95": 0.011598953149999999,
+          "p99": 0.016397645490000005
+        },
+        "itl_single_token_coverage": 0.7946708463949843,
+        "batched_token_increments": 524,
+        "e2e_s": {
+          "count": 8,
+          "p50": 4.36639221,
+          "p95": 6.585673003949999,
+          "p99": 6.58981905999
+        },
+        "queue_s": {
+          "count": 8,
+          "p50": 0.0002533785,
+          "p95": 0.00028156005,
+          "p99": 0.00028300401
+        },
+        "client_lateness_s": {
+          "count": 8,
+          "p50": 0.0020572045,
+          "p95": 0.006801376349999998,
+          "p99": 0.007512772069999999
+        },
+        "prefill_s": {
+          "count": 8,
+          "p50": 0.5174509715,
+          "p95": 0.53569007405,
+          "p99": 0.53983214121
+        },
+        "transfer_s": {
+          "count": 8,
+          "p50": 0.042915237,
+          "p95": 0.05134498219999999,
+          "p99": 0.05439619484
+        },
+        "decode_kv_wait_s": {
+          "count": 8,
+          "p50": 0.5684025804999999,
+          "p95": 0.586401764,
+          "p99": 0.5883091351999999
+        },
+        "decode_s": {
+          "count": 8,
+          "p50": 3.565627784,
+          "p95": 5.76124351845,
+          "p99": 5.76225086129
+        }
+      }
+    },
+    "dispatch_reordering_observed": false,
+    "maximum_gateway_queue_ms": 0.289995
+  },
+  {
+    "topology": "pd_fair",
+    "scenario": "80short-low",
+    "repeat": 3,
+    "trace_sha256": "77abba08835644e4838c68a0533f36bd11cbe4aad406a58bf7a62b449bfe1ad5",
+    "duration_s": 225.234595864,
+    "completed_throughput_rps": 0.17759261114643593,
+    "groups": {
+      "all": {
+        "requests": 40,
+        "completed": 40,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 40,
+          "p50": 0.120459184,
+          "p95": 0.6788528240499999,
+          "p99": 0.69346398741
+        },
+        "itl_s": {
+          "count": 9576,
+          "p50": 0.0106355035,
+          "p95": 0.0112954735,
+          "p99": 0.013093101999999999
+        },
+        "itl_single_token_coverage": 0.7504702194357367,
+        "batched_token_increments": 3180,
+        "e2e_s": {
+          "count": 40,
+          "p50": 3.983252801,
+          "p95": 6.5491946935000005,
+          "p99": 6.5741271372300005
+        },
+        "queue_s": {
+          "count": 40,
+          "p50": 0.0002651635,
+          "p95": 0.0002911038,
+          "p99": 0.00032894949000000003
+        },
+        "client_lateness_s": {
+          "count": 40,
+          "p50": 0.0019496875,
+          "p95": 0.009921944749999998,
+          "p99": 0.01142900475
+        },
+        "prefill_s": {
+          "count": 40,
+          "p50": 0.0496368265,
+          "p95": 0.5242860490499999,
+          "p99": 0.53456703572
+        },
+        "transfer_s": {
+          "count": 40,
+          "p50": 0.0099692345,
+          "p95": 0.048401470300000006,
+          "p99": 0.05765258749999999
+        },
+        "decode_kv_wait_s": {
+          "count": 40,
+          "p50": 0.0719378545,
+          "p95": 0.5881811686,
+          "p99": 0.6069215507
+        },
+        "decode_s": {
+          "count": 40,
+          "p50": 3.5041187765,
+          "p95": 5.77242868305,
+          "p99": 5.80141170265
+        }
+      },
+      "short": {
+        "requests": 32,
+        "completed": 32,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 32,
+          "p50": 0.08778728,
+          "p95": 0.22901271994999997,
+          "p99": 0.25529254202
+        },
+        "itl_s": {
+          "count": 7596,
+          "p50": 0.010610314499999999,
+          "p95": 0.011183236249999999,
+          "p99": 0.01212852190000001
+        },
+        "itl_single_token_coverage": 0.7441222570532915,
+        "batched_token_increments": 2608,
+        "e2e_s": {
+          "count": 32,
+          "p50": 3.6990334585,
+          "p95": 5.8791488327,
+          "p99": 5.90375559079
+        },
+        "queue_s": {
+          "count": 32,
+          "p50": 0.0002598975,
+          "p95": 0.00028730145000000005,
+          "p99": 0.0003323178000000001
+        },
+        "client_lateness_s": {
+          "count": 32,
+          "p50": 0.0018175215,
+          "p95": 0.010435478749999998,
+          "p99": 0.01146669875
+        },
+        "prefill_s": {
+          "count": 32,
+          "p50": 0.04900278,
+          "p95": 0.057153313549999994,
+          "p99": 0.06430000127999999
+        },
+        "transfer_s": {
+          "count": 32,
+          "p50": 0.009322867,
+          "p95": 0.021883687149999997,
+          "p99": 0.02288630905
+        },
+        "decode_kv_wait_s": {
+          "count": 32,
+          "p50": 0.0669070425,
+          "p95": 0.0799462715,
+          "p99": 0.09510014697000004
+        },
+        "decode_s": {
+          "count": 32,
+          "p50": 3.4920341374999997,
+          "p95": 5.64533340945,
+          "p99": 5.6679219578
+        }
+      },
+      "long": {
+        "requests": 8,
+        "completed": 8,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 8,
+          "p50": 0.668437902,
+          "p95": 0.69377336665,
+          "p99": 0.69593902133
+        },
+        "itl_s": {
+          "count": 1980,
+          "p50": 0.011000218999999999,
+          "p95": 0.01166096525,
+          "p99": 0.022447714760000004
+        },
+        "itl_single_token_coverage": 0.7758620689655172,
+        "batched_token_increments": 572,
+        "e2e_s": {
+          "count": 8,
+          "p50": 4.3816924185,
+          "p95": 6.574942770949999,
+          "p99": 6.58065220699
+        },
+        "queue_s": {
+          "count": 8,
+          "p50": 0.0002719125,
+          "p95": 0.00029234940000000004,
+          "p99": 0.00029293068
+        },
+        "client_lateness_s": {
+          "count": 8,
+          "p50": 0.0033280404999999997,
+          "p95": 0.007426955949999998,
+          "p99": 0.008141835989999999
+        },
+        "prefill_s": {
+          "count": 8,
+          "p50": 0.5216942765,
+          "p95": 0.5347405618000001,
+          "p99": 0.53595524436
+        },
+        "transfer_s": {
+          "count": 8,
+          "p50": 0.0476665915,
+          "p95": 0.05823239349999999,
+          "p99": 0.06229103549999999
+        },
+        "decode_kv_wait_s": {
+          "count": 8,
+          "p50": 0.5790743190000001,
+          "p95": 0.6076544415,
+          "p99": 0.6127846771
+        },
+        "decode_s": {
+          "count": 8,
+          "p50": 3.6089893165,
+          "p95": 5.8021158252500005,
+          "p99": 5.80704468345
+        }
+      }
+    },
+    "dispatch_reordering_observed": false,
+    "maximum_gateway_queue_ms": 0.351885
+  },
+  {
+    "topology": "pd_fair",
+    "scenario": "80short-saturated",
+    "repeat": 1,
+    "trace_sha256": "6351d639f571a9216185aaf467a1e641978347d50accd4cddbb0fa1408eab092",
+    "duration_s": 20.253560631,
+    "completed_throughput_rps": 1.9749613773479513,
+    "groups": {
+      "all": {
+        "requests": 40,
+        "completed": 40,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 40,
+          "p50": 0.216582553,
+          "p95": 0.6666775732499999,
+          "p99": 0.8600363539399998
+        },
+        "itl_s": {
+          "count": 9132,
+          "p50": 0.011960469500000001,
+          "p95": 0.01368914174999999,
+          "p99": 0.02522040538000008
+        },
+        "itl_single_token_coverage": 0.7156739811912226,
+        "batched_token_increments": 3628,
+        "e2e_s": {
+          "count": 40,
+          "p50": 4.3273286595,
+          "p95": 7.13991648765,
+          "p99": 7.54627675007
+        },
+        "queue_s": {
+          "count": 40,
+          "p50": 0.00018799700000000002,
+          "p95": 0.00026329965,
+          "p99": 0.00027300705
+        },
+        "client_lateness_s": {
+          "count": 40,
+          "p50": 0.0006929655,
+          "p95": 0.0011807144999999993,
+          "p99": 0.0017247926199999996
+        },
+        "prefill_s": {
+          "count": 40,
+          "p50": 0.039982585,
+          "p95": 0.5105086896999997,
+          "p99": 0.5932086913
+        },
+        "transfer_s": {
+          "count": 40,
+          "p50": 0.0091086025,
+          "p95": 0.10482865564999996,
+          "p99": 0.35239960396999975
+        },
+        "decode_kv_wait_s": {
+          "count": 40,
+          "p50": 0.08034692700000001,
+          "p95": 0.6195647727999999,
+          "p99": 0.7038160420899999
+        },
+        "decode_s": {
+          "count": 40,
+          "p50": 3.8332909355,
+          "p95": 6.4596693629,
+          "p99": 6.4666238503999995
+        }
+      },
+      "short": {
+        "requests": 32,
+        "completed": 32,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 32,
+          "p50": 0.1690533295,
+          "p95": 0.6352247462,
+          "p99": 0.64884364109
+        },
+        "itl_s": {
+          "count": 7290,
+          "p50": 0.0119424915,
+          "p95": 0.013643197299999996,
+          "p99": 0.024420184039999786
+        },
+        "itl_single_token_coverage": 0.7141457680250783,
+        "batched_token_increments": 2918,
+        "e2e_s": {
+          "count": 32,
+          "p50": 4.29334984,
+          "p95": 6.83915739345,
+          "p99": 7.0084993116600005
+        },
+        "queue_s": {
+          "count": 32,
+          "p50": 0.0001755215,
+          "p95": 0.0002580802,
+          "p99": 0.00027383122000000003
+        },
+        "client_lateness_s": {
+          "count": 32,
+          "p50": 0.0008126699999999999,
+          "p95": 0.0012823185,
+          "p99": 0.0017644999800000005
+        },
+        "prefill_s": {
+          "count": 32,
+          "p50": 0.0381327395,
+          "p95": 0.32748371424999967,
+          "p99": 0.5932480617
+        },
+        "transfer_s": {
+          "count": 32,
+          "p50": 0.0086513285,
+          "p95": 0.0493280449,
+          "p99": 0.052542881390000004
+        },
+        "decode_kv_wait_s": {
+          "count": 32,
+          "p50": 0.059814385,
+          "p95": 0.6125335225,
+          "p99": 0.62916818784
+        },
+        "decode_s": {
+          "count": 32,
+          "p50": 3.8332909355,
+          "p95": 6.4620459381,
+          "p99": 6.4667956696
+        }
+      },
+      "long": {
+        "requests": 8,
+        "completed": 8,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 8,
+          "p50": 0.6382528384999999,
+          "p95": 0.8706588560999998,
+          "p99": 0.9450163712199999
+        },
+        "itl_s": {
+          "count": 1842,
+          "p50": 0.012032381,
+          "p95": 0.0138252246,
+          "p99": 0.027331580489999868
+        },
+        "itl_single_token_coverage": 0.7217868338557993,
+        "batched_token_increments": 710,
+        "e2e_s": {
+          "count": 8,
+          "p50": 4.5863672485,
+          "p95": 7.564681289549999,
+          "p99": 7.6935130659099995
+        },
+        "queue_s": {
+          "count": 8,
+          "p50": 0.00022487499999999998,
+          "p95": 0.0002558684,
+          "p99": 0.00026259848
+        },
+        "client_lateness_s": {
+          "count": 8,
+          "p50": 0.0004079595,
+          "p95": 0.0008793178499999995,
+          "p99": 0.0010433667699999997
+        },
+        "prefill_s": {
+          "count": 8,
+          "p50": 0.4811779585,
+          "p95": 0.5041281666999999,
+          "p99": 0.50576311974
+        },
+        "transfer_s": {
+          "count": 8,
+          "p50": 0.064771727,
+          "p95": 0.3678770790499998,
+          "p99": 0.47621940460999984
+        },
+        "decode_kv_wait_s": {
+          "count": 8,
+          "p50": 0.5623956555,
+          "p95": 0.6912157778999999,
+          "p99": 0.7370973243799999
+        },
+        "decode_s": {
+          "count": 8,
+          "p50": 3.8762556985,
+          "p95": 6.453310420200001,
+          "p99": 6.4557249072400005
+        }
+      }
+    },
+    "dispatch_reordering_observed": false,
+    "maximum_gateway_queue_ms": 0.278586
+  },
+  {
+    "topology": "pd_fair",
+    "scenario": "80short-saturated",
+    "repeat": 2,
+    "trace_sha256": "6351d639f571a9216185aaf467a1e641978347d50accd4cddbb0fa1408eab092",
+    "duration_s": 20.298455498,
+    "completed_throughput_rps": 1.9705932800621795,
+    "groups": {
+      "all": {
+        "requests": 40,
+        "completed": 40,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 40,
+          "p50": 0.307098804,
+          "p95": 0.6858102833999998,
+          "p99": 0.9460138546599999
+        },
+        "itl_s": {
+          "count": 9248,
+          "p50": 0.0119261025,
+          "p95": 0.013538488449999999,
+          "p99": 0.03419968677
+        },
+        "itl_single_token_coverage": 0.7247648902821316,
+        "batched_token_increments": 3512,
+        "e2e_s": {
+          "count": 40,
+          "p50": 4.408033586,
+          "p95": 7.215401304449999,
+          "p99": 7.35041928751
+        },
+        "queue_s": {
+          "count": 40,
+          "p50": 0.000183775,
+          "p95": 0.0002762112,
+          "p99": 0.00028498966
+        },
+        "client_lateness_s": {
+          "count": 40,
+          "p50": 0.0007073439999999999,
+          "p95": 0.0012135774499999993,
+          "p99": 0.0016574930099999999
+        },
+        "prefill_s": {
+          "count": 40,
+          "p50": 0.0440483435,
+          "p95": 0.5319253478999999,
+          "p99": 0.5702805393099999
+        },
+        "transfer_s": {
+          "count": 40,
+          "p50": 0.0108359345,
+          "p95": 0.11570050274999888,
+          "p99": 0.50023965909
+        },
+        "decode_kv_wait_s": {
+          "count": 40,
+          "p50": 0.09894777499999999,
+          "p95": 0.6037849046999999,
+          "p99": 0.76129691521
+        },
+        "decode_s": {
+          "count": 40,
+          "p50": 3.8374753090000002,
+          "p95": 6.47829925355,
+          "p99": 6.48807732767
+        }
+      },
+      "short": {
+        "requests": 32,
+        "completed": 32,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 32,
+          "p50": 0.2359564805,
+          "p95": 0.63599036395,
+          "p99": 0.648335947
+        },
+        "itl_s": {
+          "count": 7370,
+          "p50": 0.011908334,
+          "p95": 0.013527843149999993,
+          "p99": 0.03415897234999999
+        },
+        "itl_single_token_coverage": 0.7219827586206896,
+        "batched_token_increments": 2838,
+        "e2e_s": {
+          "count": 32,
+          "p50": 4.264074453,
+          "p95": 6.8922523068,
+          "p99": 6.94837068271
+        },
+        "queue_s": {
+          "count": 32,
+          "p50": 0.0001796875,
+          "p95": 0.0002626875,
+          "p99": 0.00027210633
+        },
+        "client_lateness_s": {
+          "count": 32,
+          "p50": 0.000677879,
+          "p95": 0.0011370926500000001,
+          "p99": 0.001583222370000001
+        },
+        "prefill_s": {
+          "count": 32,
+          "p50": 0.042754230000000004,
+          "p95": 0.3171471564499997,
+          "p99": 0.5703070729899999
+        },
+        "transfer_s": {
+          "count": 32,
+          "p50": 0.009174342,
+          "p95": 0.04816304075,
+          "p99": 0.3505237586800005
+        },
+        "decode_kv_wait_s": {
+          "count": 32,
+          "p50": 0.075670723,
+          "p95": 0.5917715608,
+          "p99": 0.6150304519400001
+        },
+        "decode_s": {
+          "count": 32,
+          "p50": 3.836556538,
+          "p95": 6.48135731395,
+          "p99": 6.488407187430001
+        }
+      },
+      "long": {
+        "requests": 8,
+        "completed": 8,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 8,
+          "p50": 0.6681990680000001,
+          "p95": 0.9608270949,
+          "p99": 1.06451977658
+        },
+        "itl_s": {
+          "count": 1878,
+          "p50": 0.012018187999999999,
+          "p95": 0.013644007549999995,
+          "p99": 0.034346636730000005
+        },
+        "itl_single_token_coverage": 0.7358934169278997,
+        "batched_token_increments": 674,
+        "e2e_s": {
+          "count": 8,
+          "p50": 4.7414575135,
+          "p95": 7.35746109515,
+          "p99": 7.40675374863
+        },
+        "queue_s": {
+          "count": 8,
+          "p50": 0.00020814599999999998,
+          "p95": 0.0002854579,
+          "p99": 0.00028873558
+        },
+        "client_lateness_s": {
+          "count": 8,
+          "p50": 0.0008634090000000001,
+          "p95": 0.0013738428499999998,
+          "p99": 0.0014486333700000002
+        },
+        "prefill_s": {
+          "count": 8,
+          "p50": 0.484189825,
+          "p95": 0.5268701964,
+          "p99": 0.5293078808799999
+        },
+        "transfer_s": {
+          "count": 8,
+          "p50": 0.07731083450000001,
+          "p95": 0.36471502259999977,
+          "p99": 0.48037995491999985
+        },
+        "decode_kv_wait_s": {
+          "count": 8,
+          "p50": 0.5670768845,
+          "p95": 0.7634621067499998,
+          "p99": 0.8326725949499999
+        },
+        "decode_s": {
+          "count": 8,
+          "p50": 3.897533664,
+          "p95": 6.467442632399999,
+          "p99": 6.47557659208
+        }
+      }
+    },
+    "dispatch_reordering_observed": false,
+    "maximum_gateway_queue_ms": 0.289555
+  },
+  {
+    "topology": "pd_fair",
+    "scenario": "80short-saturated",
+    "repeat": 3,
+    "trace_sha256": "6351d639f571a9216185aaf467a1e641978347d50accd4cddbb0fa1408eab092",
+    "duration_s": 20.376424962,
+    "completed_throughput_rps": 1.9630528944403156,
+    "groups": {
+      "all": {
+        "requests": 40,
+        "completed": 40,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 40,
+          "p50": 0.2671617085,
+          "p95": 0.7741960148499997,
+          "p99": 0.92585576713
+        },
+        "itl_s": {
+          "count": 8658,
+          "p50": 0.0119002445,
+          "p95": 0.013693180849999998,
+          "p99": 0.04138997824000002
+        },
+        "itl_single_token_coverage": 0.6785266457680251,
+        "batched_token_increments": 4102,
+        "e2e_s": {
+          "count": 40,
+          "p50": 4.390499148,
+          "p95": 7.37665211635,
+          "p99": 7.61970962776
+        },
+        "queue_s": {
+          "count": 40,
+          "p50": 0.0001830205,
+          "p95": 0.0002688674,
+          "p99": 0.00030644376
+        },
+        "client_lateness_s": {
+          "count": 40,
+          "p50": 0.0007344809999999999,
+          "p95": 0.0014385340499999991,
+          "p99": 0.0019945816
+        },
+        "prefill_s": {
+          "count": 40,
+          "p50": 0.041805867999999996,
+          "p95": 0.567629329,
+          "p99": 0.57461615176
+        },
+        "transfer_s": {
+          "count": 40,
+          "p50": 0.008997255499999999,
+          "p95": 0.10708532114999879,
+          "p99": 0.52195050375
+        },
+        "decode_kv_wait_s": {
+          "count": 40,
+          "p50": 0.1123812,
+          "p95": 0.6856622381499999,
+          "p99": 0.75164742718
+        },
+        "decode_s": {
+          "count": 40,
+          "p50": 3.845163464,
+          "p95": 6.53133359875,
+          "p99": 6.53969604093
+        }
+      },
+      "short": {
+        "requests": 32,
+        "completed": 32,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 32,
+          "p50": 0.207052605,
+          "p95": 0.65660422535,
+          "p99": 0.7317309503600001
+        },
+        "itl_s": {
+          "count": 6906,
+          "p50": 0.011883002,
+          "p95": 0.013674459,
+          "p99": 0.02920277539999999
+        },
+        "itl_single_token_coverage": 0.6765282131661442,
+        "batched_token_increments": 3302,
+        "e2e_s": {
+          "count": 32,
+          "p50": 4.373861327,
+          "p95": 7.03243559555,
+          "p99": 7.121523649350001
+        },
+        "queue_s": {
+          "count": 32,
+          "p50": 0.00017040300000000001,
+          "p95": 0.00026068985,
+          "p99": 0.00027235412
+        },
+        "client_lateness_s": {
+          "count": 32,
+          "p50": 0.000744941,
+          "p95": 0.0014131691,
+          "p99": 0.001947515090000001
+        },
+        "prefill_s": {
+          "count": 32,
+          "p50": 0.0371096815,
+          "p95": 0.56616879045,
+          "p99": 0.57528203684
+        },
+        "transfer_s": {
+          "count": 32,
+          "p50": 0.008103272,
+          "p95": 0.052974938999999985,
+          "p99": 0.38433656941000055
+        },
+        "decode_kv_wait_s": {
+          "count": 32,
+          "p50": 0.0640992455,
+          "p95": 0.5975387269000001,
+          "p99": 0.6719472165700001
+        },
+        "decode_s": {
+          "count": 32,
+          "p50": 3.845163464,
+          "p95": 6.5331549967499996,
+          "p99": 6.54022543397
+        }
+      },
+      "long": {
+        "requests": 8,
+        "completed": 8,
+        "failed": 0,
+        "rejected": 0,
+        "failure_rate": 0.0,
+        "rejection_rate": 0.0,
+        "ttft_s": {
+          "count": 8,
+          "p50": 0.721549111,
+          "p95": 0.9292098444499999,
+          "p99": 0.95268838569
+        },
+        "itl_s": {
+          "count": 1752,
+          "p50": 0.0119758655,
+          "p95": 0.013769295449999996,
+          "p99": 0.04180454753
+        },
+        "itl_single_token_coverage": 0.6865203761755486,
+        "batched_token_increments": 800,
+        "e2e_s": {
+          "count": 8,
+          "p50": 4.7576119375,
+          "p95": 7.6297000324,
+          "p99": 7.699632864879999
+        },
+        "queue_s": {
+          "count": 8,
+          "p50": 0.0002512685,
+          "p95": 0.00030467569999999993,
+          "p99": 0.00032266234
+        },
+        "client_lateness_s": {
+          "count": 8,
+          "p50": 0.0005203135,
+          "p95": 0.0014271261499999995,
+          "p99": 0.0016460892299999998
+        },
+        "prefill_s": {
+          "count": 8,
+          "p50": 0.49352802100000004,
+          "p95": 0.55050922205,
+          "p99": 0.56464323481
+        },
+        "transfer_s": {
+          "count": 8,
+          "p50": 0.065721638,
+          "p95": 0.36309549494999976,
+          "p99": 0.4825669093899999
+        },
+        "decode_kv_wait_s": {
+          "count": 8,
+          "p50": 0.572482419,
+          "p95": 0.7482782916499999,
+          "p99": 0.77565340473
+        },
+        "decode_s": {
+          "count": 8,
+          "p50": 3.910118745,
+          "p95": 6.5261796686,
+          "p99": 6.527140702520001
+        }
+      }
+    },
+    "dispatch_reordering_observed": false,
+    "maximum_gateway_queue_ms": 0.327159
+  }
+]

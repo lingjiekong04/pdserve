@@ -1,0 +1,85 @@
+{
+  "renderer": "bundled Poppler pdftoppm",
+  "dpi": 100,
+  "pages": [
+    {
+      "page": 1,
+      "render_sha256": "90f9b2bdf793ba1b14a07d9dec89a2df8b4d913d8a20979a3e19abc1e6359b2e",
+      "visually_inspected": true,
+      "issues_found": []
+    },
+    {
+      "page": 2,
+      "render_sha256": "fa222afd430a87a82cf8181c4eaeddbca5d56ef366854a8cff5c3757b3554641",
+      "visually_inspected": true,
+      "issues_found": []
+    },
+    {
+      "page": 3,
+      "render_sha256": "69464f270e564fd0c63d8e47c049d18a3f952cd9b571e22905aec4c3155f446c",
+      "visually_inspected": true,
+      "issues_found": []
+    },
+    {
+      "page": 4,
+      "render_sha256": "3049596cd6debb7daeca893b9d08e1854f0dab084d791f68be48c4e0de2dfcad",
+      "visually_inspected": true,
+      "issues_found": []
+    },
+    {
+      "page": 5,
+      "render_sha256": "c50b74cc3ae6f8405627d4ce514e2da0cf2daadafecbada25c52b2686f2596b2",
+      "visually_inspected": true,
+      "issues_found": []
+    },
+    {
+      "page": 6,
+      "render_sha256": "fe28ffae8410f1929892e0eab893f37577a2df5d783c22bdee4f81c751f4b3b7",
+      "visually_inspected": true,
+      "issues_found": []
+    },
+    {
+      "page": 7,
+      "render_sha256": "e269b448183c62ec80f3514e7f56ce135a1446fb6f7224ad617259bd21f608fb",
+      "visually_inspected": true,
+      "issues_found": []
+    },
+    {
+      "page": 8,
+      "render_sha256": "af3f1bcab383b32d4e36377a96f04ce7cc3f6de03cbbbb4c40f36d428ec24779",
+      "visually_inspected": true,
+      "issues_found": []
+    },
+    {
+      "page": 9,
+      "render_sha256": "01fe06f460684f52be749c2283fc2c0be1d105ae218bf09ec64e038361c464f7",
+      "visually_inspected": true,
+      "issues_found": []
+    },
+    {
+      "page": 10,
+      "render_sha256": "f540979c0a8eb7fd2fe07426d6992d76a8ef0d632cc42bf64946636268b69880",
+      "visually_inspected": true,
+      "issues_found": []
+    },
+    {
+      "page": 11,
+      "render_sha256": "5480560f3fc72b34f46056770b4f6bcbdf722557f425f674e2099474122587c6",
+      "visually_inspected": true,
+      "issues_found": []
+    },
+    {
+      "page": 12,
+      "render_sha256": "bde50f4a0929c37db4576aa4bb0c81a9431cb4228c5fa2678fa195cfa22ae1c0",
+      "visually_inspected": true,
+      "issues_found": []
+    },
+    {
+      "page": 13,
+      "render_sha256": "e9855ce0fb058fb1da5254e8f8e20be2219e3eb785746e2e3705a8a985053c34",
+      "visually_inspected": true,
+      "issues_found": []
+    }
+  ],
+  "renderer_notes": "Poppler reported missing system display fonts Symbol/ArialUnicode; rendered embedded CJK/Mono content and charts were visually correct. No dependencies installed."
+}

@@ -1,0 +1,609 @@
+[
+  {
+    "candidate_path": ".gitattributes",
+    "candidate_sha256": "e3db5c2f645625ef697d6e48cc408422389c99b75edef84c2815b2e38c34e1c4",
+    "kind": "new",
+    "note": "Publication tooling/documentation or new portable wrapper; no historical GPU claim."
+  },
+  {
+    "candidate_path": ".github/workflows/cpu.yml",
+    "candidate_sha256": "d305f16c927a6d1f8420ecd77038bf19cba04d6ad0443224070501e8db27b0e9",
+    "kind": "new",
+    "note": "Publication tooling/documentation or new portable wrapper; no historical GPU claim."
+  },
+  {
+    "candidate_path": ".gitignore",
+    "candidate_sha256": "e81fdf96688561ae4af47078e602eb9b3d1f57146858ad6bd8f3066ee187b24c",
+    "kind": "new",
+    "note": "Publication tooling/documentation or new portable wrapper; no historical GPU claim."
+  },
+  {
+    "candidate_path": "benchmarks/__init__.py",
+    "candidate_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "kind": "new",
+    "note": "Publication tooling/documentation or new portable wrapper; no historical GPU claim."
+  },
+  {
+    "candidate_path": "benchmarks/aggregate.py",
+    "candidate_sha256": "beede0413df7b262ce68baa6e25289635895d8c075e2c07ba7a9c87fff159a52",
+    "source_path": "stage3d/aggregate.py",
+    "source_sha256": "beede0413df7b262ce68baa6e25289635895d8c075e2c07ba7a9c87fff159a52",
+    "kind": "byte-identical",
+    "note": ""
+  },
+  {
+    "candidate_path": "benchmarks/analyze.py",
+    "candidate_sha256": "2ace902dd106a9461a76af279c96a5b552ab7152eaa7ec6001feba3023d85378",
+    "source_path": "stage3d/analyze.py",
+    "source_sha256": "2ace902dd106a9461a76af279c96a5b552ab7152eaa7ec6001feba3023d85378",
+    "kind": "byte-identical",
+    "note": ""
+  },
+  {
+    "candidate_path": "benchmarks/benchmark_config.py",
+    "candidate_sha256": "80061dc7a600a91b6e30bf343a1c6f7fae2ea2b389058d33c0c0d2f99be3f1a1",
+    "source_path": "stage3d/benchmark_config.py",
+    "source_sha256": "80061dc7a600a91b6e30bf343a1c6f7fae2ea2b389058d33c0c0d2f99be3f1a1",
+    "kind": "byte-identical",
+    "note": ""
+  },
+  {
+    "candidate_path": "benchmarks/campaign.py",
+    "candidate_sha256": "cdf45d1606ce82c6e96b5d555f6e4e3f0b5574b3b719636d263ea5cae2e9ccfc",
+    "source_path": "stage3d/campaign.py",
+    "source_sha256": "edc26c6a43430e14bbf6f5ce31a8927cb3f3e3175f1ef7f519e81985d75dd212",
+    "kind": "adapted",
+    "note": "New campaigns fingerprint public manifest; original campaign never resumed by candidate."
+  },
+  {
+    "candidate_path": "benchmarks/client.py",
+    "candidate_sha256": "06c03376f554071cea291395db31a4a2653025fb0b4ffc026eedf5ecfbc7bfdf",
+    "source_path": "stage3d/client.py",
+    "source_sha256": "06c03376f554071cea291395db31a4a2653025fb0b4ffc026eedf5ecfbc7bfdf",
+    "kind": "byte-identical",
+    "note": ""
+  },
+  {
+    "candidate_path": "benchmarks/make_trace.py",
+    "candidate_sha256": "a5d590d16feb2daa9af8fb1cfa262b6abf925ab2e0f29d43816dd1bd42953d67",
+    "source_path": "stage3d/make_trace.py",
+    "source_sha256": "a5d590d16feb2daa9af8fb1cfa262b6abf925ab2e0f29d43816dd1bd42953d67",
+    "kind": "byte-identical",
+    "note": ""
+  },
+  {
+    "candidate_path": "benchmarks/run_matrix.py",
+    "candidate_sha256": "54ba7f3bae998cf2e5cd67c67eba669d825b2e94aa9de25c94e0e5212ee2f606",
+    "source_path": "stage3d/run_matrix.py",
+    "source_sha256": "aaad6bc938cc286d193ab08f575fedf21e928031605054b5c6933fd9a12d461a",
+    "kind": "adapted",
+    "note": "Entry paths adapted for public layout; historical records not overwritten."
+  },
+  {
+    "candidate_path": "benchmarks/run_pilot.py",
+    "candidate_sha256": "2a3d1a37ba7f3d568be8880e0602039114a59babd020f39cc6ed6a079ff20067",
+    "source_path": "stage3d/run_pilot.py",
+    "source_sha256": "d3f381ef343eb2419a9b6b1e4a475c89395273a7d429e3d6ad9efef672a1911d",
+    "kind": "adapted",
+    "note": "Entry paths adapted for public layout; historical records not overwritten."
+  },
+  {
+    "candidate_path": "benchmarks/sse.py",
+    "candidate_sha256": "a477528cddfa510baf988b8ac9700aa629125419035d80c6a33137b22995f052",
+    "source_path": "stage3d/sse.py",
+    "source_sha256": "a477528cddfa510baf988b8ac9700aa629125419035d80c6a33137b22995f052",
+    "kind": "byte-identical",
+    "note": ""
+  },
+  {
+    "candidate_path": "CONTRIBUTING.md",
+    "candidate_sha256": "262fb30e00aa50cb8413c2ecfe0b5af666e0763b54dd2caaf6c9d29fdcbb9086",
+    "kind": "new",
+    "note": "Publication tooling/documentation or new portable wrapper; no historical GPU claim."
+  },
+  {
+    "candidate_path": "CONTRIBUTIONS.md",
+    "candidate_sha256": "d683caf247f5ced9dbea4959b2c17b871d109e3a4019f6506bbd0a127785932a",
+    "kind": "new",
+    "note": "Publication tooling/documentation or new portable wrapper; no historical GPU claim."
+  },
+  {
+    "candidate_path": "docs/ARCHITECTURE.md",
+    "candidate_sha256": "6047e408ee9d3a5cdbd80588de046853f36fda2396018ea35b5bfdd2f71a0a8f",
+    "kind": "new",
+    "note": "Publication tooling/documentation or new portable wrapper; no historical GPU claim."
+  },
+  {
+    "candidate_path": "docs/DEMO.md",
+    "candidate_sha256": "b0d49ebfb2f28fdda6bfddc88a71e95be5c4f33901ffc5245aaa5122f959e0a3",
+    "kind": "new",
+    "note": "Publication tooling/documentation or new portable wrapper; no historical GPU claim."
+  },
+  {
+    "candidate_path": "docs/figures/architecture.svg",
+    "candidate_sha256": "55c89629995d9011e0d60ed20cd5052116dc6f4e35b252e36b3b482ac2c463fc",
+    "kind": "new",
+    "note": "Publication tooling/documentation or new portable wrapper; no historical GPU claim."
+  },
+  {
+    "candidate_path": "docs/ITERATION_HISTORY.md",
+    "candidate_sha256": "3d2950ecaf9a4490f175c9b147486e0a80428b0925ca346a50b1048739f26d4b",
+    "kind": "new",
+    "note": "Publication tooling/documentation or new portable wrapper; no historical GPU claim."
+  },
+  {
+    "candidate_path": "docs/LIMITATIONS.md",
+    "candidate_sha256": "d29b35a2aeddaf34da783f8f86755c3295bf015a99da404a87f09a69434bfefa",
+    "kind": "new",
+    "note": "Publication tooling/documentation or new portable wrapper; no historical GPU claim."
+  },
+  {
+    "candidate_path": "docs/PDServe_项目报告.pdf",
+    "candidate_sha256": "f08d5c6484548d49dfc164a732bb200f38de5ecc7b9be7e96199c4cca74012d6",
+    "kind": "new",
+    "note": "Publication tooling/documentation or new portable wrapper; no historical GPU claim."
+  },
+  {
+    "candidate_path": "docs/PUBLIC_SCOPE.md",
+    "candidate_sha256": "b81d83f0cd7279641a79593332fd2e2673e718e410abf687f0724f4db7e1f428",
+    "kind": "new",
+    "note": "Publication tooling/documentation or new portable wrapper; no historical GPU claim."
+  },
+  {
+    "candidate_path": "docs/REPRODUCE.md",
+    "candidate_sha256": "c70903ebbb54e6bab94aa1cdf6a06d1ca2122f7639610e7200c212cb9a46ee3e",
+    "kind": "new",
+    "note": "Publication tooling/documentation or new portable wrapper; no historical GPU claim."
+  },
+  {
+    "candidate_path": "docs/RESULTS.md",
+    "candidate_sha256": "efa482ee73e6cd35c201636ae84c1a51581f84dc86708571e387f46b57718614",
+    "kind": "new",
+    "note": "Publication tooling/documentation or new portable wrapper; no historical GPU claim."
+  },
+  {
+    "candidate_path": "docs/RESUME.md",
+    "candidate_sha256": "ea3896e0242f7b8bc98e1d679f04e20c3543b1926b3d2e1b2d630afa8e3dacf5",
+    "kind": "new",
+    "note": "Publication tooling/documentation or new portable wrapper; no historical GPU claim."
+  },
+  {
+    "candidate_path": "docs/UPLOAD.md",
+    "candidate_sha256": "968b4ee213efde87ba16e38f6c69d81a68a34dd33f0197cf4bc7d5c5c446525d",
+    "kind": "new",
+    "note": "Publication tooling/documentation or new portable wrapper; no historical GPU claim.",
+    "publication_fix": "Explicit UTF-8 validation / release documentation, no engine change."
+  },
+  {
+    "candidate_path": "engine_modules/pdserve_fault_guard.py",
+    "candidate_sha256": "0ce6ae8f0c2a804afd909dfd61ea5ce6e36186c18fa73e97663934eeb8064848",
+    "source_path": "stage2c1/engine/sglang/srt/pdserve_fault_guard.py",
+    "source_sha256": "0ce6ae8f0c2a804afd909dfd61ea5ce6e36186c18fa73e97663934eeb8064848",
+    "kind": "byte-identical",
+    "note": "Final engine module bytes also matched remote installed file and accepted evidence."
+  },
+  {
+    "candidate_path": "engine_modules/pdserve_lifecycle.py",
+    "candidate_sha256": "f913c673cc1b168ab729db05217646c3fc9b52da494728af99fbe7bde1045d98",
+    "source_path": "stage2c1/engine/sglang/srt/pdserve_lifecycle.py",
+    "source_sha256": "f913c673cc1b168ab729db05217646c3fc9b52da494728af99fbe7bde1045d98",
+    "kind": "byte-identical",
+    "note": "Final engine module bytes also matched remote installed file and accepted evidence."
+  },
+  {
+    "candidate_path": "engine_modules/pdserve_observer.py",
+    "candidate_sha256": "fb9ce9cb017842fffe84ef8f48f5541d61768e94f46cdf884c8785b666665aa2",
+    "source_path": "stage2c1/engine/sglang/srt/pdserve_observer.py",
+    "source_sha256": "fb9ce9cb017842fffe84ef8f48f5541d61768e94f46cdf884c8785b666665aa2",
+    "kind": "byte-identical",
+    "note": "Final engine module bytes also matched remote installed file and accepted evidence."
+  },
+  {
+    "candidate_path": "examples/mock_scheduler.py",
+    "candidate_sha256": "a311a2b3123272c04f4b6eb2b160c31d8b9d8c880d6b8a53272c67d6ae73bd44",
+    "kind": "new",
+    "note": "Publication tooling/documentation or new portable wrapper; no historical GPU claim."
+  },
+  {
+    "candidate_path": "examples/sse_client.py",
+    "candidate_sha256": "63d7c62a2b9731eeb88b3c217c891c011901030ba7b96ea5790c25237ebc6727",
+    "kind": "new",
+    "note": "Publication tooling/documentation or new portable wrapper; no historical GPU claim."
+  },
+  {
+    "candidate_path": "examples/traces/20short-low.json",
+    "candidate_sha256": "6fb9143ecacc18adeab1600e5f54161c0a2faa354c515366a28f804b5f43f0ea",
+    "source_path": "traces/stage3d-v1/20short-low.json",
+    "source_sha256": "6fb9143ecacc18adeab1600e5f54161c0a2faa354c515366a28f804b5f43f0ea",
+    "kind": "byte-identical",
+    "note": ""
+  },
+  {
+    "candidate_path": "examples/traces/20short-saturated.json",
+    "candidate_sha256": "a58b0871a6653f9a2a54739d05944b8601b888580ba318220b9e164003d115d4",
+    "source_path": "traces/stage3d-v1/20short-saturated.json",
+    "source_sha256": "a58b0871a6653f9a2a54739d05944b8601b888580ba318220b9e164003d115d4",
+    "kind": "byte-identical",
+    "note": ""
+  },
+  {
+    "candidate_path": "examples/traces/80short-low.json",
+    "candidate_sha256": "77abba08835644e4838c68a0533f36bd11cbe4aad406a58bf7a62b449bfe1ad5",
+    "source_path": "traces/stage3d-v1/80short-low.json",
+    "source_sha256": "77abba08835644e4838c68a0533f36bd11cbe4aad406a58bf7a62b449bfe1ad5",
+    "kind": "byte-identical",
+    "note": ""
+  },
+  {
+    "candidate_path": "examples/traces/80short-saturated.json",
+    "candidate_sha256": "6351d639f571a9216185aaf467a1e641978347d50accd4cddbb0fa1408eab092",
+    "source_path": "traces/stage3d-v1/80short-saturated.json",
+    "source_sha256": "6351d639f571a9216185aaf467a1e641978347d50accd4cddbb0fa1408eab092",
+    "kind": "byte-identical",
+    "note": ""
+  },
+  {
+    "candidate_path": "LICENSE",
+    "candidate_sha256": "1495e1e757ef4d0925a2350563cf5754bb23c51701a8ec4fb3c5cdcbedae6747",
+    "kind": "new",
+    "note": "Publication tooling/documentation or new portable wrapper; no historical GPU claim."
+  },
+  {
+    "candidate_path": "LICENSES/SGLang-Apache-2.0.txt",
+    "candidate_sha256": "1495e1e757ef4d0925a2350563cf5754bb23c51701a8ec4fb3c5cdcbedae6747",
+    "kind": "new",
+    "note": "Publication tooling/documentation or new portable wrapper; no historical GPU claim."
+  },
+  {
+    "candidate_path": "NOTICE",
+    "candidate_sha256": "1ff73d30352e5690b95d93631b4bf95a6f7a5301c79d4e4016b69892417e890e",
+    "kind": "new",
+    "note": "Publication tooling/documentation or new portable wrapper; no historical GPU claim."
+  },
+  {
+    "candidate_path": "patches/manifest.json",
+    "candidate_sha256": "45843747a1713dcf9cae9ad54d709d7ea9598a583c398bbb3d11cffb8232dac3",
+    "kind": "derived-patch",
+    "note": "Exact stock-to-final engine diff; sources identified by patch before/after manifest."
+  },
+  {
+    "candidate_path": "patches/sglang-v0.4.6.post5-pdserve.patch",
+    "candidate_sha256": "5d8162d98c318d326ca204883cab34d705780e18e2112190ae3c7dd483b0e701",
+    "kind": "derived-patch",
+    "note": "Exact stock-to-final engine diff; sources identified by patch before/after manifest."
+  },
+  {
+    "candidate_path": "provenance/audit-origin.json",
+    "candidate_sha256": "e71d697361eecd394a6d9d26b3b1f7a76ff95d4241b4d6ffbc23448ef895ba2e",
+    "kind": "new",
+    "note": "Publication tooling/documentation or new portable wrapper; no historical GPU claim."
+  },
+  {
+    "candidate_path": "provenance/result-sources.json",
+    "candidate_sha256": "e948cc3132321dcce7cb2d3334a11805a5ab345d04eeffa8d33bb84da4304568",
+    "kind": "derived-summary",
+    "note": "Extraction rules and private source hashes are in result-sources.json and PUBLIC_SCOPE.md."
+  },
+  {
+    "candidate_path": "pyproject.toml",
+    "candidate_sha256": "17965a075a4c41fc8f90527bb7b92fe2b2fffca6cdf54b9a6f7b4a105dd83cb6",
+    "kind": "new",
+    "note": "Publication tooling/documentation or new portable wrapper; no historical GPU claim."
+  },
+  {
+    "candidate_path": "README.md",
+    "candidate_sha256": "7734fa40531424318f94f5a5e3903a146fb563e775dca92bd0f043a343c9d471",
+    "kind": "new",
+    "note": "Publication tooling/documentation or new portable wrapper; no historical GPU claim."
+  },
+  {
+    "candidate_path": "requirements/gpu-constraints.txt",
+    "candidate_sha256": "164d0b59ac588c9b32b24aa42240a65cb63d295b489ecf5c4dcc03df715e28ad",
+    "source_path": "stage1-mirror/constraints-cu124.txt",
+    "source_sha256": "164d0b59ac588c9b32b24aa42240a65cb63d295b489ecf5c4dcc03df715e28ad",
+    "kind": "byte-identical",
+    "note": "Historical constraint file; final freeze is the authoritative observed environment, not a claim of current installability."
+  },
+  {
+    "candidate_path": "requirements/gpu.txt",
+    "candidate_sha256": "51060338a4a558d0e38b360a4ae5f5cc1685c6af0d368190e8213804a217c116",
+    "kind": "new",
+    "note": "Publication tooling/documentation or new portable wrapper; no historical GPU claim."
+  },
+  {
+    "candidate_path": "requirements/historical-linux.lock",
+    "candidate_sha256": "14a4026bc86b3a350375e9f95b2fe6aee08a1dee33088c379cb16f6164b872a0",
+    "source_path": "checkpoints/stage3d/requirements.lock",
+    "source_sha256": "14a4026bc86b3a350375e9f95b2fe6aee08a1dee33088c379cb16f6164b872a0",
+    "kind": "byte-identical",
+    "note": ""
+  },
+  {
+    "candidate_path": "requirements/runtime.txt",
+    "candidate_sha256": "5378ce7c5a33f616703ddb8324388a5e07563e8b6ca03d8d7961a6b10b1754ee",
+    "kind": "new",
+    "note": "Publication tooling/documentation or new portable wrapper; no historical GPU claim."
+  },
+  {
+    "candidate_path": "resources/model-files.json",
+    "candidate_sha256": "b154222b5296290c0a5a80b2e08127953a219c487ba1c562b44b9a74f2325cf1",
+    "source_path": "reports/model/manifest.json",
+    "source_sha256": "20cfe4cc2c53fc7a6c58210a6cbb6d4d003585cbc5c7eb9686aca52580b44f7f",
+    "kind": "adapted",
+    "note": "Removed machine paths/date; hashes unchanged, upstream revision remains unverified."
+  },
+  {
+    "candidate_path": "results/aggregates.json",
+    "candidate_sha256": "c272fb570bbb9dd43b5a1958c12963bc93a1dcb1c242572b318b8498ab6bb8d8",
+    "kind": "derived-summary",
+    "note": "Extraction rules and private source hashes are in result-sources.json and PUBLIC_SCOPE.md."
+  },
+  {
+    "candidate_path": "results/per-run.json",
+    "candidate_sha256": "350529070da63d195ffd757cf527ce1ecfb9654c989fb0e8b95c170b10a56990",
+    "kind": "derived-summary",
+    "note": "Extraction rules and private source hashes are in result-sources.json and PUBLIC_SCOPE.md."
+  },
+  {
+    "candidate_path": "scripts/candidate_manifest.py",
+    "candidate_sha256": "a16716a091bd4a039fdba58897a6fe891079a2c38fba5b0df8efaa75b6b5fcd6",
+    "kind": "new",
+    "note": "Publication tooling/documentation or new portable wrapper; no historical GPU claim."
+  },
+  {
+    "candidate_path": "scripts/manual_upload.ps1",
+    "candidate_sha256": "3f16e9182652992ad4e8ee8ea935678d10b9c72e28bc35274d783cbc8a6e251b",
+    "kind": "new",
+    "note": "Publication tooling/documentation or new portable wrapper; no historical GPU claim.",
+    "publication_fix": "Explicit UTF-8 validation / release documentation, no engine change."
+  },
+  {
+    "candidate_path": "scripts/preflight.py",
+    "candidate_sha256": "2a90e5f3340f708e629c32dd76513ffc51d95c5e1d25cefef30e41e7aa44309c",
+    "source_path": "stage3d/preflight.py",
+    "source_sha256": "f3129e6d9228917905e69de99f93e0f466898849d416acb587ae2e989de6fc6d",
+    "kind": "adapted",
+    "note": "Public manifest validation and explicit local model path replace historical working directory."
+  },
+  {
+    "candidate_path": "scripts/serve_backend.py",
+    "candidate_sha256": "8c6609f9d258b635a20b8b1cd4709838c1f8603290239d7780cd48e0ecbec251",
+    "kind": "new",
+    "note": "Publication tooling/documentation or new portable wrapper; no historical GPU claim."
+  },
+  {
+    "candidate_path": "src/pdserve/__init__.py",
+    "candidate_sha256": "910eaa518696f9e96d68967d99ef47804258ba89278d8cf384d6b2d5a8ab04d3",
+    "source_path": "stage2d1/pdserve/__init__.py",
+    "source_sha256": "910eaa518696f9e96d68967d99ef47804258ba89278d8cf384d6b2d5a8ab04d3",
+    "kind": "byte-identical",
+    "note": ""
+  },
+  {
+    "candidate_path": "src/pdserve/api.py",
+    "candidate_sha256": "ee444b9645c026ecfa4f67f7b80f579df645aa08486e8a703eaccde740060a77",
+    "source_path": "stage2d1/pdserve/api.py",
+    "source_sha256": "ee444b9645c026ecfa4f67f7b80f579df645aa08486e8a703eaccde740060a77",
+    "kind": "byte-identical",
+    "note": ""
+  },
+  {
+    "candidate_path": "src/pdserve/backend.py",
+    "candidate_sha256": "05a1ec7f14473616ad9c3bc7ebf2f28cdf17e779ade6ea60f44fd9a6b4596056",
+    "source_path": "stage2d1/pdserve/backend.py",
+    "source_sha256": "05a1ec7f14473616ad9c3bc7ebf2f28cdf17e779ade6ea60f44fd9a6b4596056",
+    "kind": "byte-identical",
+    "note": ""
+  },
+  {
+    "candidate_path": "src/pdserve/benchmark_config.py",
+    "candidate_sha256": "80061dc7a600a91b6e30bf343a1c6f7fae2ea2b389058d33c0c0d2f99be3f1a1",
+    "source_path": "stage3d/benchmark_config.py",
+    "source_sha256": "80061dc7a600a91b6e30bf343a1c6f7fae2ea2b389058d33c0c0d2f99be3f1a1",
+    "kind": "byte-identical",
+    "note": "Copy of historical observation constants."
+  },
+  {
+    "candidate_path": "src/pdserve/context_guard.py",
+    "candidate_sha256": "59578b8e9ba618da92163aeea217688bdc2bf4255c1418f7bc30d23ab6e677a5",
+    "source_path": "stage2e1-fix1/gateway_guard.py",
+    "source_sha256": "59578b8e9ba618da92163aeea217688bdc2bf4255c1418f7bc30d23ab6e677a5",
+    "kind": "byte-identical",
+    "note": ""
+  },
+  {
+    "candidate_path": "src/pdserve/core.py",
+    "candidate_sha256": "3d8f6b201092996391fb4dd95f3b4d133710a796ec1c38bbf9722950d50009b2",
+    "source_path": "stage2d1/pdserve/core.py",
+    "source_sha256": "3d8f6b201092996391fb4dd95f3b4d133710a796ec1c38bbf9722950d50009b2",
+    "kind": "byte-identical",
+    "note": ""
+  },
+  {
+    "candidate_path": "src/pdserve/launch.py",
+    "candidate_sha256": "9aa2b6681af97ab25d710a6507515f4e7adcf2edf89b3525cdc0d8e08a2c4633",
+    "source_path": "stage3d/launch_pd_gateway.py",
+    "source_sha256": "0523d44a16c437e83b7065e0b2012a8dda2871d0cf185d148470aa7d6b7186d6",
+    "kind": "adapted",
+    "note": "Only import layout and explicit model path adapted; service and observation policy preserved."
+  },
+  {
+    "candidate_path": "src/pdserve/launch_mixed.py",
+    "candidate_sha256": "bf6af9b423028ef5f38b60ab4f669bd2bc7a53e9825cccc734cf4d14ff469848",
+    "source_path": "stage3d/launch_mixed_gateway.py",
+    "source_sha256": "082f207c3347597cf87efc6817f159d510073c63df82a0a65709fa4297ab0110",
+    "kind": "adapted",
+    "note": "Only import layout and explicit model path adapted; service and observation policy preserved."
+  },
+  {
+    "candidate_path": "src/pdserve/mixed.py",
+    "candidate_sha256": "0ec99676e2866f483549bb446d9a39178460a1ec62d3fde008d2343f1eb04cd7",
+    "source_path": "stage3b/baseline.py",
+    "source_sha256": "0ec99676e2866f483549bb446d9a39178460a1ec62d3fde008d2343f1eb04cd7",
+    "kind": "byte-identical",
+    "note": ""
+  },
+  {
+    "candidate_path": "src/pdserve/protocol.py",
+    "candidate_sha256": "9fd9cec8b8a1e3aae33cec4244c5910df8783138b39d448dbe00555b960c476c",
+    "source_path": "stage2d1/pdserve/protocol.py",
+    "source_sha256": "9fd9cec8b8a1e3aae33cec4244c5910df8783138b39d448dbe00555b960c476c",
+    "kind": "byte-identical",
+    "note": ""
+  },
+  {
+    "candidate_path": "src/pdserve/service.py",
+    "candidate_sha256": "4dd5049f9f4985fc62e080025b70e7193344e599713481160cc55c33cb9be70d",
+    "source_path": "stage2d1/pdserve/service.py",
+    "source_sha256": "4dd5049f9f4985fc62e080025b70e7193344e599713481160cc55c33cb9be70d",
+    "kind": "byte-identical",
+    "note": ""
+  },
+  {
+    "candidate_path": "src/pdserve/telemetry.py",
+    "candidate_sha256": "fb78a3b4ace341345203592700f95181b7730984417c3de2b4eb613ddcbe9aea",
+    "source_path": "stage2d1/pdserve/telemetry.py",
+    "source_sha256": "fb78a3b4ace341345203592700f95181b7730984417c3de2b4eb613ddcbe9aea",
+    "kind": "byte-identical",
+    "note": ""
+  },
+  {
+    "candidate_path": "tests/phase_evidence.py",
+    "candidate_sha256": "c76fd92250d128a85fcbd5bfa75ae5d370e2bd1b7af53992ea8e08ad6dbd11d9",
+    "source_path": "stage2e1/evidence.py",
+    "source_sha256": "c76fd92250d128a85fcbd5bfa75ae5d370e2bd1b7af53992ea8e08ad6dbd11d9",
+    "kind": "byte-identical",
+    "note": ""
+  },
+  {
+    "candidate_path": "tests/test_context.py",
+    "candidate_sha256": "b0351b47d79298a676f83f35e667e29f4b83d733effbfa8f7b331a1b44a125aa",
+    "source_path": "stage2e1-fix1/test_guard.py",
+    "source_sha256": "5bc63c8bb5413c53c97b61eefd5b5d1fbfb2d669a57afa01c1d9cd26a86f4b0d",
+    "kind": "adapted",
+    "note": "Import paths changed; test assertions retained."
+  },
+  {
+    "candidate_path": "tests/test_engine_modules.py",
+    "candidate_sha256": "6260ff309b0d36f1bea346b917036d958c2ae15c07228ddfed679ddabd4fa780",
+    "kind": "new",
+    "note": "Publication tooling/documentation or new portable wrapper; no historical GPU claim."
+  },
+  {
+    "candidate_path": "tests/test_gateway.py",
+    "candidate_sha256": "61e78dbb4086c0549d023a39063965fdfe8838182c7b8a7a421bea111b0c25f3",
+    "source_path": "stage2d1/test_gateway.py",
+    "source_sha256": "61e78dbb4086c0549d023a39063965fdfe8838182c7b8a7a421bea111b0c25f3",
+    "kind": "byte-identical",
+    "note": ""
+  },
+  {
+    "candidate_path": "tests/test_metrics.py",
+    "candidate_sha256": "a16919a5f57116b1c5ad182ec8d51f7d8e8faf2495646518811375d264f6461b",
+    "source_path": "stage3d/test_metrics.py",
+    "source_sha256": "a16919a5f57116b1c5ad182ec8d51f7d8e8faf2495646518811375d264f6461b",
+    "kind": "byte-identical",
+    "note": "Only test location changes; benchmark modules resolved by CPU check runner."
+  },
+  {
+    "candidate_path": "tests/test_mixed.py",
+    "candidate_sha256": "13ac37ea57f461c06ff572ab409b3555cabeb92f3c4302f636445a2e91e8f36c",
+    "source_path": "stage3b/test_baseline.py",
+    "source_sha256": "2c63a27c3a3b2096ac8e3f442246f92f293cc883aa68f982028e0fcbd70361c3",
+    "kind": "adapted",
+    "note": "Import paths changed; test assertions retained."
+  },
+  {
+    "candidate_path": "tests/test_phase_evidence.py",
+    "candidate_sha256": "6663ad26a25d80effd1fa19e4337d358196293e10a6d3cb4cba04cf29d339a01",
+    "source_path": "stage2e1/test_evidence.py",
+    "source_sha256": "acec57a0dd5e6a3ef8626e7093da55eb13fb4ebb004cdf442a0b529a88557f46",
+    "kind": "adapted",
+    "note": "Only helper import renamed for standalone tests."
+  },
+  {
+    "candidate_path": "tests/test_portable_entry.py",
+    "candidate_sha256": "00b26e8115220bb4054f6a2d4e469dfc87636275ddf42268ba84c483d273e4c8",
+    "kind": "new",
+    "note": "Publication tooling/documentation or new portable wrapper; no historical GPU claim."
+  },
+  {
+    "candidate_path": "THIRD_PARTY.md",
+    "candidate_sha256": "1ca91082bd8bb456a6bb62c2af44b7cc8479a5d7c30ece25a2f7c3ad41d633fd",
+    "kind": "new",
+    "note": "Publication tooling/documentation or new portable wrapper; no historical GPU claim."
+  },
+  {
+    "candidate_path": "tools/build_pdf.py",
+    "candidate_sha256": "454ca38f914023be5e5805e6067361443bde23be259d79405867f7f2220851d1",
+    "kind": "new",
+    "note": "Publication tooling/documentation or new portable wrapper; no historical GPU claim."
+  },
+  {
+    "candidate_path": "tools/check.py",
+    "candidate_sha256": "bd74f8df19383aa12b4eb9cf17ee52616f274c708a2d2aac2f5d5e6d88220f9a",
+    "kind": "new",
+    "note": "Publication tooling/documentation or new portable wrapper; no historical GPU claim."
+  },
+  {
+    "candidate_path": "tools/check_release.py",
+    "candidate_sha256": "64b49e9490fd40c15a6a8d12e38ee6a84c942d9965c1ca6818e767760b412fa9",
+    "kind": "new",
+    "note": "Publication tooling/documentation or new portable wrapper; no historical GPU claim."
+  },
+  {
+    "candidate_path": "tools/rebuild_engine.py",
+    "candidate_sha256": "877b2ce2c4dac9bf1a43e6021f525aeae2dbaac9ede2d8f63847df020bd98ea1",
+    "kind": "new",
+    "note": "Publication tooling/documentation or new portable wrapper; no historical GPU claim."
+  },
+  {
+    "candidate_path": "tools/summarize_results.py",
+    "candidate_sha256": "2dd678076a33a424c0c131f220118cbce9852427c1a71a8764ae4e1b9852cb7e",
+    "kind": "new",
+    "note": "Publication tooling/documentation or new portable wrapper; no historical GPU claim."
+  },
+  {
+    "candidate_path": "tools/verify_model.py",
+    "candidate_sha256": "56211f8079b52cf8da31ba8cd6beb41b83f09ca841ea53dee225990f660b39ec",
+    "kind": "new",
+    "note": "Publication tooling/documentation or new portable wrapper; no historical GPU claim."
+  },
+  {
+    "candidate_path": "checks/cpu-tests.txt",
+    "kind": "new",
+    "note": "Publication review/check artifact; no historical GPU claim.",
+    "candidate_sha256": "4d4bebd9997d2c03c32151529db8ae2f40ebe2e52903d4435757075dee08d3f4"
+  },
+  {
+    "candidate_path": "checks/pdf-review.json",
+    "kind": "new",
+    "note": "Publication review/check artifact; no historical GPU claim.",
+    "candidate_sha256": "ae0cd16ed8dee74421737c7d9783dec180315ea8fae244c1c08d84a6c1952716"
+  },
+  {
+    "candidate_path": "checks/verification.json",
+    "kind": "new",
+    "note": "Publication review/check artifact; no historical GPU claim.",
+    "candidate_sha256": "aa4265807651ea4ab466a773150417b152f6bcf4cb14e37b487258cbf633e64e"
+  },
+  {
+    "candidate_path": "docs/CHECKS.md",
+    "kind": "new",
+    "note": "Publication review/check artifact; no historical GPU claim.",
+    "candidate_sha256": "82b1823c5a460cd6434addfaa164c9760085f2f3bb575249a07cef35e066ef3c",
+    "publication_fix": "Explicit UTF-8 validation / release documentation, no engine change."
+  },
+  {
+    "candidate_path": "docs/RELEASE_FIX1.md",
+    "kind": "new",
+    "note": "Publication-only Windows PowerShell UTF-8 fix1.",
+    "candidate_sha256": "ca59b941353ac8508678dd6f3b5574b5205326024ed3a95eb02c95284d6f4ca8"
+  },
+  {
+    "candidate_path": "checks/powershell-utf8-fix1.json",
+    "kind": "new",
+    "note": "Windows PowerShell UTF-8 release fix1 validation.",
+    "candidate_sha256": "c78ad6116d458018b724ae652d77d4db80e7a0fa86021b4ae77c6d9bca78a54a"
+  }
+]

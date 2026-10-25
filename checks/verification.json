@@ -1,0 +1,43 @@
+{
+  "schema": "pdserve.public.verification.v1",
+  "date": "2026-10-25",
+  "python_execution_version": "3.12.14",
+  "python310_ast_files": 44,
+  "cpu_tests_passed": 74,
+  "inference_requests_sent_this_round": 0,
+  "remote_archive_copies_verified": 464,
+  "historical_evidence_zip_hashes_matched": 12,
+  "raw_hashes_matched": 37,
+  "raw_summaries_recomputed": 36,
+  "aggregates_recomputed": 12,
+  "float_tolerance": {
+    "relative": 1e-12,
+    "absolute": 1e-12
+  },
+  "rounding_differences": [
+    {
+      "field": ".duration_sum_s",
+      "recomputed": 58.705336751000004,
+      "stored": 58.705336751,
+      "absolute_delta": 7.105427357601002e-15
+    }
+  ],
+  "dispatch_reordering_runs": 0,
+  "maximum_gateway_queue_ms": 0.7281949999999999,
+  "patch_rebuild_after_sha256_matches": 10,
+  "pdf_pages": 13,
+  "pdf_sha256": "f08d5c6484548d49dfc164a732bb200f38de5ecc7b9be7e96199c4cca74012d6",
+  "pdf_visual_review": "all pages 1-13 rendered at 100dpi and visually inspected",
+  "pdf_replacement_characters": 0,
+  "known_private_identifier_hits": [],
+  "powershell_upload_script": "parsed without executing Git",
+  "not_run": [
+    "fresh dependency installation",
+    "model download",
+    "GPU inference",
+    "GPU fault injection",
+    "live ASGI integration under candidate dependencies",
+    "GitHub upload",
+    "Python 3.10 execution (AST only)"
+  ]
+}

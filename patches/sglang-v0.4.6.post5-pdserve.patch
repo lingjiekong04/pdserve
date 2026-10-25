@@ -1,0 +1,1215 @@
+diff --git a/sglang/srt/disaggregation/decode.py b/sglang/srt/disaggregation/decode.py
+--- a/sglang/srt/disaggregation/decode.py
++++ b/sglang/srt/disaggregation/decode.py
+@@ -21,6 +21,7 @@
+ from __future__ import annotations
+ 
+ import logging
++import time
+ import os
+ from collections import deque
+ from dataclasses import dataclass
+@@ -49,6 +50,10 @@
+ from sglang.srt.mem_cache.base_prefix_cache import BasePrefixCache
+ from sglang.srt.mem_cache.memory_pool import ReqToTokenPool, TokenToKVPoolAllocator
+ from sglang.srt.model_executor.forward_batch_info import ForwardMode
++
++from sglang.srt.pdserve_observer import observe, settle_cleanup
++
++from sglang.srt.pdserve_fault_guard import pause_dispatch, hold_failed
+ 
+ logger = logging.getLogger(__name__)
+ 
+@@ -181,6 +186,8 @@
+             elif poll == KVPoll.WaitingForInput:
+                 decode_req.waiting_for_input = True
+             elif poll == KVPoll.Failed:
++                if hold_failed(self.scheduler, decode_req.req):
++                    continue
+                 error_message = f"Decode handshake failed for request rank={self.tp_rank} {decode_req.req.rid=} {decode_req.req.bootstrap_room=}"
+                 try:
+                     decode_req.kv_receiver.failure_exception()
+@@ -196,6 +203,8 @@
+     def pop_preallocated(self) -> List[DecodeRequest]:
+         """Pop the preallocated requests from the pending queue (FIFO)."""
+         self._update_handshake_waiters()
++        if pause_dispatch(self.scheduler):
++            return []
+ 
+         preallocated_reqs = []
+         indices_to_remove = set()
+@@ -231,6 +240,7 @@
+ 
+             allocatable_tokens -= required_tokens_for_request
+             self._pre_alloc(decode_req.req)
++            observe(self.scheduler, decode_req.req, "kv_preallocated")
+ 
+             kv_indices = (
+                 self.req_to_token_pool.req_to_token[decode_req.req.req_pool_idx][
+@@ -361,6 +371,8 @@
+         indices_to_remove = set()
+         for i, (decode_req, poll) in enumerate(zip(self.queue, polls)):
+             if poll == KVPoll.Failed:
++                if hold_failed(self.scheduler, decode_req.req):
++                    continue
+                 error_message = f"Decode transfer failed for request {decode_req.req.rid=} {decode_req.req.bootstrap_room=}"
+                 try:
+                     decode_req.kv_receiver.failure_exception()
+@@ -380,6 +392,7 @@
+                 indices_to_remove.add(i)
+                 continue
+             elif poll == KVPoll.Success:
++                observe(self.scheduler, decode_req.req, "kv_ready")
+ 
+                 idx = decode_req.metadata_buffer_index
+                 (
+@@ -410,6 +423,19 @@
+                         ].tolist()
+                     )
+ 
++                observer = getattr(self.scheduler, "pdserve_observer", None)
++                if observer is not None and observer.lifecycle_enabled:
++                    decode_req.req.check_finished()
++                    if decode_req.req.finished():
++                        # The first token may satisfy max_new_tokens=1 or EOS.
++                        # No fake extend or Decode GPU batch is needed.
++                        self.tree_cache.cache_finished_req(decode_req.req)
++                        observe(self.scheduler, decode_req.req, "allocator_released")
++                        observe(self.scheduler, decode_req.req, "first_token_terminal")
++                        self.scheduler.stream_output(
++                            [decode_req.req], decode_req.req.return_logprob)
++                        indices_to_remove.add(i)
++                        continue
+                 transferred_reqs.append(decode_req.req)
+                 indices_to_remove.add(i)
+             elif poll in [
+@@ -425,6 +451,7 @@
+             idx = self.queue[i].metadata_buffer_index
+             assert idx != -1
+             self.req_to_metadata_buffer_idx_allocator.free(idx)
++            observe(self.scheduler, self.queue[i].req, "metadata_released")
+ 
+         self.queue = [
+             entry for i, entry in enumerate(self.queue) if i not in indices_to_remove
+@@ -451,6 +478,9 @@
+         while True:
+             recv_reqs = self.recv_requests()
+             self.process_input_requests(recv_reqs)
++            if pause_dispatch(self):
++                time.sleep(0.001)
++                continue
+             # polling and allocating kv cache
+             self.process_decode_queue()
+             batch = self.get_next_disagg_decode_batch_to_run()
+@@ -488,6 +518,7 @@
+                 self.new_token_ratio = self.init_new_token_ratio
+ 
+             self.last_batch = batch
++            settle_cleanup(self)
+ 
+     @torch.no_grad()
+     def event_loop_overlap_disagg_decode(self: Scheduler):
+@@ -498,6 +529,9 @@
+         while True:
+             recv_reqs = self.recv_requests()
+             self.process_input_requests(recv_reqs)
++            if pause_dispatch(self):
++                time.sleep(0.001)
++                continue
+             # polling and allocating kv cache
+             self.process_decode_queue()
+             batch = self.get_next_disagg_decode_batch_to_run()
+@@ -567,6 +601,7 @@
+ 
+             self.last_batch = batch
+             self.last_batch_in_queue = last_batch_in_queue
++            settle_cleanup(self)
+ 
+     def get_next_disagg_decode_batch_to_run(
+         self: Scheduler,
+diff --git a/sglang/srt/disaggregation/mooncake/conn.py b/sglang/srt/disaggregation/mooncake/conn.py
+--- a/sglang/srt/disaggregation/mooncake/conn.py
++++ b/sglang/srt/disaggregation/mooncake/conn.py
+@@ -8,6 +8,7 @@
+ import queue
+ import socket
+ import struct
++import sys
+ import threading
+ from functools import cache
+ from typing import Dict, List, Optional, Tuple, Union
+@@ -30,6 +31,12 @@
+ from sglang.srt.disaggregation.utils import DisaggregationMode
+ from sglang.srt.server_args import ServerArgs
+ from sglang.srt.utils import get_free_port, get_ip, get_local_ip_by_remote
++
++from sglang.srt.pdserve_observer import observe_room, controlled_transfer_delay
++from sglang.srt.pdserve_fault_guard import sticky_failure, controlled_fault_delay
++from sglang.srt.pdserve_lifecycle import (
++    init_transport, guard, accepts, submitted, started, completed,
++)
+ 
+ logger = logging.getLogger(__name__)
+ 
+@@ -144,6 +151,8 @@
+                 "If dp_attention is not enabled, dp size must be 1 in disaggregation mode."
+             )
+         self.request_status: Dict[int, KVPoll] = {}
++        self.pdserve_transport = init_transport(
++            "prefill" if disaggregation_mode == DisaggregationMode.PREFILL else "decode")
+         self.rank_port = None
+         self.server_socket = zmq.Context().socket(zmq.PULL)
+         self.register_buffer_to_engine()
+@@ -294,21 +303,30 @@
+                 else:
+                     required_dst_info_num = int(waiting_req_bytes[6].decode("ascii"))
+                     room = int(room)
+-                    if room not in self.transfer_infos:
+-                        self.transfer_infos[room] = {}
+-
+-                    self.transfer_infos[room][mooncake_session_id] = (
+-                        TransferInfo.from_zmq(waiting_req_bytes)
+-                    )
+-                    # NOTE: after bootstrapping we can mark the req as waiting for input
+-                    if len(self.transfer_infos[room]) == required_dst_info_num:
+-                        self.update_status(room, KVPoll.WaitingForInput)
++                    with guard(self):
++                        if not accepts(self, room):
++                            continue
++                        if room not in self.transfer_infos:
++                            self.transfer_infos[room] = {}
++
++                        self.transfer_infos[room][mooncake_session_id] = (
++                            TransferInfo.from_zmq(waiting_req_bytes)
++                        )
++                        # NOTE: after bootstrapping we can mark the req as waiting for input
++                        if len(self.transfer_infos[room]) == required_dst_info_num:
++                            self.update_status(room, KVPoll.WaitingForInput)
+ 
+         def transfer_thread():
+             # TODO: Shall we use KVPoll.Transferring state?
+             while True:
++                kv_chunk = None
+                 try:
+                     kv_chunk: TransferKVChunk = self.transfer_queue.get(timeout=0.01)
++                    started(self, kv_chunk.room)
++                    observe_room(self, kv_chunk.room, "rdma_chunk_started",
++                                 kv_tokens=len(kv_chunk.prefill_kv_indices))
++                    controlled_fault_delay(self, kv_chunk.room)
++                    controlled_transfer_delay(self, kv_chunk.room)
+                     reqs_to_be_processed = self.transfer_infos[kv_chunk.room].values()
+                     polls = []
+                     dst_ranks_infos = []
+@@ -367,11 +385,17 @@
+                             if kv_chunk.is_last:
+                                 self.update_status(req.room, KVPoll.Success)
+ 
++                    observe_room(self, kv_chunk.room, "rdma_chunk_finished",
++                                 kv_tokens=len(kv_chunk.prefill_kv_indices),
++                                 status=int(self.check_status(kv_chunk.room)))
+                     if self.check_status(kv_chunk.room) == KVPoll.Success:
+                         self.transfer_infos.pop(kv_chunk.room)
+ 
+                 except queue.Empty:
+                     continue
++                finally:
++                    if kv_chunk is not None:
++                        completed(self, kv_chunk, exception=sys.exc_info()[0] is not None)
+ 
+         threading.Thread(target=bootstrap_thread).start()
+         threading.Thread(target=transfer_thread).start()
+@@ -400,6 +424,7 @@
+         assert self.disaggregation_mode == DisaggregationMode.PREFILL
+         assert not is_last or (is_last and aux_index is not None)
+ 
++        submitted(self, bootstrap_room)
+         self.transfer_queue.put(
+             TransferKVChunk(
+                 room=bootstrap_room,
+@@ -412,16 +437,22 @@
+         self.update_status(bootstrap_room, KVPoll.WaitingForInput)
+ 
+     def check_status(self, bootstrap_room: int):
+-        return self.request_status[bootstrap_room]
++        with guard(self):
++            return self.request_status[bootstrap_room]
+ 
+     def update_status(self, bootstrap_room: int, status: KVPoll):
+-        if bootstrap_room not in self.request_status:
+-            self.request_status[bootstrap_room] = status
+-        else:
+-            # NOTE: The prefill engine could recv bootstrapping first
+-            self.request_status[bootstrap_room] = max(
+-                self.request_status[bootstrap_room], status
+-            )
++        with guard(self):
++            if not accepts(self, bootstrap_room):
++                return
++            if sticky_failure(self, bootstrap_room, status):
++                return
++            if bootstrap_room not in self.request_status:
++                self.request_status[bootstrap_room] = status
++            else:
++                # NOTE: The prefill engine could recv bootstrapping first
++                self.request_status[bootstrap_room] = max(
++                    self.request_status[bootstrap_room], status
++                )
+ 
+     def get_session_id(self):
+         return self.engine.get_session_id()
+diff --git a/sglang/srt/disaggregation/prefill.py b/sglang/srt/disaggregation/prefill.py
+--- a/sglang/srt/disaggregation/prefill.py
++++ b/sglang/srt/disaggregation/prefill.py
+@@ -20,6 +20,7 @@
+ from __future__ import annotations
+ 
+ import logging
++import time
+ import threading
+ from collections import deque
+ from http import HTTPStatus
+@@ -52,6 +53,11 @@
+     from sglang.srt.mem_cache.memory_pool import KVCache
+ 
+ 
++from sglang.srt.pdserve_observer import (observe, batch_result_done, settle_cleanup,
++                                          cancellation_requested, CANCEL_MESSAGE)
++
++from sglang.srt.pdserve_fault_guard import pause_dispatch, hold_failed
++
+ logger = logging.getLogger(__name__)
+ 
+ 
+@@ -170,6 +176,8 @@
+             if poll == KVPoll.Bootstrapping:
+                 continue
+             elif poll == KVPoll.Failed:
++                if hold_failed(self.scheduler, req):
++                    continue
+                 error_message = f"Prefill bootstrap failed for request rank={self.tp_rank} {req.rid=} {req.bootstrap_room=}"
+                 try:
+                     req.disagg_kv_sender.failure_exception()
+@@ -195,6 +203,7 @@
+             num_pages = kv_to_page_num(num_kv_indices, self.token_to_kv_pool.page_size)
+             req.disagg_kv_sender.init(num_pages, req.metadata_buffer_index)
+ 
++            observe(self.scheduler, req, "bootstrap_completed")
+             bootstrapped_reqs.append(req)
+             indices_to_remove.add(i)
+ 
+@@ -217,6 +226,9 @@
+         while True:
+             recv_reqs = self.recv_requests()
+             self.process_input_requests(recv_reqs)
++            if pause_dispatch(self):
++                time.sleep(0.001)
++                continue
+             self.waiting_queue.extend(
+                 self.disagg_prefill_bootstrap_queue.pop_bootstrapped()
+             )
+@@ -247,6 +259,7 @@
+             # HACK (byronhsu): reset the batch_is_full flag because we never enter update_running_batch which resets it
+             # Otherwise, it hangs under high concurrency
+             self.running_batch.batch_is_full = False
++            settle_cleanup(self)
+ 
+     @torch.no_grad()
+     def event_loop_overlap_disagg_prefill(self: Scheduler):
+@@ -255,6 +268,9 @@
+         while True:
+             recv_reqs = self.recv_requests()
+             self.process_input_requests(recv_reqs)
++            if pause_dispatch(self):
++                time.sleep(0.001)
++                continue
+             self.waiting_queue.extend(
+                 self.disagg_prefill_bootstrap_queue.pop_bootstrapped()
+             )
+@@ -299,6 +315,7 @@
+             # HACK (byronhsu): reset the batch_is_full flag because we never enter update_running_batch which resets it
+             # Otherwise, it hangs under high concurrency
+             self.running_batch.batch_is_full = False
++            settle_cleanup(self)
+ 
+     def process_batch_result_disagg_prefill(
+         self: Scheduler,
+@@ -345,6 +362,7 @@
+         ):
+             req: Req
+             if req.is_chunked <= 0:
++                observe(self, req, "prefill_completed")
+                 # There is no output_ids for prefill
+                 req.output_ids.append(next_token_id)
+                 self.tree_cache.cache_unfinished_req(req)  # update the tree and lock
+@@ -394,6 +412,7 @@
+ 
+         # We need to remove the sync in the following function for overlap schedule.
+         self.set_next_batch_sampling_info_done(batch)
++        batch_result_done(self, batch)
+ 
+     def process_disagg_prefill_inflight_queue(self: Scheduler) -> None:
+         """
+@@ -414,11 +433,18 @@
+             if poll in [KVPoll.WaitingForInput, KVPoll.Transferring]:
+                 undone_reqs.append(req)
+             elif poll == KVPoll.Success:  # transfer done
++                observe(self, req, "transfer_completed")
+                 self.tree_cache.cache_finished_req(req)  # unlock the tree
++                observe(self, req, "allocator_released")
+                 req.finished_reason = FINISH_LENGTH(length=0)
++                if cancellation_requested(self, req):
++                    prepare_abort(req, CANCEL_MESSAGE, status_code=499)
+                 # FIXME: clean up req's data in transfer engine
+                 done_reqs.append(req)
+             elif poll == KVPoll.Failed:
++                if hold_failed(self, req):
++                    undone_reqs.append(req)
++                    continue
+                 error_message = f"Prefill transfer failed for request rank={self.tp_rank} {req.rid=} {req.bootstrap_room=}"
+                 try:
+                     req.disagg_kv_sender.failure_exception()
+@@ -426,6 +452,7 @@
+                     error_message += f" with exception {e}"
+                 logger.warning(error_message)
+                 self.tree_cache.cache_finished_req(req)  # unlock the tree
++                observe(self, req, "allocator_released")
+                 prepare_abort(
+                     req, error_message, status_code=HTTPStatus.INTERNAL_SERVER_ERROR
+                 )
+@@ -435,6 +462,7 @@
+             self.disagg_prefill_bootstrap_queue.req_to_metadata_buffer_idx_allocator.free(
+                 req.metadata_buffer_index
+             )
++            observe(self, req, "metadata_released")
+ 
+         # Stream requests which have finished transfer
+         self.stream_output(
+@@ -500,3 +528,5 @@
+             )
+             return
+         req.disagg_kv_sender.send(page_indices)
++        observe(self, req, "transfer_enqueued", repeat=True,
++                start_token=start_idx, end_token=end_idx, final_chunk=last_chunk)
+diff --git a/sglang/srt/entrypoints/http_server.py b/sglang/srt/entrypoints/http_server.py
+--- a/sglang/srt/entrypoints/http_server.py
++++ b/sglang/srt/entrypoints/http_server.py
+@@ -546,6 +546,22 @@
+     return Response(status_code=200)
+ 
+ 
++@app.post("/pdserve/cancel")
++async def pdserve_cancel(obj: AbortReq, request: Request):
++    """Queue an exact-ID cooperative cancel; cleanup is confirmed separately."""
++    if not all(os.getenv(flag, "0") == "1" for flag in
++               ("PDSERVE_ENGINE_CANCEL", "PDSERVE_ENGINE_LIFECYCLE", "PDSERVE_ENGINE_OBSERVER")):
++        return ORJSONResponse({"error": "PDServe cooperative cancellation requires observer and lifecycle"}, status_code=503)
++    if not obj.rid or len(obj.rid) > 128:
++        return ORJSONResponse({"error": "rid must contain 1 to 128 characters"}, status_code=400)
++    manager = _global_state.tokenizer_manager
++    manager.auto_create_handle_loop()
++    issued_ns = time.monotonic_ns()
++    manager.send_to_scheduler.send_pyobj(AbortReq(obj.rid, pdserve_issued_ns=issued_ns))
++    return ORJSONResponse({"rid": obj.rid, "cancel_enqueued": True, "issued_ns": issued_ns,
++                          "cleanup_confirmed": False, "mode": "drain_prefill_and_transfer"}, status_code=202)
++
++
+ @app.post("/abort_request")
+ async def abort_request(obj: AbortReq, request: Request):
+     """Abort a request."""
+diff --git a/sglang/srt/managers/io_struct.py b/sglang/srt/managers/io_struct.py
+--- a/sglang/srt/managers/io_struct.py
++++ b/sglang/srt/managers/io_struct.py
+@@ -817,6 +817,8 @@
+ class AbortReq:
+     # The request id
+     rid: str
++    # HTTP process records when cancellation was received, not cleanup confirmation.
++    pdserve_issued_ns: int = 0
+ 
+ 
+ @dataclass
+diff --git a/sglang/srt/managers/scheduler.py b/sglang/srt/managers/scheduler.py
+--- a/sglang/srt/managers/scheduler.py
++++ b/sglang/srt/managers/scheduler.py
+@@ -148,6 +148,9 @@
+ )
+ from sglang.utils import TypeBasedDispatcher, get_exception_traceback
+ 
++from sglang.srt.pdserve_fault_guard import pause_dispatch
++from sglang.srt.pdserve_observer import init_observer, observe, observe_batch
++
+ logger = logging.getLogger(__name__)
+ 
+ # Test retract decode for debugging purposes
+@@ -461,6 +464,7 @@
+             self.server_args.disaggregation_mode
+         )
+         self.init_disaggregation()
++        self.pdserve_observer = init_observer(self)
+ 
+     def init_tokenizer(self):
+         server_args = self.server_args
+@@ -1057,6 +1061,12 @@
+             self._add_request_to_queue(req)
+ 
+     def _add_request_to_queue(self, req: Req):
++        observe(self, req, "received")
++        if pause_dispatch(self):
++            observe(self, req, "rejected_quarantine", allocated=False)
++            prepare_abort(req, "PDServe node quarantined; coordinated recovery required", status_code=503)
++            self.stream_output([req], req.return_logprob)
++            return
+         req.queue_time_start = time.perf_counter()
+         if self.disaggregation_mode == DisaggregationMode.PREFILL:
+             self.disagg_prefill_bootstrap_queue.add(req)
+@@ -1537,6 +1547,7 @@
+         self, batch: ScheduleBatch
+     ) -> Union[GenerationBatchResult, EmbeddingBatchResult]:
+         """Run a batch."""
++        observe_batch(self, batch)
+         self.forward_ct += 1
+ 
+         # Check profiler
+@@ -1890,6 +1901,8 @@
+     def get_internal_state(self, recv_req: GetInternalStateReq):
+         ret = dict(global_server_args_dict)
+         ret["last_gen_throughput"] = self.last_gen_throughput
++        if self.pdserve_observer is not None:
++            ret["pdserve"] = self.pdserve_observer.snapshot()
+         if not self.spec_algorithm.is_none() and self.cum_spec_accept_count > 0:
+             ret["avg_spec_accept_length"] = (
+                 self.cum_spec_accept_length / self.cum_spec_accept_count
+@@ -1974,6 +1987,10 @@
+         )
+ 
+     def abort_request(self, recv_req: AbortReq):
++        observer = getattr(self, "pdserve_observer", None)
++        if observer is not None and observer.cancel_enabled:
++            observer.request_cancel(recv_req.rid, getattr(recv_req, "pdserve_issued_ns", 0))
++            return
+         # TODO(lmzheng): abort the requests in the grammar queue.
+ 
+         # Delete requests in the waiting queue
+diff --git a/sglang/srt/managers/scheduler_output_processor_mixin.py b/sglang/srt/managers/scheduler_output_processor_mixin.py
+--- a/sglang/srt/managers/scheduler_output_processor_mixin.py
++++ b/sglang/srt/managers/scheduler_output_processor_mixin.py
+@@ -17,6 +17,8 @@
+         ScheduleBatch,
+         Scheduler,
+     )
++
++from sglang.srt.pdserve_observer import observe, batch_result_done
+ 
+ logger = logging.getLogger(__name__)
+ 
+@@ -236,6 +238,7 @@
+             req.check_finished()
+             if req.finished():
+                 self.tree_cache.cache_finished_req(req)
++                observe(self, req, "allocator_released")
+                 req.time_stats.completion_time = time.time()
+ 
+             if req.return_logprob and batch.spec_algorithm.is_none():
+@@ -269,6 +272,7 @@
+         self.set_next_batch_sampling_info_done(batch)
+         self.stream_output(batch.reqs, batch.return_logprob)
+         self.token_to_kv_pool_allocator.free_group_end()
++        batch_result_done(self, batch)
+ 
+         self.forward_ct_decode = (self.forward_ct_decode + 1) % (1 << 30)
+         if (
+@@ -514,6 +518,7 @@
+                     # With the overlap schedule, a request will try to output twice and hit this line twice
+                     # because of the one additional delayed token. This "continue" prevented the dummy output.
+                     continue
++                observe(self, req, "terminal")
+                 req.finished_output = True
+                 should_output = True
+             else:
+diff --git a/sglang/srt/pdserve_fault_guard.py b/sglang/srt/pdserve_fault_guard.py
+new file mode 100644
+--- /dev/null
++++ b/sglang/srt/pdserve_fault_guard.py
+@@ -0,0 +1,152 @@
++"""Fail closed at scheduler checkpoints; this module never frees KV or retries."""
++import math
++import os
++import threading
++import time
++
++
++class FaultGuard:
++    def __init__(self, observer, transfer_timeout=30, kv_ready_timeout=60):
++        if not all(math.isfinite(value) and value > 0 for value in (transfer_timeout, kv_ready_timeout)):
++            raise ValueError('Fault deadlines must be positive finite seconds')
++        self.observer = observer
++        self.transfer_timeout = transfer_timeout
++        self.kv_ready_timeout = kv_ready_timeout
++        self.lock = threading.RLock()
++        self.fault = None
++        self.fault_event_emitted = False
++        self.test_delayed = set()
++
++    def quarantine(self, reason, room=None):
++        with self.lock:
++            if self.fault is not None:
++                return
++            self.fault = {'reason': reason, 'room': room, 'monotonic_ns': time.monotonic_ns(),
++                          'recovery_requires_new_epoch': True}
++        # Do not hold this lock when acquiring the observer lock.
++        self.observer.error = 'Fault quarantine: ' + reason
++        # Transport callbacks may hold tracker.lock. Emit from scheduler tick,
++        # after releasing transport locks, so callbacks never acquire observer.lock.
++
++    def publish_fault(self):
++        with self.lock:
++            if self.fault is None or self.fault_event_emitted:
++                return
++            fault = dict(self.fault)
++            self.fault_event_emitted = True
++        if fault['room'] is not None:
++            self.observer.room_trace(fault['room'], 'fault_quarantined', reason=fault['reason'],
++                                     allocation_release_confirmed=False,
++                                     fault_monotonic_ns=fault['monotonic_ns'])
++
++    def snapshot(self):
++        with self.lock:
++            return {'enabled': True, 'quarantined': self.fault is not None,
++                    'fault': dict(self.fault) if self.fault is not None else None,
++                    'transfer_worker_timeout_s': self.transfer_timeout,
++                    'decode_kv_ready_timeout_s': self.kv_ready_timeout,
++                    'test_hooks_enabled': os.getenv('PDSERVE_ENABLE_TEST_HOOKS', '0') == '1',
++                    'automatic_recovery_supported': False,
++                    'scope': 'local scheduler quarantine; peer monitoring and coordinated recovery pending'}
++
++    def test_timeout(self, room):
++        with self.observer.lock:
++            rid = self.observer.rooms.get(room, '')
++        return (os.getenv('PDSERVE_ENABLE_TEST_HOOKS', '0') == '1'
++                and rid.startswith('pdserve-fault-timeout-'))
++
++    def controlled_delay(self, room):
++        if not self.test_timeout(room):
++            return
++        with self.lock:
++            if room in self.test_delayed:
++                return
++            self.test_delayed.add(room)
++        self.observer.room_trace(room, 'test_delay_fault_transfer', milliseconds=1000, test_only=True)
++        time.sleep(1)
++
++    def tick(self):
++        if self.fault is not None:
++            self.publish_fault()
++            return True
++        observer = self.observer
++        if observer.error is not None:
++            self.quarantine('Observer unhealthy: ' + observer.error)
++            self.publish_fault()
++            return True
++        manager = observer.manager
++        tracker = getattr(manager, 'pdserve_transport', None)
++        if tracker is None:
++            self.quarantine('Transport tracker missing')
++            self.publish_fault()
++            return True
++        with tracker.lock:
++            error = tracker.error
++            active = [(room, row.get('active_started_ns')) for room, row in tracker.work.items() if row['active']]
++        if error:
++            self.quarantine(error)
++            self.publish_fault()
++            return True
++        now = time.monotonic_ns()
++        if observer.role == 'prefill':
++            for room, began in active:
++                deadline = 0.2 if self.test_timeout(room) else self.transfer_timeout
++                if began is not None and now - began > deadline * 1e9:
++                    self.quarantine('Prefill transfer worker deadline exceeded', room)
++                    self.publish_fault()
++                    return True
++        else:
++            with observer.lock:
++                waiting = [(record['bootstrap_room'], record['first_stage_ns'].get('kv_preallocated'))
++                           for record in observer.records.values()
++                           if not record['terminal_observed'] and 'kv_ready' not in record['first_stage_ns']]
++            for room, began in waiting:
++                deadline = 0.5 if self.test_timeout(room) else self.kv_ready_timeout
++                if began is not None and now - began > deadline * 1e9:
++                    self.quarantine('Decode preallocated KV-ready deadline exceeded', room)
++                    self.publish_fault()
++                    return True
++        return False
++
++
++def init_fault_guard(observer):
++    if os.getenv('PDSERVE_ENGINE_FAULT_GUARD', '0') != '1':
++        return None
++    if not observer.lifecycle_enabled:
++        raise ValueError('Fault guard requires lifecycle observation')
++    return FaultGuard(observer, float(os.getenv('PDSERVE_TRANSFER_TIMEOUT_S', '30')),
++                      float(os.getenv('PDSERVE_KV_READY_TIMEOUT_S', '60')))
++
++
++def pause_dispatch(scheduler):
++    observer = getattr(scheduler, 'pdserve_observer', None)
++    guard = getattr(observer, 'fault_guard', None)
++    return bool(guard and guard.tick())
++
++
++def hold_failed(scheduler, req):
++    observer = getattr(scheduler, 'pdserve_observer', None)
++    guard = getattr(observer, 'fault_guard', None)
++    if guard is None:
++        return False
++    guard.quarantine('Transport reported Failed; other layer writes may still be active', req.bootstrap_room)
++    return True
++
++
++def sticky_failure(manager, room, status):
++    observer = getattr(manager, 'pdserve_observer', None)
++    guard = getattr(observer, 'fault_guard', None)
++    if guard is None:
++        return False
++    current = manager.request_status.get(room)
++    if status == 0 or current == 0:
++        manager.request_status[room] = 0
++        guard.quarantine('Transport reported Failed; other layer writes may still be active', room)
++        return True
++    return False
++
++
++def controlled_fault_delay(manager, room):
++    guard = getattr(getattr(manager, 'pdserve_observer', None), 'fault_guard', None)
++    if guard is not None:
++        guard.controlled_delay(room)
+diff --git a/sglang/srt/pdserve_lifecycle.py b/sglang/srt/pdserve_lifecycle.py
+new file mode 100644
+--- /dev/null
++++ b/sglang/srt/pdserve_lifecycle.py
+@@ -0,0 +1,125 @@
++"""Bounded successful-transfer retirement; cancellation is deliberately unsupported."""
++import os
++import threading
++import time
++from contextlib import nullcontext
++
++
++class TransportLifecycle:
++    def __init__(self, role, limit=65536):
++        self.role = role
++        self.limit = limit
++        self.lock = threading.RLock()
++        self.work = {}
++        self.retired = set()
++        self.late_messages = 0
++        self.error = None
++
++    def accepts(self, room):
++        # Caller holds lock around associated manager-map access.
++        if room in self.retired:
++            self.late_messages += 1
++            return False
++        return True
++
++    def submitted(self, room):
++        with self.lock:
++            if not self.accepts(room):
++                self.error = 'Attempt to submit work for a retired room'
++                raise RuntimeError(self.error)
++            row = self.work.setdefault(room, dict(pending=0, active=0, final_done=False))
++            row['pending'] += 1
++
++    def started(self, room):
++        with self.lock:
++            row = self.work.get(room)
++            if row is None or row['pending'] <= row['active']:
++                self.error = 'Transfer worker started without a submitted chunk'
++                raise RuntimeError(self.error)
++            row['active'] += 1
++            if row['active'] == 1:
++                row['active_started_ns'] = time.monotonic_ns()
++
++    def completed(self, room, final, success, exception=False):
++        with self.lock:
++            row = self.work.get(room)
++            if row is None or row['active'] <= 0 or row['pending'] <= 0:
++                self.error = 'Transfer worker completion accounting mismatch'
++                return
++            row['active'] -= 1
++            if row['active'] == 0:
++                row['active_started_ns'] = None
++            row['pending'] -= 1
++            if exception:
++                self.error = 'Transfer worker exception; successful-cleanup path unavailable'
++            if final and success and not exception:
++                row['final_done'] = True
++
++    def retire(self, manager, room):
++        with self.lock:
++            if room in self.retired:
++                return True  # Idempotent, no repeated allocator mutation.
++            if self.error is not None or manager.request_status.get(room) != 4:
++                return False
++            if room in getattr(manager, 'transfer_infos', {}):
++                return False
++            if self.role == 'prefill':
++                row = self.work.get(room)
++                if not row or row['pending'] or row['active'] or not row['final_done']:
++                    return False
++            if len(self.retired) >= self.limit:
++                self.error = 'Retired-room limit reached; restart required before more cleanup acknowledgements'
++                return False
++            # Keep tombstones for the entire engine epoch: late notifications
++            # cannot resurrect retired request_status or transfer_infos entries.
++            self.retired.add(room)
++            manager.request_status.pop(room, None)
++            self.work.pop(room, None)
++            return True
++
++    def snapshot(self):
++        with self.lock:
++            return dict(retired_rooms=len(self.retired), late_messages=self.late_messages,
++                        pending_chunks=sum(row['pending'] for row in self.work.values()),
++                        active_chunks=sum(row['active'] for row in self.work.values()),
++                        healthy=self.error is None, error=self.error, retired_room_limit=self.limit)
++
++
++def init_transport(role):
++    if os.getenv('PDSERVE_ENGINE_LIFECYCLE', '0') != '1':
++        return None
++    if os.getenv('PDSERVE_ENGINE_OBSERVER', '0') != '1':
++        raise ValueError('Lifecycle requires PDSERVE_ENGINE_OBSERVER=1')
++    limit = int(os.getenv('PDSERVE_TRANSPORT_RETIRE_LIMIT', '65536'))
++    if limit <= 0:
++        raise ValueError('Retired room limit must be positive')
++    return TransportLifecycle(role, limit)
++
++
++def submitted(manager, room):
++    tracker = getattr(manager, 'pdserve_transport', None)
++    if tracker is not None:
++        tracker.submitted(room)
++
++
++def guard(manager):
++    tracker = getattr(manager, 'pdserve_transport', None)
++    return tracker.lock if tracker is not None else nullcontext()
++
++
++def accepts(manager, room):
++    tracker = getattr(manager, 'pdserve_transport', None)
++    return tracker.accepts(room) if tracker is not None else True
++
++
++def started(manager, room):
++    tracker = getattr(manager, 'pdserve_transport', None)
++    if tracker is not None:
++        tracker.started(room)
++
++
++def completed(manager, chunk, exception=False):
++    tracker = getattr(manager, 'pdserve_transport', None)
++    if tracker is not None:
++        tracker.completed(chunk.room, chunk.is_last,
++                          manager.request_status.get(chunk.room) == 4, exception)
+diff --git a/sglang/srt/pdserve_observer.py b/sglang/srt/pdserve_observer.py
+new file mode 100644
+--- /dev/null
++++ b/sglang/srt/pdserve_observer.py
+@@ -0,0 +1,395 @@
++"""Opt-in PDServe observation for the pinned SGLang build; no allocator mutation.
++
++Scheduler snapshots run on the scheduler thread. Mooncake worker events acquire
++the same observer lock but never read allocator state. A terminal response is
++not a cleanup acknowledgement. Normal-success cleanup requires explicit release and compute/transport completion hooks.
++"""
++from collections import OrderedDict, deque
++import json
++import math
++import os
++from pathlib import Path
++import threading
++import time
++import uuid
++from sglang.srt.pdserve_fault_guard import init_fault_guard
++
++PATCH_ID = "pdserve-stage2c-guard-v1"
++CANCEL_MESSAGE = "PDServe cooperatively cancelled"
++
++
++class PDObserver:
++    def __init__(self, scheduler, log_dir=None, limit=4096, lifecycle_enabled=False, cancel_enabled=False):
++        self.scheduler = scheduler
++        self.lifecycle_enabled = lifecycle_enabled
++        self.cancel_enabled = cancel_enabled
++        self.fault_guard = None
++        self.live_requests = {}
++        self.pending_cancels = {}
++        self.pending_cancel_limit = 128
++        self.cancel_rejections = 0
++        self.cancel_expirations = 0
++        self.role = scheduler.server_args.disaggregation_mode
++        self.epoch = uuid.uuid4().hex
++        self.lock = threading.RLock()
++        self.limit = limit
++        self.records = OrderedDict()
++        self.rooms = {}
++        self.events = deque(maxlen=limit)
++        self.sequence = 0
++        self.dropped_events = 0
++        self.error = None
++        self.log = None
++        if log_dir:
++            path = Path(log_dir)
++            path.mkdir(parents=True, exist_ok=True)
++            self.log = (path / f"{self.role}-{os.getpid()}-{self.epoch}.jsonl").open(
++                "a", encoding="utf-8", buffering=1
++            )
++        queue = getattr(scheduler, "disagg_prefill_bootstrap_queue", None)
++        if queue is None:
++            queue = getattr(scheduler, "disagg_decode_prealloc_queue", None)
++        self.manager = queue.kv_manager if queue is not None else None
++        if queue is not None:
++            queue.kv_manager.pdserve_observer = self
++        self.fault_guard = init_fault_guard(self)
++
++    def _emit(self, record, stage, details):
++        self.sequence += 1
++        event = dict(patch_id=PATCH_ID, epoch=self.epoch, seq=self.sequence,
++                     role=self.role, rid=record["rid"], bootstrap_room=record["bootstrap_room"],
++                     stage=stage, monotonic_ns=time.monotonic_ns(), unix_ns=time.time_ns(),
++                     details=details)
++        if len(self.events) == self.events.maxlen:
++            self.dropped_events += 1
++        self.events.append(event)
++        record["stage"] = stage
++        record["last_seq"] = self.sequence
++        record["first_stage_ns"].setdefault(stage, event["monotonic_ns"])
++        if self.log:
++            try:
++                self.log.write(json.dumps(event, ensure_ascii=False) + "\n")
++            except OSError as error:
++                self.error = f"Event log write failed: {error}"
++
++    def trace(self, req, stage, repeat=False, **details):
++        if getattr(req, "bootstrap_host", None) == "2.2.2.2":
++            return  # Stock health/warmup uses fake KV transfers.
++        with self.lock:
++            rid = req.rid
++            record = self.records.get(rid)
++            if record is None:
++                if len(self.records) >= self.limit:
++                    old = next((key for key, obj in self.records.items()
++                                if (obj["cleanup_confirmed"] if self.lifecycle_enabled
++                                    else obj["terminal_observed"])), None)
++                    if old is None:
++                        self.error = "Active request observation limit exceeded"
++                        return
++                    previous = self.records.pop(old)
++                    self.live_requests.pop(old, None)
++                    if self.rooms.get(previous["bootstrap_room"]) == old:
++                        self.rooms.pop(previous["bootstrap_room"], None)
++                record = dict(rid=rid, bootstrap_room=getattr(req, "bootstrap_room", None),
++                              prompt_tokens=len(req.origin_input_ids),
++                              output_limit=req.sampling_params.max_new_tokens,
++                              first_stage_ns={}, terminal_observed=False,
++                              cleanup_confirmed=False, compute_pending=0, last_compute_result_ns=None,
++                              allocator_release_seen=False, metadata_release_seen=False,
++                              finish_reason=None, cancel_requested=False, cancel_issued_ns=None,
++                              cleanup_scope=None)
++                owner = self.rooms.get(record["bootstrap_room"])
++                if self.lifecycle_enabled and owner is not None and owner != rid:
++                    self.error = "Bootstrap room reused by a different request"
++                    return
++                self.records[rid] = record
++                self.rooms[record["bootstrap_room"]] = rid
++            elif record["bootstrap_room"] != getattr(req, "bootstrap_room", None):
++                self.error = "Request ID reused with a different bootstrap room"
++                return
++            if not repeat and stage in record["first_stage_ns"]:
++                return
++            if stage == "terminal":
++                record["terminal_observed"] = True
++                details["finish_reason"] = req.finished_reason.to_json()
++                record["finish_reason"] = details["finish_reason"]
++            if stage == "allocator_released":
++                record["allocator_release_seen"] = True
++            if stage == "metadata_released":
++                record["metadata_release_seen"] = True
++            self._emit(record, stage, details)
++            if self.cancel_enabled:
++                if not record["cleanup_confirmed"]:
++                    self.live_requests[rid] = req
++                if stage == "received":
++                    self.expire_pending_cancels()
++                    pending = self.pending_cancels.pop(rid, None)
++                    if pending is not None:
++                        self._cancel_known(record, req, pending["issued_ns"])
++                elif stage == "kv_ready" and record["cancel_requested"]:
++                    self._arm_decode_cancel(record, req)
++
++    def room_trace(self, room, stage, **details):
++        with self.lock:
++            rid = self.rooms.get(room)
++            if rid is not None and rid in self.records:
++                self._emit(self.records[rid], stage, details)
++
++    def expire_pending_cancels(self):
++        now = time.monotonic_ns()
++        with self.lock:
++            expired = [rid for rid, row in self.pending_cancels.items() if row["expires_ns"] <= now]
++            for rid in expired:
++                self.pending_cancels.pop(rid)
++                self.cancel_expirations += 1
++
++    def _arm_decode_cancel(self, record, req):
++        if self.role == "decode" and "kv_ready" in record["first_stage_ns"]:
++            req.to_abort = True
++            req.to_abort_message = CANCEL_MESSAGE
++            if "cancel_armed" not in record["first_stage_ns"]:
++                self._emit(record, "cancel_armed", {"kv_transfer_success_observed": True})
++
++    def _cancel_known(self, record, req, issued_ns):
++        if record["terminal_observed"] or record["cleanup_confirmed"] or req.finished():
++            self._emit(record, "cancel_too_late", {"issued_ns": issued_ns})
++            return "too_late"
++        if record["cancel_requested"]:
++            self._emit(record, "cancel_duplicate", {"issued_ns": issued_ns})
++            return "already_requested"
++        record["cancel_requested"] = True
++        record["cancel_issued_ns"] = issued_ns
++        self._emit(record, "cancel_requested", {"issued_ns": issued_ns, "mode": "drain_prefill_and_transfer"})
++        self._arm_decode_cancel(record, req)
++        return "requested"
++
++    def request_cancel(self, rid, issued_ns=0):
++        if not self.cancel_enabled:
++            return "unsupported"
++        if not isinstance(rid, str) or not rid or len(rid) > 128:
++            self.cancel_rejections += 1
++            return "invalid_id"
++        self.expire_pending_cancels()
++        issued_ns = issued_ns or time.monotonic_ns()
++        with self.lock:
++            record = self.records.get(rid)
++            if record is not None:
++                req = self.live_requests.get(rid)
++                if req is None:
++                    self._emit(record, "cancel_too_late", {"issued_ns": issued_ns})
++                    return "too_late"
++                return self._cancel_known(record, req, issued_ns)
++            if rid in self.pending_cancels:
++                return "already_pending"
++            if len(self.pending_cancels) >= self.pending_cancel_limit:
++                self.cancel_rejections += 1
++                return "pending_limit"
++            self.pending_cancels[rid] = {"issued_ns": issued_ns,
++                                         "expires_ns": time.monotonic_ns() + 60_000_000_000}
++            return "pending_registration"
++
++    def controlled_test_delay(self, rid, phase):
++        # Only deterministic cancellation demos opt in. Never enabled in benchmarks.
++        if (os.getenv("PDSERVE_ENABLE_TEST_HOOKS", "0") == "1" and
++                rid.startswith("pdserve-cancel-" + phase + "-")):
++            with self.lock:
++                record = self.records.get(rid)
++                marker = "test_delay_" + phase
++                if record is None or marker in record["first_stage_ns"]:
++                    return
++                milliseconds = int(os.getenv("PDSERVE_TEST_STAGE_DELAY_MS", "200"))
++                if not 1 <= milliseconds <= 1000:
++                    raise ValueError("Test delay must be between 1 and 1000 ms")
++                self._emit(record, marker, {"milliseconds": milliseconds, "test_only": True})
++            time.sleep(milliseconds / 1000)
++
++    def batch_start(self, batch):
++        if self.role == "prefill" and batch.forward_mode.is_extend():
++            stage = "prefill_started"
++        elif self.role == "decode" and batch.forward_mode.is_decode():
++            stage = "decode_started"
++        else:
++            return
++        for req in batch.reqs or []:
++            self.trace(req, stage)
++            if self.lifecycle_enabled:
++                with self.lock:
++                    record = self.records.get(req.rid)
++                    if record is not None:
++                        if record["cleanup_confirmed"]:
++                            self.error = "Compute submitted after cleanup acknowledgement"
++                        record["compute_pending"] += 1
++            if self.role == "prefill":
++                self.controlled_test_delay(req.rid, "prefill")
++
++    def batch_done(self, batch):
++        if not self.lifecycle_enabled:
++            return
++        with self.lock:
++            for req in batch.reqs or []:
++                record = self.records.get(req.rid)
++                if record is not None:
++                    if getattr(req, "is_retracted", False):
++                        self.error = "Retracted request requires a separate cleanup path"
++                    if record["compute_pending"] <= 0:
++                        self.error = "Compute result accounting mismatch"
++                    else:
++                        record["compute_pending"] -= 1
++                        record["last_compute_result_ns"] = time.monotonic_ns()
++                        if record["terminal_observed"] or record["allocator_release_seen"]:
++                            self._emit(record, "compute_result_processed",
++                                       {"compute_pending": record["compute_pending"]})
++
++    def settle_cleanup(self):
++        self.expire_pending_cancels()
++        if not self.lifecycle_enabled or self.error is not None:
++            return
++        tracker = getattr(self.manager, "pdserve_transport", None)
++        if tracker is None:
++            self.error = "Lifecycle transport tracker missing"
++            return
++        with self.lock:
++            candidates = [record for record in self.records.values()
++                          if record["terminal_observed"] and not record["cleanup_confirmed"]
++                          and record["allocator_release_seen"]
++                          and record["metadata_release_seen"]
++                          and record["compute_pending"] == 0
++                          and ((record["finish_reason"] or {}).get("type") in ("length", "stop")
++                               or (self.cancel_enabled and record["cancel_requested"]
++                                   and (record["finish_reason"] or {}).get("type") == "abort"
++                                   and (record["finish_reason"] or {}).get("message") == CANCEL_MESSAGE))]
++        # Never hold observer lock while obtaining the transport lock.
++        for record in candidates:
++            if tracker.retire(self.manager, record["bootstrap_room"]):
++                with self.lock:
++                    record["cleanup_confirmed"] = True
++                    record["cleanup_scope"] = "cooperative_cancel" if record["cancel_requested"] else "normal_success"
++                    self.live_requests.pop(record["rid"], None)
++                    self._emit(record, "cleanup_confirmed", {
++                        "scope": record["cleanup_scope"], "compute_pending": 0,
++                        "allocator_release_seen": True, "metadata_release_seen": True,
++                        "transport_retired": True})
++
++    def _resources(self):
++        s = self.scheduler
++        allocator = s.token_to_kv_pool_allocator
++        free = int(allocator.available_size())
++        evictable = int(s.tree_cache.evictable_size())
++        pool = allocator.get_kvcache()
++        buffers = list(getattr(pool, "k_buffer", [])) + list(getattr(pool, "v_buffer", []))
++        bytes_per_token = sum(math.prod(buffer.shape[1:]) * buffer.element_size()
++                              for buffer in buffers) if buffers else None
++        capacity = dict(kv_tokens=int(s.max_total_num_tokens), page_size=int(allocator.page_size),
++                        kv_bytes_per_token=bytes_per_token,
++                        request_slots=int(s.req_to_token_pool.size))
++        queues = dict(waiting=len(s.waiting_queue), grammar=len(s.grammar_queue),
++                      running=len(s.running_batch.reqs))
++        role_queue = getattr(s, "disagg_prefill_bootstrap_queue", None)
++        if role_queue is not None:
++            queues.update(prefill_bootstrap=len(role_queue.queue),
++                          prefill_inflight=len(s.disagg_prefill_inflight_queue))
++        else:
++            role_queue = s.disagg_decode_prealloc_queue
++            queues.update(decode_prealloc=len(role_queue.queue),
++                          decode_transfer=len(s.disagg_decode_transfer_queue.queue))
++        metadata = role_queue.req_to_metadata_buffer_idx_allocator
++        capacity["metadata_slots"] = int(metadata.size)
++        manager = role_queue.kv_manager
++        transfer_queue = getattr(manager, "transfer_queue", None)
++        resources = dict(kv_free_tokens=free, kv_evictable_tokens=evictable,
++                         kv_used_tokens=capacity["kv_tokens"] - free - evictable,
++                         request_free_slots=len(s.req_to_token_pool.free_slots),
++                         metadata_free_slots=int(metadata.available_size()), queues=queues,
++                         # Manager maps are touched by worker threads; these are point observations,
++                         # not a transport quiescence or per-request cleanup acknowledgement.
++                         transport_status_entries=len(manager.request_status),
++                         transport_info_entries=len(getattr(manager, "transfer_infos", {})),
++                         transport_queued_chunks=transfer_queue.qsize() if transfer_queue else 0)
++        return capacity, resources
++
++    def snapshot(self):
++        capacity, resources = self._resources()
++        tracker = getattr(self.manager, "pdserve_transport", None)
++        transport = tracker.snapshot() if tracker is not None else None
++        with self.lock:
++            return dict(enabled=True, patch_id=PATCH_ID, epoch=self.epoch, role=self.role,
++                        captured_monotonic_ns=time.monotonic_ns(), capacity=capacity, resources=resources,
++                        healthy=self.error is None and (transport is None or transport["healthy"]),
++                        observer_error=self.error or (transport or {}).get("error"),
++                        cleanup_confirmation_supported=self.lifecycle_enabled,
++                        cleanup_confirmation_scope=("normal_success_and_cooperative_cancel"
++                                                    if self.cancel_enabled else "normal_success")
++                                                   if self.lifecycle_enabled else None,
++                        fault_guard=self.fault_guard.snapshot() if self.fault_guard else None,
++                        cancellation_supported=self.cancel_enabled,
++                        cancellation_scope="drain_prefill_and_transfer" if self.cancel_enabled else None,
++                        pending_cancels=len(self.pending_cancels), cancel_rejections=self.cancel_rejections,
++                        cancel_expirations=self.cancel_expirations, transport_lifecycle=transport,
++                        events_oldest_seq=self.events[0]["seq"] if self.events else self.sequence + 1,
++                        events_latest_seq=self.sequence, events_overwritten=self.dropped_events,
++                        requests=json.loads(json.dumps(list(self.records.values()))),
++                        events=json.loads(json.dumps(list(self.events))))
++
++
++def init_observer(scheduler):
++    if os.getenv("PDSERVE_ENGINE_OBSERVER", "0") != "1":
++        return None
++    args = scheduler.server_args
++    if (args.tp_size, args.pp_size, args.dp_size) != (1, 1, 1):
++        raise ValueError("PDServe observer currently requires TP=PP=DP=1")
++    if args.disaggregation_mode not in ("prefill", "decode") or not args.disable_radix_cache:
++        raise ValueError("PDServe observer requires P/D mode with prefix cache disabled")
++    lifecycle = os.getenv("PDSERVE_ENGINE_LIFECYCLE", "0") == "1"
++    cancel = os.getenv("PDSERVE_ENGINE_CANCEL", "0") == "1"
++    if cancel and not lifecycle:
++        raise ValueError("Cooperative cancellation requires lifecycle enabled")
++    if lifecycle and (scheduler.token_to_kv_pool_allocator.page_size != 1
++                      or getattr(args, "speculative_algorithm", None) is not None):
++        raise ValueError("Normal lifecycle currently requires page_size=1 and no speculative decoding")
++    return PDObserver(scheduler, os.getenv("PDSERVE_ENGINE_EVENT_LOG_DIR",
++                                         str(Path.cwd() / "logs/engine-events")),
++                      lifecycle_enabled=lifecycle, cancel_enabled=cancel)
++
++
++def observe(scheduler, req, stage, repeat=False, **details):
++    observer = getattr(scheduler, "pdserve_observer", None)
++    if observer is not None:
++        observer.trace(req, stage, repeat=repeat, **details)
++
++
++def observe_batch(scheduler, batch):
++    observer = getattr(scheduler, "pdserve_observer", None)
++    if observer is not None:
++        observer.batch_start(batch)
++
++
++def observe_room(manager, room, stage, **details):
++    observer = getattr(manager, "pdserve_observer", None)
++    if observer is not None:
++        observer.room_trace(room, stage, **details)
++
++
++def batch_result_done(scheduler, batch):
++    observer = getattr(scheduler, "pdserve_observer", None)
++    if observer is not None:
++        observer.batch_done(batch)
++
++
++def settle_cleanup(scheduler):
++    observer = getattr(scheduler, "pdserve_observer", None)
++    if observer is not None:
++        observer.settle_cleanup()
++
++
++def cancellation_requested(scheduler, req):
++    observer = getattr(scheduler, "pdserve_observer", None)
++    return bool(observer and observer.cancel_enabled and
++                observer.records.get(req.rid, {}).get("cancel_requested"))
++
++
++def controlled_transfer_delay(manager, room):
++    observer = getattr(manager, "pdserve_observer", None)
++    if observer is not None:
++        rid = observer.rooms.get(room)
++        if rid is not None:
++            observer.controlled_test_delay(rid, "transfer")

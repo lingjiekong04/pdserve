@@ -1,0 +1,7 @@
+# Linux GPU installation recipe; download availability not retested this round.
+# First install the exact torch/torchvision and FlashInfer wheels per REPRODUCE.md.
+sglang[srt]==0.4.6.post5
+mooncake-transfer-engine==0.3.2
+compressed-tensors==0.9.3
+cuda-python==12.4.0
+-r runtime.txt

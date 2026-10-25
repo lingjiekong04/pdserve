@@ -1,0 +1,2 @@
+# Preserve reviewed bytes and patch context on Windows and Linux.
+* -text
